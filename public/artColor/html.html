@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+  <ul id="myUL">
+    <li><a href="#">Adele</a></li>
+    <li><a href="#">Agnes</a></li>
+  
+    <li><a href="#">Billy</a></li>
+    <li><a href="#">Bob</a></li>
+  
+    <li><a href="#">Calvin</a></li>
+    <li><a href="#">Christina</a></li>
+    <li><a href="#">Cindy</a></li>
+  </ul>
+
+  <script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
+
+
+
+
+<h1>My First Google Map</h1>
+
+<div id="map" style="width: 600px; height: 400px"></div>
+ 
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=92bd9a31-f25d-42dd-a08e-7de4b146adb1&lang=en_US" type="text/javascript">
+  </script>
+<script>
+  ymaps.ready(init);
+                function init(){
+                    // Создание карты.
+                        var myMap = new ymaps.Map("map", {
+                        center: [41.35, 69.25],
+                        zoom: 10
+            
+                    });
+                }
+</script>
+
+
+</body>
+</html>
