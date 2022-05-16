@@ -16,9 +16,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -39,6 +36,8 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset("adminstyle.css") }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -52,42 +51,32 @@
             <span class="brand-text font-weight-light">Art Color</span>
         </a>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="nav-icon fa fa-shopping-cart"></i>
-                            <p>
-                                Buyurtmalar
-                            </p>
-                        </a>
-                    </li>
+        @include('layouts.sidebar')
 
-                    <li class="nav-item">
-                        <a href="{{ route('logout') }}" class="nav-link"
-                           onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                            <i class="nav-icon fas fa-sign-out-alt"></i>
-                            <p>
-                                Chiqish
-                            </p>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
     </aside>
 
     <div class="content-wrapper">
+        <section class="content-header">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Xatolik!</strong> Ma'lumotlar to'ldirishda xatolik yuz berdi.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </section>
+
         @yield('content')
+
     </div>
 
     <footer class="main-footer">
@@ -136,5 +125,6 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.js')}}"></script>
 
 <script src="{{ asset('adminlte/dist/js/pages/dashboard.js')}}"></script>
+
 </body>
 </html>

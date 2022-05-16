@@ -1,170 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Muhammadsolih">
-    <title>ArtColor Главная</title>
+@extends('layouts.app')
 
-
-    <!--aos animation  -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!--aos animation  -->
-
-    <!-- logo icon -->
-    <link rel="icon" href="images/card-item-1.png">
-    <!-- logo icon -->
-
-    <!-- swipper js -->
-    <link rel="stylesheet" href="style/swiper.min.css">
-    <!-- swipper js -->
-
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="style/bootstrap.min.css">
-    <!-- bootstrap css -->
-
-    <!-- my style code -->
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/media.css">
-    <!-- my style code -->
-</head>
-<body>
-    <!-- loader -->
-    <div id="loader-content">
-        <div class="loader-display">
-            <h1 data-text="Art Color" class="loader">Art Color</h1>
-        </div>
-    </div>
-    <!-- loader -->
-
-    <!-- progress bar -->
-    <div class="progress-bar"></div>
-    <!-- progress bar -->
-
-    <!-- btn -->
-    <button type="button" class="toTop pulse" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <!-- btn -->
-
-    <!-- offcancas -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel"></h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <ul>
-            <li>
-                <a href="index.html"  class="active">Главная</a>
-            </li>
-            <li>
-                <a href="pages/product.html">Продукция</a>
-            </li>
-            <li>
-                <a href="pages/about.html">О компании</a>
-            </li>
-            <li>
-                <a href="pages/contact.html">Контакты</a>
-            </li>
-         </ul>
-         <div class="navbar-phone">
-            <a href="tel:+998 90 780 06 60">
-                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
-            </a>
-            <a href="tel:+998 90 780 06 60">
-                 <i class="fas fa-phone"></i>
-                 <span>+998 90 780 06 60</span>
-             </a>
-        </div>
-        <div class="search">
-            <i class="fas fa-search"></i>
-
-            <div class="dropdown">
-                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                     Ru
-                 </a>
-
-                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                     <li><a class="dropdown-item" href="#">Eng</a></li>
-                     <li><a class="dropdown-item" href="#">Uz</a></li>
-                 </ul>
-             </div>
-
-        </div>
-    </div>
-    </div>
-    <!-- offcancas -->
-
-    <!-- navbar -->
-   <div class="navMenu" >
-       <div class="container">
-           <div class="content">
-               <div class="navbar-left">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="">
-                    </a>
-                    <ul>
-                       <li>
-                           <a href="index.html"  class="active">Главная</a>
-                       </li>
-                       <li>
-                           <a href="pages/product.html">Продукция</a>
-                       </li>
-                       <li>
-                           <a href="pages/about.html">О компании</a>
-                       </li>
-                       <li>
-                           <a href="pages/contact.html">Контакты</a>
-                       </li>
-                    </ul>
-               </div>
-               <div class="navbar-right">
-                   <div class="navbar-phone">
-                       <a href="tel:+998 90 780 06 60">
-                            <i class="fas fa-phone"></i>
-                           <span>+998 90 780 06 60</span>
-                       </a>
-                       <a href="tel:+998 90 780 06 60">
-                            <i class="fas fa-phone"></i>
-                            <span>+998 90 780 06 60</span>
-                        </a>
-                   </div>
-                   <div class="search">
-                       <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
-
-                       <div class="dropdown">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Ru
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Eng</a></li>
-                                <li><a class="dropdown-item" href="#">Uz</a></li>
-                            </ul>
-                        </div>
-
-                   </div>
-               </div>
-               <div class="navbar-bars">
-                   <div class="bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <i class="fas fa-bars"></i>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-    <!-- navbar -->
+@section('content')
 
     <!-- main -->
     <div class="main">
         <div class="main-content">
-
             <div class="main-slider-item">
                 <div class="container">
-
                     <div class="main-slider d-flex justify-content-between align-items-end w-100">
                         <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
                             <h1 class="text-white">Производство лакокрасочных продукций</h1>
@@ -179,7 +21,7 @@
                             </div>
                         </div>
                         <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="images/main-img.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -229,7 +71,7 @@
                             </div>
                         </div>
                         <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="images/main-img.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -279,7 +121,7 @@
                             </div>
                         </div>
                         <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="images/main-img.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -349,12 +191,13 @@
                                 <h1>24</h1>
                                 <p>Типы красок</p>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="about-right" data-aos="fade-up"  data-aos-duration="1500">
                     <div class="about-img ">
-                        <img src="images/about-right.png" alt="">
+                        <img src="{{ asset('artColor/images/about-right.png')}}" alt="">
                     </div>
                     <p class="pt-3">Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего</p>
                 </div>
@@ -364,11 +207,9 @@
     <!-- about -->
 
     <!-- main video data-bs-toggle="modal" data-bs-target="#exampleModal"-->
-    <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url(images/main-video-bg.png); ">
+    <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url('{{ asset("artColor/images/main-video-bg.png") }}');">
         <div class="video d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-aos="flip-up"  data-aos-duration="1500">
-                <i class="fas fa-solid fa-play" id="video" ></i>
-
-
+            <i class="fas fa-solid fa-play" id="video" ></i>
         </div>
     </div>
     <!-- main video -->
@@ -393,12 +234,12 @@
                     <div class="forProduct-left">
 
                         <div class="forProduct-img">
-                            <img src="images/forProduct.png" class="product-item1" alt="">
-                            <img src="images/about-right.png" class="product-item2" alt="">
-                            <img src="images/main.png" class="product-item3" alt="">
-                            <img src="images/forProduct.png" class="product-item4" alt="">
-                            <img src="images/about-right.png" class="product-item5"  alt="">
-                            <img src="images/forProduct.png" class="product-item6"  alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item1" alt="">
+                            <img src="{{ asset('artColor/images/about-right.png')}}" class="product-item2" alt="">
+                            <img src="{{ asset('artColor/images/main.png')}}" class="product-item3" alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item4" alt="">
+                            <img src="{{ asset('artColor/images/about-right.png')}}" class="product-item5"  alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item6"  alt="">
 
                             <div class="slide-product-content">
                                 <div class="pulse slide-product-item item-1" data-aos="fade-up"  data-aos-duration="1500">
@@ -499,12 +340,12 @@
                     <div class="forProduct-left">
 
                         <div class="forProduct-img">
-                            <img src="images/forProduct.png" class=" product-item-1" alt="">
-                            <img src="images/about-right.png" class=" product-item-2" alt="">
-                            <img src="images/main.png" class=" product-item-3"  alt="">
-                            <img src="images/forProduct.png" class=" product-item-4" alt="">
-                            <img src="images/about-right.png" class=" product-item-5" alt="">
-                            <img src="images/forProduct.png" class=" product-item-6" alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-1" alt="">
+                            <img src="{{ asset('artColor/images/about-right.png')}}" class=" product-item-2" alt="">
+                            <img src="{{ asset('artColor/images/main.png')}}" class=" product-item-3"  alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-4" alt="">
+                            <img src="{{ asset('artColor/images/about-right.png')}}" class=" product-item-5" alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-6" alt="">
 
                             <div class="slide-product-content">
                                 <div class="pulse slide-product-item item-1 item-1-1" data-aos="fade-up"  data-aos-duration="1500">
@@ -651,7 +492,7 @@
                     <div class="card-foot-item">
                         <div class="card-shape-hover"></div>
                         <div class="card-img text-center">
-                            <img src="images/card-item-1.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-1.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>LAK</h5>
                         <p>
@@ -664,7 +505,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="2">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-2.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-2.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>Encanto</h5>
                         <p>
@@ -676,7 +517,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="3">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-3.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-3.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>JOKER</h5>
                         <p>
@@ -688,7 +529,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="7">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-4.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>POWER 7</h5>
                         <p>
@@ -700,7 +541,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="6">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-5.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-5.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>LAK</h5>
                         <p>
@@ -712,7 +553,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="5">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-6.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-6.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>Encanto</h5>
                         <p>
@@ -724,7 +565,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="4">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-7.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-7.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>JOKER</h5>
                         <p>
@@ -736,7 +577,7 @@
                 <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="1">
                     <div class="card-foot-item">
                         <div class="card-img text-center">
-                            <img src="images/card-item-8.png" class="img-fluid" alt="">
+                            <img src="{{ asset('artColor/images/card-item-8.png')}}" class="img-fluid" alt="">
                         </div>
                         <h5>POWER 7</h5>
                         <p>
@@ -777,7 +618,7 @@
                             </p>
 
                             <div class="py-3">
-                                <img src="images/card-item-2.png" class="img-fluid" alt="">
+                                <img src="{{ asset('artColor/images/card-item-2.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -789,7 +630,7 @@
                             </p>
 
                             <div class="py-3">
-                                <img src="images/card-item-3.png" class="img-fluid" alt="">
+                                <img src="{{ asset('artColor/images/card-item-3.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -801,7 +642,7 @@
                             </p>
 
                             <div class="py-3">
-                                <img src="images/card-item-4.png" class="img-fluid" alt="">
+                                <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -813,7 +654,7 @@
                             </p>
 
                             <div class="py-3">
-                                <img src="images/card-item-4.png" class="img-fluid" alt="">
+                                <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -826,17 +667,17 @@
                     <div class="our-right-content">
 
                         <div class="our-right-item nextOur activeItem">
-                            <img src="images/forProduct.png" alt="">
+                            <img src="{{ asset('artColor/images/forProduct.png')}}" alt="">
                         </div>
 
                         <div class="our-right-item nextOur nextItem">
-                            <img src="images/our-item.png" alt="">
+                            <img src="{{ asset('artColor/images/our-item.png')}}" alt="">
                         </div>
                         <div class="our-right-item nextOur ">
-                            <img src="images/about-right.png" alt="">
+                            <img src="{{ asset('artColor/images/about-right.png')}}" alt="">
                         </div>
                         <div class="our-right-item nextOur">
-                            <img src="images/main.png" alt="">
+                            <img src="{{ asset('artColor/images/main.png')}}" alt="">
                         </div>
 
                     </div>
@@ -876,24 +717,12 @@
 
             <section class="swiper">
                 <div class="swiper-container">
-                      <div class="swiper-wrapper">
+                    <div class="swiper-wrapper">
 
-                          <div class="swiper-slide">
-                              <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="images/forProduct.png"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                              </a>
-                          </div>
-                          <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="pages/blog.html">
                                 <div class="splide-card-item">
-                                    <img src="images/about-right.png"  alt="">
+                                    <img src="{{ asset('artColor/images/forProduct.png')}}"  alt="">
                                     <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
                                     <div class="date-content d-flex justify-content-between">
                                         <div class="date">23 марта 2022 г.</div>
@@ -901,11 +730,11 @@
                                     </div>
                                 </div>
                             </a>
-                          </div>
-                          <div class="swiper-slide">
+                        </div>
+                        <div class="swiper-slide">
                             <a href="pages/blog.html">
                                 <div class="splide-card-item">
-                                    <img src="images/our-item.png"  alt="">
+                                    <img src="{{ asset('artColor/images/about-right.png')}}"  alt="">
                                     <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
                                     <div class="date-content d-flex justify-content-between">
                                         <div class="date">23 марта 2022 г.</div>
@@ -913,11 +742,11 @@
                                     </div>
                                 </div>
                             </a>
-                          </div>
-                          <div class="swiper-slide">
+                        </div>
+                        <div class="swiper-slide">
                             <a href="pages/blog.html">
                                 <div class="splide-card-item">
-                                    <img src="images/about-right.png"  alt="">
+                                    <img src="{{ asset('artColor/images/our-item.png')}}"  alt="">
                                     <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
                                     <div class="date-content d-flex justify-content-between">
                                         <div class="date">23 марта 2022 г.</div>
@@ -925,11 +754,11 @@
                                     </div>
                                 </div>
                             </a>
-                          </div>
-                          <div class="swiper-slide">
+                        </div>
+                        <div class="swiper-slide">
                             <a href="pages/blog.html">
                                 <div class="splide-card-item">
-                                    <img src="images/forProduct.png"  alt="">
+                                    <img src="{{ asset('artColor/images/about-right.png')}}"  alt="">
                                     <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
                                     <div class="date-content d-flex justify-content-between">
                                         <div class="date">23 марта 2022 г.</div>
@@ -937,11 +766,11 @@
                                     </div>
                                 </div>
                             </a>
-                          </div>
-                          <div class="swiper-slide">
+                        </div>
+                        <div class="swiper-slide">
                             <a href="pages/blog.html">
                                 <div class="splide-card-item">
-                                    <img src="images/our-item.png"  alt="">
+                                    <img src="{{ asset('artColor/images/forProduct.png')}}"  alt="">
                                     <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
                                     <div class="date-content d-flex justify-content-between">
                                         <div class="date">23 марта 2022 г.</div>
@@ -949,320 +778,26 @@
                                     </div>
                                 </div>
                             </a>
-                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="pages/blog.html">
+                                <div class="splide-card-item">
+                                    <img src="{{ asset('artColor/images/our-item.png')}}"  alt="">
+                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
+                                    <div class="date-content d-flex justify-content-between">
+                                        <div class="date">23 марта 2022 г.</div>
+                                        <div class="blog-text">блог</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                      </div>
+                    </div>
                 </div>
-              </section>
+            </section>
 
         </div>
     </div>
     <!-- blog -->
 
-    <!-- input form -->
-    <div class="form-input">
-        <div class="container">
-
-            <form action="">
-
-                <div class="form-content d-flex justify-content-between">
-                    <div class="form-left">
-                        <h4 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">Обсудим ваш проект?</h4>
-                        <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="text" id="Имя" autocomplete="off" required>
-                            <label for="username">Имя</label>
-                        </div>
-                        <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="number" id="tel"  autocomplete="off"  required>
-                            <label for="tel">Телефон</label>
-                        </div>
-                        <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="email" id="mail" autocomplete="off"  required>
-                            <label for="mail">Эл. адрес</label>
-                        </div>
-                        <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center align-items-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="checkbox" id="ok"  style="color: #fff;">
-                            <label for="ok" class="ok-text" >Я согласен с <a href="#">условиями обработки персональных данных</a></label>
-                        </div>
-                    </div>
-                    <div class="form-right">
-                        <button class="circleBtn" style="z-index: 100;">
-                            Отправить заявку
-                        </button>
-
-                        <div id="map-content">
-                            <div id="map" style="width: 100%; height: 100%; z-index: -1; ">
-
-                                <div class="map-content-bg-display " id="btn-cl">
-                                    <div class="map-content-bg">
-                                        <div>
-                                            <img src="../images/map-icon.png" alt="">
-                                            <p><b>Нажмите для отображения карты</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </form>
-
-
-
-        </div>
-    </div>
-    <!-- input form -->
-
-    <!-- footer -->
-    <div class="footer">
-        <div class="container">
-
-            <div class="footer-content d-flex justify-content-center text-center text-sm-start   justify-content-sm-between">
-                <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                    <a href="index.html"><img src="images/logo.png" alt=""></a>
-                    <p>Ведущий узбекский производитель декоративно-отделочных материалов</p>
-                    <h6 class="mb-3">Подписывайтесь на нас</h6>
-                    <div class="main-social-app">
-                        <a href="#">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                    <a href="index.html">Главная</a>
-                    <a href="pages/product.html">Продукция</a>
-                    <a href="pages/about.html">О компании</a>
-                    <a href="pages/blog.html">Новости</a>
-                    <a href="pages/servise.html">Сервисы</a>
-                    <a href="pages/downloadmaterial.html">Материалы для скачивания</a>
-                    <a href="pages/contact.html">Контакты</a>
-                </div>
-                <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                    <h6>Адрес:</h6>
-
-                    <div class="address">
-                        <div>
-                            <img src="images/location.png" alt="">
-                        </div>
-                        <div>
-                            <p>
-                                Улица Бунёдкор 9, Чиланзарский район, Ташкент, Узбекистан
-                            </p>
-                        </div>
-                    </div>
-                    <div class="address">
-                        <div>
-                            <img src="images/location.png" alt="">
-                        </div>
-                        <div>
-                            <p>
-                                Узбекистан, Ташкент, улица Хадра
-                            </p>
-                        </div>
-                    </div>
-                    <div class="address">
-                        <div>
-                            <img src="images/location.png" alt="">
-                        </div>
-                        <div>
-                            <p>
-                                Узбекистан, Ташкент, просп. Амира Темура, 1
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                    <h6>Контакты:</h6>
-
-                    <div class="address">
-                        <div>
-                            <i class="fas fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <p>
-                                <a href="tel:+998 99 777 77 77">+998 99 777 77 77</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="address">
-                        <div>
-                            <i class="fas fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p>
-                               <a href="mailto:artcolor.com@info">artcolor.com@info</a>
-                            </p>
-                        </div>
-                    </div>
-                    <h6 class="my-3">Расписание:</h6>
-                    <div class="address">
-                        <div>
-                            <i class="fas fa-solid fa-clock"></i>
-                        </div>
-                        <div>
-                            <p>
-                                ПН-СБ с 10:00 до 19:00
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="footer-ads">
-            <div class="container">
-                <div class="footer-ads-content d-flex justify-content-between align-items-center">
-                    <div class="footer-left">
-                        <p>При перепечатке любых материалов ссылка на веб-сайт обязательна</p>
-                    </div>
-                    <div class="footer-right">
-                        <p>2022. Все права защищены. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer -->
-
-
-    <!-- video modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="btn-close" id="video-close" onclick="videoPause()" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <iframe id="videoframe"   src="https://www.youtube.com/embed/KuU44b3w1O4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- video modal -->
-
-    <!-- Modal -->
-    <div class="modal fade modal-search" id="exampleModal-search" tabindex="-1" aria-labelledby="exampleModalLabel-search" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="index.html"><img src="images/logo.png" alt=""></a>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <h2>Поиск по сайту</h2>
-
-                <div class="form-item">
-                    <input type="text"  id="search" required>
-                    <label for="search">Начните вводить текст...</label>
-                </div>
-
-                <p>НАПРИМЕР: <span>Декоративное покрытие Canyon</span></p>
-
-
-                <div class="search-result">
-                    <p><a href="pages/about.html">КОРОТКО О ARTCOLOR</a></p>
-                </div>
-
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- search modal -->
-
-    <!-- aos animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <!-- aos animation -->
-
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/02b94d3768.js" crossorigin="anonymous"></script>
-    <!-- font awesome -->
-
-    <!-- bootstrap js -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- bootstrap js -->
-
-    <!-- swipper js -->
-    <script src="js/swiper.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            slidesPerView:3,
-            centeredSlides: false,
-            paginationClickable: true,
-            loop: false,
-            spaceBetween: 0,
-            slideToClickedSlide: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-
-
-            300: {
-            slidesPerView: 1,
-            spaceBetween: 10
-            },
-
-            600: {
-            slidesPerView: 2,
-            spaceBetween: 10
-            },
-
-            1000: {
-            slidesPerView: 3,
-            spaceBetween: 10
-            }
-            }
-        });
-
-
-    </script>
-
-    <!-- swipper js -->
-    <!-- map -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=92bd9a31-f25d-42dd-a08e-7de4b146adb1&lang=en_US" type="text/javascript"> </script>
-        <script src="js/map.js">
-
-        </script>
-    <!-- map -->
-
-    <script>
-        function videoPause(){
-            let videoClose = document.getElementById('video-close');
-            let video = document.getElementById('videoframe');
-            if ( video ) {
-                    var iframeSrc = video.src;
-                    video.src = iframeSrc;
-                }
-            }
-    </script>
-
-    <!-- my js code -->
-    <script src="js/main.js"></script>
-    <!-- my js code -->
-
-</body>
-</html>
+@endsection
