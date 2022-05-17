@@ -107,7 +107,7 @@ class TeamController extends Controller
     }
 
     public function uploadImage($request){
-        $name =  time()."." . $request->file('image')->getClientOriginalExtension();
+        $name =  rand(1000,9999).time()."." . $request->file('image')->getClientOriginalExtension();
         $request->image->move(public_path('uploads/'), $name);
         return $name;
     }

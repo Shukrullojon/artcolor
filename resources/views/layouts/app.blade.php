@@ -58,13 +58,13 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="index.html"  class="active">Главная</a>
+                <a href="{{ url("/") }}"  class="active">Главная</a>
             </li>
             <li>
                 <a href="pages/product.html">Продукция</a>
             </li>
             <li>
-                <a href="pages/about.html">О компании</a>
+                <a href="{{ route("about") }}">О компании</a>
             </li>
             <li>
                 <a href="pages/contact.html">Контакты</a>
@@ -104,18 +104,18 @@
     <div class="container">
         <div class="content">
             <div class="navbar-left">
-                <a href="index.html">
+                <a href="{{ url("/") }}">
                     <img src="{{ asset('artColor/images/logo.png')}}" alt="">
                 </a>
                 <ul>
                     <li>
-                        <a href="index.html"  class="active">Главная</a>
+                        <a href="{{ url("/") }}"  class="active">Главная</a>
                     </li>
                     <li>
                         <a href="pages/product.html">Продукция</a>
                     </li>
                     <li>
-                        <a href="pages/about.html">О компании</a>
+                        <a href="{{ route("about") }}">О компании</a>
                     </li>
                     <li>
                         <a href="pages/contact.html">Контакты</a>
@@ -224,7 +224,7 @@
 
         <div class="footer-content d-flex justify-content-center text-center text-sm-start   justify-content-sm-between">
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="index.html"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
+                <a href="{{ url("/") }}"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
                 <p>Ведущий узбекский производитель декоративно-отделочных материалов</p>
                 <h6 class="mb-3">Подписывайтесь на нас</h6>
                 <div class="main-social-app">
@@ -243,9 +243,9 @@
                 </div>
             </div>
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="index.html">Главная</a>
+                <a href="{{ url("/") }}">Главная</a>
                 <a href="pages/product.html">Продукция</a>
-                <a href="pages/about.html">О компании</a>
+                <a href="{{ route("about") }}">О компании</a>
                 <a href="pages/blog.html">Новости</a>
                 <a href="pages/servise.html">Сервисы</a>
                 <a href="pages/downloadmaterial.html">Материалы для скачивания</a>
@@ -364,7 +364,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="index.html"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
+                <a href="{{ url("/") }}"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -380,7 +380,7 @@
 
 
                 <div class="search-result">
-                    <p><a href="pages/about.html">КОРОТКО О ARTCOLOR</a></p>
+                    <p><a href="{{ route("about") }}">КОРОТКО О ARTCOLOR</a></p>
                 </div>
 
             </div>
@@ -465,5 +465,9 @@
 <!-- my js code -->
 <script src="{{ asset('artColor/js/main.js')}}"></script>
 <!-- my js code -->
+
+
+@yield('scripts')
+
 </body>
 </html>

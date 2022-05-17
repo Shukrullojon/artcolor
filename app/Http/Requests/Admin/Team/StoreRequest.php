@@ -21,7 +21,6 @@ class StoreRequest extends FormRequest
             'position_ru' => 'required',
             'position_en' => 'required',
             'status' => 'required|integer',
-            'image' => 'required',
         ];
     }
 }
