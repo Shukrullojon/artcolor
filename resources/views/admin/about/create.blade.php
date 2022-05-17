@@ -68,16 +68,35 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
-                                        <label>@lang('admin.crud.status')</label><label style="color: red">*</label>
-                                        <select class="form-control" name="status">
-                                            <option value="1">@lang('admin.crud.active')</option>
-                                            <option value="0">@lang('admin.crud.no_active')</option>
-                                        </select>
-                                        @if($errors->has('status'))
-                                            <span class="error invalid-feedback">{{ $errors->first('status') }}</span>
+                                        <label>@lang('admin.crud.title')(uz)</label><label style="color: red">*</label>
+                                        <input type="text" name="title_uz" class="form-control {{ $errors->has('title_uz') ? "is-invalid":"" }}" value="{{ old('title_uz') }}" required>
+                                        @if($errors->has('title_uz'))
+                                            <span class="error invalid-feedback">{{ $errors->first('title_uz') }}</span>
                                         @endif
                                     </div>
                                 </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.title')(ru)</label><label style="color: red">*</label>
+                                        <input type="text" name="title_ru" class="form-control {{ $errors->has('title_ru') ? "is-invalid":"" }}" value="{{ old('title_ru') }}" required>
+                                        @if($errors->has('title_ru'))
+                                            <span class="error invalid-feedback">{{ $errors->first('title_ru') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.title')(en)</label><label style="color: red">*</label>
+                                        <input type="text" name="title_en" class="form-control {{ $errors->has('title_en') ? "is-invalid":"" }}" value="{{ old('title_en') }}" required>
+                                        @if($errors->has('title_en'))
+                                            <span class="error invalid-feedback">{{ $errors->first('title_en') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
 
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
