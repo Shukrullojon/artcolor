@@ -23,5 +23,9 @@ return [
         "image" => "Image",
         "active" => "Active",
         "no_active" => "No active",
+        'title' => 'Title',
+        'short_title' => 'Short Title' ,
+        'text' => 'Full Text' ,
+        'right_text' => 'Right Text'
     ],
 ];

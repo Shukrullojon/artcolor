@@ -23,5 +23,9 @@ return [
         "image" => "Rasmi",
         "active" => "Faol",
         "no_active" => "Faol emas",
+        'title' => 'Sarlavha',
+        'short_title' => 'Qisqa sarlavha' ,
+        'text' => "To'liq matn" ,
+        'right_text' => "O'ng taraf matn"
     ],
 ];
