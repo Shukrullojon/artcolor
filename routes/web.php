@@ -12,6 +12,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
 
     Route::resource("team",\App\Http\Controllers\Admin\TeamController::class);
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
+    Route::resource('product-type', \App\Http\Controllers\Admin\ProductTypeController::class);
 
 });
 
