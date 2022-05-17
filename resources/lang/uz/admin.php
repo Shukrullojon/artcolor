@@ -12,6 +12,8 @@ return [
         "product" => "Mahsulotlar",
         "about_company" => "Kompaniya haqida",
         "news" => "Yangiliklar",
+        "download" => "Yuklash",
+        "download_header" => "Sarlavha",
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -26,6 +28,7 @@ return [
         'title' => 'Sarlavha',
         'short_title' => 'Qisqa sarlavha' ,
         'text' => "To'liq matn" ,
-        'right_text' => "O'ng taraf matn"
+        'right_text' => "O'ng taraf matn",
+        "info" => "Ma'lumot",
     ],
 ];
