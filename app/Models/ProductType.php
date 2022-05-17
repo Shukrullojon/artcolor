@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ProductType extends Model
 {
     use HasFactory;
+
+    protected $table = 'product_types';
+
+    protected $guarded = [];
+
+    public function productTypeItem(){
+        return $this -> hasMany(ProductTypeItem::class);
+    }
 }
