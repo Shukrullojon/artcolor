@@ -51,21 +51,21 @@
                     <li class="nav-item">
                         <a href="{{route('about.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Abouts table</p>
+                            <p>Abouts </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('item.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>About_item table</p>
+                            <p>About Item</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('team.index') }}" class="nav-link">
+                        <a href="{{ route('text.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>@lang('admin.sidebar.our_team')</p>
+                            <p>@lang('admin.sidebar.about_text')</p>
                         </a>
                     </li>
 
@@ -83,12 +83,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>About_text table</p>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
 

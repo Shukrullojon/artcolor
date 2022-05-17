@@ -14,6 +14,11 @@ return [
         "news" => "Новости",
         "download" => "Скачать",
         "download_header" => "Заголовок",
+        'count' => "Kоличество" ,
+        'about_item' => 'About Item' ,
+        'about_text' => 'About Text' ,
+        'info' => 'Информация' ,
+        'additional' => "Дополнительная информация"
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -33,5 +38,9 @@ return [
         'video_image' => "Видео картинка" ,
         'video_link' => "Ссылка на видео" ,
         'update' => "Pедактировать" ,
+        'about_item' => 'About Item' ,
+        'count' => "Kоличество" ,
+        'about_text' => 'About Text' ,
+        'additional' => "Дополнительная информация"
     ],
 ];

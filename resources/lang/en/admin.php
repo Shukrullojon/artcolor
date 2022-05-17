@@ -14,6 +14,11 @@ return [
         "news" => "News",
         "download" => "Download",
         "download_header" => "Header",
+        'about_item' => 'About Item' ,
+        'count' => "Total" ,
+        'about_text' => 'About Text' ,
+        'info' => 'Info' ,
+        'additional' => "Additional Information"
     ],
     'crud' => [
         "add" => "Add",
@@ -33,5 +38,9 @@ return [
         'video_image' => "Video rasmi" ,
         'video_link' => "Video Link" ,
         'update' => "Update" ,
+        'about_item' => 'About Item' ,
+        'count' => "Total" ,
+        'about_text' => 'About Text' ,
+        'additional' => "Additional Information"
     ],
 ];

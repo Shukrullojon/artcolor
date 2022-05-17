@@ -14,6 +14,11 @@ return [
         "news" => "Yangiliklar",
         "download" => "Yuklash",
         "download_header" => "Sarlavha",
+        'about_item' => 'About Item' ,
+        'count' => 'Soni' ,
+        'about_text' => 'About Text' ,
+        'info' => "Ma'lumot" ,
+        'additional' => "Qo'shimcha ma'lumot"
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -32,6 +37,11 @@ return [
         "info" => "Ma'lumot",
         'video_image' => "Video Rasmi" ,
         'video_link' => "Video Linki" ,
-        'update' => "O'zgartirish"
+        'update' => "O'zgartirish" ,
+        'about_item' => 'About Item' ,
+        'count' => 'Soni' ,
+        'about_text' => 'About Text',
+        'additional' => "Qo'shimcha ma'lumot"
+
     ],
 ];

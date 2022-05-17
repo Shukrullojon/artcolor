@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('admin.sidebar.our_team')</h1>
+                    <h1>@lang('admin.sidebar.about_text')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item active">@lang('admin.sidebar.about_company')</li>
+                        <li class="breadcrumb-item active">@lang('admin.sidebar.about_text')</li>
                     </ol>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">@lang('admin.crud.add')</h3>
-                        <a href="{{ route('about.create') }}" class="btn btn-success btn-sm float-right">
+                        <a href="{{ route('text.create') }}" class="btn btn-success btn-sm float-right">
                             <span class="fas fa-plus-circle"></span>
                             @lang('admin.crud.add')
                         </a>
@@ -37,23 +37,20 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th>@lang('admin.crud.title')</th>
-                                <th>@lang('admin.crud.short_title')</th>
-                                <th>@lang('admin.crud.text')</th>
-                                <th>@lang('admin.crud.image')</th>
+                                <th>@lang('admin.crud.info')</th>
+                                <th>@lang('admin.crud.additional')</th>
                                 <th></th>
                             </tr>
-                            @foreach($abouts as $about)
+                            @foreach($texts as $text)
                                 <tr>
-                                    <td>{{ $about->title_uz }}</td>
-                                    <td>{{ $about->title_short_uz }}</td>
-                                    <td>{{ $about->text_uz }}</td>
+                                    <td>{{ $text->title_uz }}</td>
+                                    <td>{{ $text->info_uz }}</td>
+                                    <td>{{ $text->additional_uz }}</td>
+
                                     <td>
-                                        <img src="{{ asset('uploads')}}/{{ $about->image  }}" class="img_admin">
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('about.destroy',$about->id) }}" method="POST">
-                                            <a class="btn btn-info" href="{{ route('about.show',$about->id) }}"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-primary" href="{{ route('about.edit',$about->id) }}"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('text.destroy',$text->id) }}" method="POST">
+                                            <a class="btn btn-info" href="{{ route('text.show',$text->id) }}"><i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-primary" href="{{ route('text.edit',$text->id) }}"><i class="fa fa-edit"></i></a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -66,7 +63,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{ $abouts->links() }}
+                {{ $texts->links() }}
             </div>
             <!-- /.col -->
         </div>

@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('team.index') }}">@lang('admin.sidebar.our_team')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('about.index') }}">@lang('admin.sidebar.our_team')</a></li>
                         <li class="breadcrumb-item active">@lang('admin.crud.add')</li>
                     </ol>
                 </div>

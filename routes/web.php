@@ -13,6 +13,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource("team",\App\Http\Controllers\Admin\TeamController::class);
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
     Route::resource('about' , \App\Http\Controllers\Admin\AboutController::class);
+    Route::resource('item' , \App\Http\Controllers\Admin\ItemController::class);
+    Route::resource('text' , \App\Http\Controllers\Admin\TextController::class);
     Route::resource('product-type', \App\Http\Controllers\Admin\ProductTypeController::class);
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
 
