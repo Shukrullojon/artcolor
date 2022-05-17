@@ -9,6 +9,9 @@ return [
         "logout" => "Chiqish",
         "add" => "qo'shish",
         "edit" => "Tahrirlash",
+        "product" => "Mahsulotlar",
+        "about_company" => "Kompaniya haqida",
+        "news" => "Yangiliklar",
     ],
     'crud' => [
         "add" => "Qo'shish",

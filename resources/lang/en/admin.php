@@ -9,6 +9,9 @@ return [
         "logout" => "Logout",
         "add" => "add",
         "edit" => "edit",
+        "product" => "Product",
+        "about_company" => "About company",
+        "news" => "News",
     ],
     'crud' => [
         "add" => "Add",
