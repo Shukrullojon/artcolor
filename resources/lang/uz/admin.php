@@ -30,5 +30,8 @@ return [
         'text' => "To'liq matn" ,
         'right_text' => "O'ng taraf matn",
         "info" => "Ma'lumot",
+        'video_image' => "Video Rasmi" ,
+        'video_link' => "Video Linki" ,
+        'update' => "O'zgartirish"
     ],
 ];

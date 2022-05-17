@@ -30,5 +30,8 @@ return [
         'text' => 'Full Text' ,
         'right_text' => 'Right Text',
         "info" => "Info",
+        'video_image' => "Video rasmi" ,
+        'video_link' => "Video Link" ,
+        'update' => "Update" ,
     ],
 ];

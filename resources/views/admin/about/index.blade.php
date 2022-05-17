@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">@lang('admin.crud.add')</h3>
-                        <a href="{{ route('team.create') }}" class="btn btn-success btn-sm float-right">
+                        <a href="{{ route('about.create') }}" class="btn btn-success btn-sm float-right">
                             <span class="fas fa-plus-circle"></span>
                             @lang('admin.crud.add')
                         </a>

@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('admin.sidebar.our_team')</h1>
+                    <h1>@lang('admin.sidebar.about_company')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('team.index') }}">@lang('admin.sidebar.our_team')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('about.index') }}">@lang('admin.sidebar.about_company')</a></li>
                         <li class="breadcrumb-item active"></li>
                     </ol>
                 </div>
@@ -28,46 +28,70 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th>@lang('admin.crud.fio')(uz)</th>
-                                <td>{{ $team->fio_uz }}</td>
+                                <th>@lang('admin.crud.title')(uz)</th>
+                                <td>{{ $about->title_uz }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.fio')(ru)</th>
-                                <td>{{ $team->fio_ru }}</td>
+                                <th>@lang('admin.crud.title')(ru)</th>
+                                <td>{{ $about->title_ru }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.fio')(en)</th>
-                                <td>{{ $team->fio_en }}</td>
+                                <th>@lang('admin.crud.title')(en)</th>
+                                <td>{{ $about->title_en }}</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <th>@lang('admin.crud.short_title')(uz)</th>
+                                <td>{{ $about->title_short_uz }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.status')</th>
-                                <td>
-                                    <button class="btn @if($team->status) btn-success @else btn-danger @endif" style="border-radius: 30px">@if($team->status) @lang('admin.crud.active') @else @lang('admin.crud.no_active') @endif</button>
-                                </td>
+                                <th>@lang('admin.crud.short_title')(ru)</th>
+                                <td>{{ $about->title_short_ru }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.position')(uz)</th>
-                                <td>{{ $team->position_uz }}</td>
+                                <th>@lang('admin.crud.short_title')(en)</th>
+                                <td>{{ $about->title_short_en }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.position')(ru)</th>
-                                <td>{{ $team->position_ru }}</td>
+                                <th>@lang('admin.crud.text')(uz)</th>
+                                <td>{{ $about->text_uz }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.position')(en)</th>
-                                <td>{{ $team->position_en }}</td>
+                                <th>@lang('admin.crud.text')(ru)</th>
+                                <td>{{ $about->text_ru }}</td>
+                            </tr>
+
+                            <tr>
+                                <th>@lang('admin.crud.text')(en)</th>
+                                <td>{{ $about->text_en }}</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.image')</th>
                                 <td>
-                                    <img src="{{ asset("uploads/".$team->image) }}" class="img_admin">
+                                    <img src="{{ asset("uploads/".$about->image) }}" class="img_admin">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>@lang('admin.crud.video_link')(en)</th>
+                                <td>
+                                    <iframe width="420" height="315"
+                                            src="{{$about->video_link}}">
+                                    </iframe>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>@lang('admin.crud.video_image')</th>
+                                <td>
+                                    <img src="{{ asset("uploads/".$about->video_image) }}" class="img_admin">
                                 </td>
                             </tr>
                         </table>
