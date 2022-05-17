@@ -12,6 +12,8 @@ return [
         "product" => "Product",
         "about_company" => "About company",
         "news" => "News",
+        "download" => "Download",
+        "download_header" => "Header",
     ],
     'crud' => [
         "add" => "Add",
@@ -26,6 +28,7 @@ return [
         'title' => 'Title',
         'short_title' => 'Short Title' ,
         'text' => 'Full Text' ,
-        'right_text' => 'Right Text'
+        'right_text' => 'Right Text',
+        "info" => "Info",
     ],
 ];
