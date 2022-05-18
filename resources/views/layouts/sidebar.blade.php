@@ -72,14 +72,14 @@
                     <li class="nav-item">
                         <a href="{{route('activity.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Activity table</p>
+                            <p>Activity </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('videos.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Videos table</p>
+                            <p>Videos </p>
                         </a>
                     </li>
 
