@@ -18,7 +18,12 @@ return [
         'count' => 'Soni' ,
         'about_text' => 'About Text' ,
         'info' => "Ma'lumot" ,
-        'additional' => "Qo'shimcha ma'lumot"
+        'additional' => "Qo'shimcha ma'lumot",
+        "contact" => "Aloqa",
+        "header_text" => "Yuqori matn",
+        "contact_type" => "Aloqa turi",
+        "country" => "Mamlakat",
+        "footer_text" => "Pastki matn",
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -41,7 +46,11 @@ return [
         'about_item' => 'About Item' ,
         'count' => 'Soni' ,
         'about_text' => 'About Text',
-        'additional' => "Qo'shimcha ma'lumot"
-
+        'additional' => "Qo'shimcha ma'lumot",
+        "image_right" => "Rasmi o'ng",
+        "image_back" => "Rasm orqa",
+        "button" => "Kinopka",
+        "button_url" => "Kimopka URL",
+        "button_target" => "Kinopka Target",
     ],
 ];

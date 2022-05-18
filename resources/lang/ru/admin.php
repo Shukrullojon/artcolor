@@ -18,7 +18,12 @@ return [
         'about_item' => 'About Item' ,
         'about_text' => 'About Text' ,
         'info' => 'Информация' ,
-        'additional' => "Дополнительная информация"
+        'additional' => "Дополнительная информация",
+        "contact" => "Контакты",
+        "header_text" => "Текст заголовка",
+        "contact_type" => "Тип Контакта",
+        "country" => "Страна",
+        "footer_text" => "Текст нижнего колонтитула",
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -41,6 +46,11 @@ return [
         'about_item' => 'About Item' ,
         'count' => "Kоличество" ,
         'about_text' => 'About Text' ,
-        'additional' => "Дополнительная информация"
+        'additional' => "Дополнительная информация",
+        "image_right" => "Изображение справа",
+        "image_back" => "Изображение назад",
+        "button" => "Кнопка",
+        "button_url" => "URL кнопки",
+        "button_target" => "Кнопка Target",
     ],
 ];

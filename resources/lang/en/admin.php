@@ -18,7 +18,12 @@ return [
         'count' => "Total" ,
         'about_text' => 'About Text' ,
         'info' => 'Info' ,
-        'additional' => "Additional Information"
+        'additional' => "Additional Information",
+        "contact" => "Contact",
+        "header_text" => "Header text",
+        "contact_type" => "Contact type",
+        "country" => "Country",
+        "footer_text" => "Footer text",
     ],
     'crud' => [
         "add" => "Add",
@@ -41,6 +46,11 @@ return [
         'about_item' => 'About Item' ,
         'count' => "Total" ,
         'about_text' => 'About Text' ,
-        'additional' => "Additional Information"
+        'additional' => "Additional Information",
+        "image_right" => "Image right",
+        "image_back" => "Image back",
+        "button" => "Button",
+        "button_url" => "Button url",
+        "button_target" => "Button target",
     ],
 ];
