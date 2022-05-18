@@ -18,17 +18,14 @@ return [
         'count' => 'Soni' ,
         'about_text' => 'About Text' ,
         'info' => "Ma'lumot" ,
-<<<<<<< HEAD
         'additional' => "Qo'shimcha ma'lumot" ,
-        'activity' => 'Faoliyat'
-=======
+        'activity' => 'Faoliyat',
         'additional' => "Qo'shimcha ma'lumot",
         "contact" => "Aloqa",
         "header_text" => "Yuqori matn",
         "contact_type" => "Aloqa turi",
         "country" => "Mamlakat",
         "footer_text" => "Pastki matn",
->>>>>>> 6de2e60b1b5357668248a744f031076085ef4ae3
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -51,17 +48,13 @@ return [
         'about_item' => 'About Item' ,
         'count' => 'Soni' ,
         'about_text' => 'About Text',
-<<<<<<< HEAD
         'additional' => "Qo'shimcha ma'lumot" ,
          'activity' => 'Faoliyat' ,
-         'short_text' => 'Qisqa matn'
-=======
-        'additional' => "Qo'shimcha ma'lumot",
+         'short_text' => 'Qisqa matn',
         "image_right" => "Rasmi o'ng",
         "image_back" => "Rasm orqa",
         "button" => "Kinopka",
         "button_url" => "Kimopka URL",
         "button_target" => "Kinopka Target",
->>>>>>> 6de2e60b1b5357668248a744f031076085ef4ae3
     ],
 ];
