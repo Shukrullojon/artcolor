@@ -199,7 +199,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.update')</button>
-                                <a href="{{ route('team.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                                <a href="{{ route('about.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                             </div>
                         </form>
 

@@ -18,7 +18,8 @@ return [
         'about_item' => 'About Item' ,
         'about_text' => 'About Text' ,
         'info' => 'Информация' ,
-        'additional' => "Дополнительная информация"
+        'additional' => "Дополнительная информация" ,
+        'activity' => 'Мероприятия' ,
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -41,6 +42,8 @@ return [
         'about_item' => 'About Item' ,
         'count' => "Kоличество" ,
         'about_text' => 'About Text' ,
-        'additional' => "Дополнительная информация"
+        'additional' => "Дополнительная информация" ,
+        'activity' => 'Мероприятия' ,
+        'short_text' => 'Короткий текст'
     ],
 ];

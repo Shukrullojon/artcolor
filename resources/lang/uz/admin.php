@@ -18,7 +18,8 @@ return [
         'count' => 'Soni' ,
         'about_text' => 'About Text' ,
         'info' => "Ma'lumot" ,
-        'additional' => "Qo'shimcha ma'lumot"
+        'additional' => "Qo'shimcha ma'lumot" ,
+        'activity' => 'Faoliyat'
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -41,7 +42,8 @@ return [
         'about_item' => 'About Item' ,
         'count' => 'Soni' ,
         'about_text' => 'About Text',
-        'additional' => "Qo'shimcha ma'lumot"
-
+        'additional' => "Qo'shimcha ma'lumot" ,
+         'activity' => 'Faoliyat' ,
+         'short_text' => 'Qisqa matn'
     ],
 ];

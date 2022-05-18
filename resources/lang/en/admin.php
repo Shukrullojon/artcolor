@@ -18,7 +18,8 @@ return [
         'count' => "Total" ,
         'about_text' => 'About Text' ,
         'info' => 'Info' ,
-        'additional' => "Additional Information"
+        'additional' => "Additional Information",
+        'activity' => 'Activity' ,
     ],
     'crud' => [
         "add" => "Add",
@@ -41,6 +42,8 @@ return [
         'about_item' => 'About Item' ,
         'count' => "Total" ,
         'about_text' => 'About Text' ,
-        'additional' => "Additional Information"
+        'additional' => "Additional Information" ,
+        'activity' => 'Activity' ,
+        'short_text' => 'Short text'
     ],
 ];
