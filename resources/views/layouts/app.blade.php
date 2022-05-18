@@ -58,16 +58,16 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="{{ url("/") }}"  class="active">Главная</a>
+                <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
             </li>
             <li>
-                <a href="pages/product.html">Продукция</a>
+                <a href="pages/product.html">@lang('front.sidebar.product')</a>
             </li>
             <li>
-                <a href="{{ route("about") }}">О компании</a>
+                <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
             </li>
             <li>
-                <a href="pages/contact.html">Контакты</a>
+                <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
             </li>
         </ul>
         <div class="navbar-phone">
@@ -84,13 +84,17 @@
             <i class="fas fa-search"></i>
 
             <div class="dropdown">
+                @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ru
+                    @if($lang == "uz") Uz @endif
+                    @if($lang == "ru") Ru @endif
+                    @if($lang == "en") En @endif
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Eng</a></li>
-                    <li><a class="dropdown-item" href="#">Uz</a></li>
+                    @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                    @if($lang != "ru") <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                    @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                 </ul>
             </div>
 
@@ -109,16 +113,16 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="{{ url("/") }}"  class="active">Главная</a>
+                        <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
                     </li>
                     <li>
-                        <a href="pages/product.html">Продукция</a>
+                        <a href="pages/product.html">@lang('front.sidebar.product')</a>
                     </li>
                     <li>
-                        <a href="{{ route("about") }}">О компании</a>
+                        <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
                     </li>
                     <li>
-                        <a href="pages/contact.html">Контакты</a>
+                        <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
                     </li>
                 </ul>
             </div>
@@ -137,13 +141,17 @@
                     <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
 
                     <div class="dropdown">
+                        @php $lang = session('locale') @endphp
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ru
+                            @if($lang == "uz") Uz @endif
+                            @if($lang == "ru") Ru @endif
+                            @if($lang == "en") En @endif
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Eng</a></li>
-                            <li><a class="dropdown-item" href="#">Uz</a></li>
+                            @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                            @if($lang != "ru") <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                            @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                         </ul>
                     </div>
 
