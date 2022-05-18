@@ -20,6 +20,11 @@ return [
         'info' => 'Info' ,
         'additional' => "Additional Information",
         'activity' => 'Activity' ,
+        "contact" => "Contact",
+        "header_text" => "Header text",
+        "contact_type" => "Contact type",
+        "country" => "Country",
+        "footer_text" => "Footer text",
     ],
     'crud' => [
         "add" => "Add",
@@ -44,6 +49,11 @@ return [
         'about_text' => 'About Text' ,
         'additional' => "Additional Information" ,
         'activity' => 'Activity' ,
-        'short_text' => 'Short text'
+        'short_text' => 'Short text',
+        "image_right" => "Image right",
+        "image_back" => "Image back",
+        "button" => "Button",
+        "button_url" => "Button url",
+        "button_target" => "Button target",
     ],
 ];

@@ -18,8 +18,17 @@ return [
         'about_item' => 'About Item' ,
         'about_text' => 'About Text' ,
         'info' => 'Информация' ,
+<<<<<<< HEAD
         'additional' => "Дополнительная информация" ,
         'activity' => 'Мероприятия' ,
+=======
+        'additional' => "Дополнительная информация",
+        "contact" => "Контакты",
+        "header_text" => "Текст заголовка",
+        "contact_type" => "Тип Контакта",
+        "country" => "Страна",
+        "footer_text" => "Текст нижнего колонтитула",
+>>>>>>> 6de2e60b1b5357668248a744f031076085ef4ae3
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -42,8 +51,17 @@ return [
         'about_item' => 'About Item' ,
         'count' => "Kоличество" ,
         'about_text' => 'About Text' ,
+<<<<<<< HEAD
         'additional' => "Дополнительная информация" ,
         'activity' => 'Мероприятия' ,
         'short_text' => 'Короткий текст'
+=======
+        'additional' => "Дополнительная информация",
+        "image_right" => "Изображение справа",
+        "image_back" => "Изображение назад",
+        "button" => "Кнопка",
+        "button_url" => "URL кнопки",
+        "button_target" => "Кнопка Target",
+>>>>>>> 6de2e60b1b5357668248a744f031076085ef4ae3
     ],
 ];
