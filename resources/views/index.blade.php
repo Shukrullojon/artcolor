@@ -3,162 +3,161 @@
 @section('content')
 
     <!-- main -->
-    <div class="main">
-        <div class="main-content">
-            <div class="main-slider-item">
-                <div class="container">
-                    <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                        <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                            <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                            <h3 class="py-3">100% гарантия качества</h3>
-                            <p class="text-white">
-                                Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                            </p>
-                            <div class="about-us-btn">
-                                <a href="pages/servise.html">
-                                    <button>Перейти в каталог</button>
+    @if(count($sliders)>0)
+        <div class="main">
+            <div class="main-content">
+                <div class="main-slider-item">
+                    <div class="container">
+                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
+                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
+                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
+                                <h3 class="py-3">100% гарантия качества</h3>
+                                <p class="text-white">
+                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
+                                </p>
+                                <div class="about-us-btn">
+                                    <a href="pages/servise.html">
+                                        <button>Перейти в каталог</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
+                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                        <div class="main-social d-flex pb-3 align-items-center">
+
+                            <div class="main-social-app">
+                                <a href="#">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
-                        </div>
-                        <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
+
+                            <div class="main-btn">
+                                <button class="prev pulse" onclick="previousSlide()">
+                                    <i class="fas fa-solid fa-angle-left"></i>
+                                </button>
+                                <button class="next active pulse" onclick="nextSlide()">
+                                    <i class="fas fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
-
-                    <div class="main-social d-flex pb-3 align-items-center">
-
-                        <div class="main-social-app">
-                            <a href="#">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <div class="main-btn">
-                            <button class="prev pulse" onclick="previousSlide()">
-                                <i class="fas fa-solid fa-angle-left"></i>
-                            </button>
-                            <button class="next active pulse" onclick="nextSlide()">
-                                <i class="fas fa-solid fa-angle-right"></i>
-                            </button>
-                        </div>
-
-                    </div>
-
-
                 </div>
-            </div>
-            <div class="main-slider-item">
-                <div class="container">
+                <div class="main-slider-item">
+                    <div class="container">
 
-                    <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                        <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                            <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                            <h3 class="py-3">100% гарантия качества</h3>
-                            <p class="text-white">
-                                Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                            </p>
-                            <div class="about-us-btn">
-                                <a href="pages/branch.html"><button>Перейти в каталог</button></a>
+                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
+                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
+                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
+                                <h3 class="py-3">100% гарантия качества</h3>
+                                <p class="text-white">
+                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
+                                </p>
+                                <div class="about-us-btn">
+                                    <a href="pages/branch.html"><button>Перейти в каталог</button></a>
+                                </div>
+                            </div>
+                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
+                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
+
+                        <div class="main-social d-flex pb-3 align-items-center">
+
+                            <div class="main-social-app">
+                                <a href="#">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+
+                            <div class="main-btn">
+                                <button class="prev" onclick="previousSlide()">
+                                    <i class="fas fa-solid fa-angle-left"></i>
+                                </button>
+                                <button class="next active" onclick="nextSlide()">
+                                    <i class="fas fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+
                         </div>
+
+
                     </div>
-
-                    <div class="main-social d-flex pb-3 align-items-center">
-
-                        <div class="main-social-app">
-                            <a href="#">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <div class="main-btn">
-                            <button class="prev" onclick="previousSlide()">
-                                <i class="fas fa-solid fa-angle-left"></i>
-                            </button>
-                            <button class="next active" onclick="nextSlide()">
-                                <i class="fas fa-solid fa-angle-right"></i>
-                            </button>
-                        </div>
-
-                    </div>
-
-
                 </div>
-            </div>
-            <div class="main-slider-item">
-                <div class="container">
+                <div class="main-slider-item">
+                    <div class="container">
 
-                    <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                        <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                            <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                            <h3 class="py-3">100% гарантия качества</h3>
-                            <p class="text-white">
-                                Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                            </p>
-                            <div class="about-us-btn">
-                                <a href="pages/blog.html"><button>Перейти в каталог</button></a>
+                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
+                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
+                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
+                                <h3 class="py-3">100% гарантия качества</h3>
+                                <p class="text-white">
+                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
+                                </p>
+                                <div class="about-us-btn">
+                                    <a href="pages/blog.html"><button>Перейти в каталог</button></a>
+                                </div>
+                            </div>
+                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
+                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                            <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
+
+                        <div class="main-social d-flex pb-3 align-items-center">
+
+                            <div class="main-social-app">
+                                <a href="#">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+
+                            <div class="main-btn">
+                                <button class="prev pulse" onclick="previousSlide()">
+                                    <i class="fas fa-solid fa-angle-left"></i>
+                                </button>
+                                <button class="next active pulse" onclick="nextSlide()">
+                                    <i class="fas fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+
                         </div>
+
+
                     </div>
-
-                    <div class="main-social d-flex pb-3 align-items-center">
-
-                        <div class="main-social-app">
-                            <a href="#">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-
-                        <div class="main-btn">
-                            <button class="prev pulse" onclick="previousSlide()">
-                                <i class="fas fa-solid fa-angle-left"></i>
-                            </button>
-                            <button class="next active pulse" onclick="nextSlide()">
-                                <i class="fas fa-solid fa-angle-right"></i>
-                            </button>
-                        </div>
-
-                    </div>
-
-
                 </div>
             </div>
-
         </div>
-    </div>
+    @endif
     <!-- main -->
 
     <!-- about -->
