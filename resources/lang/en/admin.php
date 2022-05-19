@@ -26,6 +26,8 @@ return [
         "country" => "Country",
         "footer_text" => "Footer text",
         "video" => "Video",
+        'category' => "Category news",
+        'news' => 'News'
     ],
     'crud' => [
         "add" => "Add",
@@ -57,5 +59,9 @@ return [
         "button_url" => "Button url",
         "button_target" => "Button target",
         "video" => "Video",
+        'category' => "Category news" ,
+        'category_name' => "Category Name" ,
+        'news' => 'News' ,
+        'slug' => "Slug"
     ],
 ];

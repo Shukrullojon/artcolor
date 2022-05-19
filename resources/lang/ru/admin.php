@@ -20,13 +20,14 @@ return [
         'info' => 'Информация' ,
         'additional' => "Дополнительная информация" ,
         'activity' => 'Мероприятия' ,
-        'additional' => "Дополнительная информация",
         "contact" => "Контакты",
         "header_text" => "Текст заголовка",
         "contact_type" => "Тип Контакта",
         "country" => "Страна",
         "footer_text" => "Текст нижнего колонтитула",
         "video" => "Bидео",
+        'category' => "Category news" ,
+        'news' => 'Новости'
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -58,5 +59,9 @@ return [
         "button_url" => "URL кнопки",
         "button_target" => "Кнопка Target",
         "video" => "Bидео",
+        'category' => "Category news" ,
+        'category_name' => "Название категории" ,
+        'news' => 'Новости' ,
+        'slug' => "Slug"
     ],
 ];
