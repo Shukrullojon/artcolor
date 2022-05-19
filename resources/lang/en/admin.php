@@ -25,6 +25,7 @@ return [
         "contact_type" => "Contact type",
         "country" => "Country",
         "footer_text" => "Footer text",
+        "video" => "Video",
     ],
     'crud' => [
         "add" => "Add",
@@ -55,5 +56,6 @@ return [
         "button" => "Button",
         "button_url" => "Button url",
         "button_target" => "Button target",
+        "video" => "Video",
     ],
 ];

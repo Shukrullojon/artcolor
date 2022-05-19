@@ -26,6 +26,7 @@ return [
         "contact_type" => "Aloqa turi",
         "country" => "Mamlakat",
         "footer_text" => "Pastki matn",
+        'video' => "Video"
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -56,5 +57,6 @@ return [
         "button" => "Kinopka",
         "button_url" => "Kimopka URL",
         "button_target" => "Kinopka Target",
+        'video' => "Video"
     ],
 ];

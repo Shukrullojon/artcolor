@@ -26,6 +26,7 @@ return [
         "contact_type" => "Тип Контакта",
         "country" => "Страна",
         "footer_text" => "Текст нижнего колонтитула",
+        "video" => "Bидео",
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -56,5 +57,6 @@ return [
         "button" => "Кнопка",
         "button_url" => "URL кнопки",
         "button_target" => "Кнопка Target",
+        "video" => "Bидео",
     ],
 ];
