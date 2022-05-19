@@ -20,13 +20,14 @@ return [
         'info' => "Ma'lumot" ,
         'additional' => "Qo'shimcha ma'lumot" ,
         'activity' => 'Faoliyat',
-        'additional' => "Qo'shimcha ma'lumot",
         "contact" => "Aloqa",
         "header_text" => "Yuqori matn",
         "contact_type" => "Aloqa turi",
         "country" => "Mamlakat",
         "footer_text" => "Pastki matn",
-        'video' => "Video"
+        'video' => "Video",
+        'category' => "Category news" ,
+        'news' => 'Yangiliklar' ,
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -57,6 +58,10 @@ return [
         "button" => "Kinopka",
         "button_url" => "Kimopka URL",
         "button_target" => "Kinopka Target",
-        'video' => "Video"
+        'video' => "Video" ,
+        'category' => "Category news" ,
+        'category_name' => "Kategoriya nomi" ,
+        'news' => 'Yangiliklar' ,
+        'slug' => "Slug"
     ],
 ];
