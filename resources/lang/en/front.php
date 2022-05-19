@@ -10,4 +10,7 @@ return [
         "contact" => "Contact",
         "product" => "Product",
     ],
+    "text" => [
+        "management" => "Management",
+    ],
 ];

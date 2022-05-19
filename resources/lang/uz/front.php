@@ -10,4 +10,7 @@ return [
         "contact" => "Aloqa",
         "product" => "Mahsulotlar",
     ],
+    "text" => [
+        "management" => "Boshqaruv",
+    ],
 ];
