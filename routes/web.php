@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
 Route::get('/language/{lang}',function ($lang){
     if ($lang == 'ru' || $lang == 'uz' || $lang == "en")
     {
+        $lang = strtolower($lang);
         session([
             'locale' => $lang
         ]);

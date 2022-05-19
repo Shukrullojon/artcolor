@@ -6,212 +6,124 @@
     @if(count($sliders)>0)
         <div class="main">
             <div class="main-content">
-                <div class="main-slider-item">
-                    <div class="container">
-                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                                <h3 class="py-3">100% гарантия качества</h3>
-                                <p class="text-white">
-                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                                </p>
-                                <div class="about-us-btn">
-                                    <a href="pages/servise.html">
-                                        <button>Перейти в каталог</button>
+                @foreach($sliders as $slider)
+                    <div class="main-slider-item">
+                        <div class="container">
+                            <div class="main-slider d-flex justify-content-between align-items-end w-100">
+                                <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
+                                    <h1 class="text-white">{!! $slider->title !!}</h1>
+                                    <h3 class="py-3">{!! $slider->title_short !!}</h3>
+                                    <p class="text-white">
+                                        {!! $slider->info !!}
+                                    </p>
+                                    <div class="about-us-btn">
+                                        <a href="{!! $slider->button_url !!}" target="{!! $slider->button_target !!}">
+                                            <button>{!! $slider->button !!}</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
+                                    <img src="{{ asset('uploads/'.$slider->image_right)}}" class="img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <div class="main-social d-flex pb-3 align-items-center">
+
+                                <div class="main-social-app">
+                                    <a href='https://telegram.me/share/url?url={{ $slider->button_url }}'>
+                                        <i class="fab fa-telegram"></i>
+                                    </a>
+                                    <a href='https://www.facebook.com/sharer/sharer.php?u={{ $slider->button_url }}'>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href='https://www.instagram.com/?url={{ $slider->button_url }}'>
+                                        <i class="fab fa-instagram"></i>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
-                            </div>
-                        </div>
 
-                        <div class="main-social d-flex pb-3 align-items-center">
-
-                            <div class="main-social-app">
-                                <a href="#">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-
-                            <div class="main-btn">
-                                <button class="prev pulse" onclick="previousSlide()">
-                                    <i class="fas fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="next active pulse" onclick="nextSlide()">
-                                    <i class="fas fa-solid fa-angle-right"></i>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="main-slider-item">
-                    <div class="container">
-
-                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                                <h3 class="py-3">100% гарантия качества</h3>
-                                <p class="text-white">
-                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                                </p>
-                                <div class="about-us-btn">
-                                    <a href="pages/branch.html"><button>Перейти в каталог</button></a>
+                                <div class="main-btn">
+                                    <button class="prev pulse" onclick="previousSlide()">
+                                        <i class="fas fa-solid fa-angle-left"></i>
+                                    </button>
+                                    <button class="next active pulse" onclick="nextSlide()">
+                                        <i class="fas fa-solid fa-angle-right"></i>
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
+
                             </div>
                         </div>
-
-                        <div class="main-social d-flex pb-3 align-items-center">
-
-                            <div class="main-social-app">
-                                <a href="#">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-
-                            <div class="main-btn">
-                                <button class="prev" onclick="previousSlide()">
-                                    <i class="fas fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="next active" onclick="nextSlide()">
-                                    <i class="fas fa-solid fa-angle-right"></i>
-                                </button>
-                            </div>
-
-                        </div>
-
-
                     </div>
-                </div>
-                <div class="main-slider-item">
-                    <div class="container">
-
-                        <div class="main-slider d-flex justify-content-between align-items-end w-100">
-                            <div class="main-left" data-aos="fade-up"  data-aos-duration="1500">
-                                <h1 class="text-white">Производство лакокрасочных продукций</h1>
-                                <h3 class="py-3">100% гарантия качества</h3>
-                                <p class="text-white">
-                                    Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего
-                                </p>
-                                <div class="about-us-btn">
-                                    <a href="pages/blog.html"><button>Перейти в каталог</button></a>
-                                </div>
-                            </div>
-                            <div class="main-right" data-aos="fade-up"  data-aos-duration="1500">
-                                <img src="{{ asset('artColor/images/main-img.png')}}" class="img-fluid" alt="">
-                            </div>
-                        </div>
-
-                        <div class="main-social d-flex pb-3 align-items-center">
-
-                            <div class="main-social-app">
-                                <a href="#">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-
-                            <div class="main-btn">
-                                <button class="prev pulse" onclick="previousSlide()">
-                                    <i class="fas fa-solid fa-angle-left"></i>
-                                </button>
-                                <button class="next active pulse" onclick="nextSlide()">
-                                    <i class="fas fa-solid fa-angle-right"></i>
-                                </button>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     @endif
     <!-- main -->
 
     <!-- about -->
-    <div class="about  my-3 ">
-        <div class="container">
-            <div class="about-content d-flex justify-content-between align-items-center">
-                <div class="about-left" data-aos="fade-up"  data-aos-duration="1500">
-                    <h1>Коротко о ARTCOLOR</h1>
-                    <h5 class="py-4">Главная направляющая ELF DECOR - это качество нашей продукции.</h5>
-                    <p>
-                        В ассортимент нашей торговой марки входят самые современные и изысканные материалы. Помимо продукции собственного производства, в коллекцию вошли продукты мировых лидеров в этой отрасли, которые на наш взгляд великолепно дополнили гамму ТМ «ЭльфDecor». Нами сформирована команда специалистов-декораторов.
-                    </p>
-                    <div class="about-result pt-4">
-                        <div class="about-result-content d-flex flex-wrap gap-4">
-                            <div class="about-result-item" data-aos="fade-up"  data-aos-duration="1500">
-                                <h1>1270</h1>
-                                <p>Счастливые клиенты</p>
+    @if(!empty($about))
+        <div class="about  my-3 ">
+            <div class="container">
+                <div class="about-content d-flex justify-content-between align-items-center">
+                    <div class="about-left" data-aos="fade-up"  data-aos-duration="1500">
+                        <h1>{!! $about->title !!}</h1>
+                        <h5 class="py-4">{!! $about->title_short !!}</h5>
+                        <p>
+                            {!! $about->text !!}
+                        </p>
+                        @if(count($items)>0)
+                            <div class="about-result pt-4">
+                                <div class="about-result-content d-flex flex-wrap gap-4">
+                                    @php $le = 1500; @endphp
+                                    @foreach($items as $item)
+                                        <div class="about-result-item" data-aos="fade-up"  data-aos-duration="{{ $le }}">
+                                            <h1>{{ $item->count }}</h1>
+                                            <p>{{ $item->title }}</p>
+                                        </div>
+                                        @php $le += 500; @endphp
+                                    @endforeach
+                                </div>
                             </div>
-                            <div class="about-result-item" data-aos="fade-up"  data-aos-duration="2000">
-                                <h1>68</h1>
-                                <p>Типы красок</p>
-                            </div>
-                            <div class="about-result-item" data-aos="fade-up"  data-aos-duration="2500">
-                                <h1>50</h1>
-                                <p>
-                                    Счастливые клиенты
-                                </p>
-                            </div>
-                            <div class="about-result-item" data-aos="fade-up"  data-aos-duration="3000">
-                                <h1>24</h1>
-                                <p>Типы красок</p>
-                            </div>
-
+                        @endif
+                    </div>
+                    <div class="about-right" data-aos="fade-up"  data-aos-duration="1500">
+                        <div class="about-img ">
+                            <img src="{{ asset('uploads/'.$about->image)}}" alt="">
                         </div>
+                        <p class="pt-3">{!! $about->text_right !!}</p>
                     </div>
-                </div>
-                <div class="about-right" data-aos="fade-up"  data-aos-duration="1500">
-                    <div class="about-img ">
-                        <img src="{{ asset('artColor/images/about-right.png')}}" alt="">
-                    </div>
-                    <p class="pt-3">Создавая наши материалы мы ориентируемся не только на эстетику, но и на эксплуатационные характеристики. Прочность, долговечность и неизменность внешнего</p>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
     <!-- about -->
 
     <!-- main video data-bs-toggle="modal" data-bs-target="#exampleModal"-->
-    <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url('{{ asset("artColor/images/main-video-bg.png") }}');">
-        <div class="video d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-aos="flip-up"  data-aos-duration="1500">
-            <i class="fas fa-solid fa-play" id="video" ></i>
+    @if(!empty($about) and !empty($about->video_image))
+        <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url('{{ asset("uploads/".$about->video_image) }}');">
+            <div class="video d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-aos="flip-up"  data-aos-duration="1500">
+                <i class="fas fa-solid fa-play" id="video" ></i>
+            </div>
         </div>
-    </div>
+    @endif
     <!-- main video -->
+    @if(!empty($about) and !empty($about->video_link))
+        @section('video')
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" id="video-close" onclick="videoPause()" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="videoframe"   src="{{ $about->video_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- video modal -->
+        @endsection
+    @endif
 
     <!-- forProduct -->
     <div class="forProduct">
@@ -435,9 +347,7 @@
     <!-- product card item -->
     <div class="cards">
         <div class="container">
-
             <h2 class="text-capitalize" data-aos="fade-up"  data-aos-duration="1500">Продукция</h2>
-
             <form onchange="filterCard()">
                 <div class="card-head d-flex justify-content-between justify-content-sm-center align-items-center">
                     <div class="card-head-item" data-aos="fade-up" data-card="1"  data-aos-duration="500">
@@ -603,7 +513,6 @@
     <div class="our-work">
         <div class="container">
             <div class="our-work-content d-flex justify-content-between text-white gap-3">
-
                 <div class="our-left">
                     <h3 data-aos="fade-up" data-aos-duration="1500">Наши работы</h3>
                     <p>Идеальным можно назвать интерьер, в котором гармонично сочетаются все, даже мельчайшие детали. Посмотрите реализованные нашими специалистами проекты.</p>
@@ -703,7 +612,6 @@
     <!-- blog -->
     <div class="blog ">
         <div class="container">
-
             <div class="row">
                 <div class="col-sm-6 blog-texts">
                     <h2 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">Новости и блог</h2>

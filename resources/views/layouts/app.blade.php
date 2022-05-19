@@ -86,6 +86,7 @@
             <div class="dropdown">
                 @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    @if(strlen($lang)>2) Ru @endif
                     @if($lang == "uz") Uz @endif
                     @if($lang == "ru") Ru @endif
                     @if($lang == "en") En @endif
@@ -93,7 +94,7 @@
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
-                    @if($lang != "ru") <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                    @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
                     @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                 </ul>
             </div>
@@ -143,6 +144,7 @@
                     <div class="dropdown">
                         @php $lang = session('locale') @endphp
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            @if(strlen($lang)>2) Ru @endif
                             @if($lang == "uz") Uz @endif
                             @if($lang == "ru") Ru @endif
                             @if($lang == "en") En @endif
@@ -150,7 +152,7 @@
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
-                            @if($lang != "ru") <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                            @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
                             @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                         </ul>
                     </div>
@@ -351,20 +353,7 @@
 <!-- footer -->
 
 
-<!-- video modal -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" id="video-close" onclick="videoPause()" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <iframe id="videoframe"   src="https://www.youtube.com/embed/KuU44b3w1O4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
+@yield('video')
 <!-- video modal -->
 
 <!-- Modal -->
