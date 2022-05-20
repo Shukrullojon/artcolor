@@ -1,25 +1,27 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!--aos animation  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Muhammadsolih">
+    <title>ArtColor НОВОСТИ</title>
+    <!-- aos animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!--aos animation  -->
+    <!-- aos animation -->
+
 
     <!-- logo icon -->
-    <link rel="icon" href="{{ asset('artColor/images/card-item-1.png') }}">
+    <link rel="icon" href="{{ asset('artColor/images/card-item-1.png')}}">
     <!-- logo icon -->
 
-    <!-- swipper css -->
+    <!-- fancy -->
+    <link rel="stylesheet" href="{{ asset('artColor/style/photoswipe.css')}}">
+    <!-- fancy -->
+
+    <!-- swiper css -->
     <link rel="stylesheet" href="{{ asset('artColor/style/swiper.min.css')}}">
-    <!-- swipper js -->
+    <!-- swiper css -->
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{ asset('artColor/style/bootstrap.min.css')}}">
@@ -30,21 +32,17 @@
     <link rel="stylesheet" href="{{ asset('artColor/style/media.css')}}">
     <!-- my style code -->
 </head>
-<body>
-<!-- loader -->
-<div id="loader-content">
-    <div class="loader-display">
-        <h1 data-text="Art Color" class="loader">Art Color</h1>
-    </div>
-</div>
-<!-- loader -->
-
+<body class="Navbar-Static blogPage">
 <!-- progress bar -->
 <div class="progress-bar"></div>
 <!-- progress bar -->
 
 <!-- btn -->
-<button type="button" class="toTop pulse" id="btn-back-to-top">
+<button
+    type="button"
+    class="toTop pulse"
+    id="btn-back-to-top"
+>
     <i class="fas fa-arrow-up"></i>
 </button>
 <!-- btn -->
@@ -58,16 +56,16 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
+                <a href="../index.html"  class="active">Главная</a>
             </li>
             <li>
-                <a href="pages/product.html">@lang('front.sidebar.product')</a>
+                <a href="product.html">Продукция</a>
             </li>
             <li>
-                <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
+                <a href="about.html">О компании</a>
             </li>
             <li>
-                <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
+                <a href="contact.html">Контакты</a>
             </li>
         </ul>
         <div class="navbar-phone">
@@ -84,18 +82,13 @@
             <i class="fas fa-search"></i>
 
             <div class="dropdown">
-                @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    @if(strlen($lang)>2) Ru @endif
-                    @if($lang == "uz") Uz @endif
-                    @if($lang == "ru") Ru @endif
-                    @if($lang == "en") En @endif
+                    Ru
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
-                    @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
-                    @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
+                    <li><a class="dropdown-item" href="#">Eng</a></li>
+                    <li><a class="dropdown-item" href="#">Uz</a></li>
                 </ul>
             </div>
 
@@ -109,21 +102,21 @@
     <div class="container">
         <div class="content">
             <div class="navbar-left">
-                <a href="{{ url("/") }}">
-                    <img src="{{ asset('artColor/images/logo.png')}}" alt="">
+                <a href="../index.html">
+                    <img src="{{ asset('artColor/images/logo-Black.png')}}" alt="">
                 </a>
                 <ul>
                     <li>
-                        <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
+                        <a href="../index.html" >Главная</a>
                     </li>
                     <li>
-                        <a href="pages/product.html">@lang('front.sidebar.product')</a>
+                        <a href="product.html">Продукция</a>
                     </li>
                     <li>
-                        <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
+                        <a href="about.html">О компании</a>
                     </li>
                     <li>
-                        <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
+                        <a href="contact.html">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -142,18 +135,13 @@
                     <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
 
                     <div class="dropdown">
-                        @php $lang = session('locale') @endphp
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            @if(strlen($lang)>2) Ru @endif
-                            @if($lang == "uz") Uz @endif
-                            @if($lang == "ru") Ru @endif
-                            @if($lang == "en") En @endif
+                            Ru
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
-                            @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
-                            @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
+                            <li><a class="dropdown-item" href="#">Eng</a></li>
+                            <li><a class="dropdown-item" href="#">Uz</a></li>
                         </ul>
                     </div>
 
@@ -169,19 +157,18 @@
 </div>
 <!-- navbar -->
 
+
 @yield('content')
 
 @include('layouts.front.footer')
 
-@yield('video')
-<!-- video modal -->
 
 <!-- Modal -->
 <div class="modal fade modal-search" id="exampleModal-search" tabindex="-1" aria-labelledby="exampleModalLabel-search" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="{{ url("/") }}"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -197,7 +184,7 @@
 
 
                 <div class="search-result">
-                    <p><a href="{{ route("about") }}">КОРОТКО О ARTCOLOR</a></p>
+                    <p><a href="pages/about.html">КОРОТКО О ARTCOLOR</a></p>
                 </div>
 
             </div>
@@ -213,43 +200,81 @@
 </script>
 <!-- aos animation -->
 
+
 <!-- font awesome -->
 <script src="https://kit.fontawesome.com/02b94d3768.js" crossorigin="anonymous"></script>
 <!-- font awesome -->
 
 <!-- bootstrap js -->
 <script src="{{ asset('artColor/js/popper.min.js')}}"></script>
-<script src="{{ asset('artColor/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('artColor/js/bootstrap.min.js"></script>
 <!-- bootstrap js -->
 
-<!-- swipper js -->
-<script src="{{ asset('artColor/js/swiper.min.js')}}"></script>
-@yield('swiper')
-<!-- swipper js -->
-<!-- map -->
-<script src="https://api-maps.yandex.ru/2.1/?apikey=92bd9a31-f25d-42dd-a08e-7de4b146adb1&lang=en_US" type="text/javascript"> </script>
-<script src="{{ asset('artColor/js/map.js')}}">
-
-</script>
-<!-- map -->
-
+<!-- my js -->
 <script>
-    function videoPause(){
-        let videoClose = document.getElementById('video-close');
-        let video = document.getElementById('videoframe');
-        if ( video ) {
-            var iframeSrc = video.src;
-            video.src = iframeSrc;
+    // scrool
+    let mybutton = document.getElementById("btn-back-to-top");
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    // progress bar
+    const showOnPx = 100;
+    const pageProgressBar = document.querySelector(".progress-bar");
+
+    const scrollContainer = () => {
+        return document.documentElement || document.body;
+    };
+
+    document.addEventListener("scroll", () => {
+
+        const scrolledPercentage =
+            (scrollContainer().scrollTop /
+                (scrollContainer().scrollHeight - scrollContainer().clientHeight)) *
+            100;
+
+        pageProgressBar.style.width = `${scrolledPercentage}%`;
+
+
+    });
+
+
+    const tabs = document.querySelector(".blog-right");
+    const tabButton = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".section-blog-item");
+
+    tabs.onclick = e => {
+        const id = e.target.dataset.id;
+        if (id) {
+            tabButton.forEach(btn => {
+                btn.classList.remove("active");
+            });
+            e.target.classList.add("active");
+
+            contents.forEach(content => {
+                content.classList.remove("active");
+            });
+            const element = document.getElementById(id);
+            element.classList.add("active");
         }
     }
 </script>
-
-<!-- my js code -->
-<script src="{{ asset('artColor/js/main.js')}}"></script>
-<!-- my js code -->
-
-
-@yield('scripts')
-
+<!-- my js -->
 </body>
 </html>

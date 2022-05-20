@@ -98,15 +98,15 @@
     <!-- about -->
 
     <!-- main video data-bs-toggle="modal" data-bs-target="#exampleModal"-->
-    @if(!empty($about) and !empty($about->video_image))
-        <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url('{{ asset("uploads/".$about->video_image) }}');">
+    @if(!empty($video))
+        <div class="main-video d-flex justify-content-center align-items-center" style="background-image: url('{{ asset("uploads/".$video->image) }}');">
             <div class="video d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-aos="flip-up"  data-aos-duration="1500">
                 <i class="fas fa-solid fa-play" id="video" ></i>
             </div>
         </div>
     @endif
     <!-- main video -->
-    @if(!empty($about) and !empty($about->video_link))
+    @if(!empty($video))
         @section('video')
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -116,7 +116,7 @@
                             <button type="button" class="btn-close" id="video-close" onclick="videoPause()" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <iframe id="videoframe"   src="{{ $about->video_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe id="videoframe"   src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

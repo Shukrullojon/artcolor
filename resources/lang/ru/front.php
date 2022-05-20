@@ -12,5 +12,7 @@ return [
     ],
     "text" => [
         "management" => "Руководство",
+        "News_events" => "Новости и События",
+        "subscribe_to_news" => "Подписоция на новостей",
     ],
 ];

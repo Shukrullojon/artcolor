@@ -7,6 +7,8 @@ Auth::routes();
 
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
 Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name('about');
+Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
+Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::get('/',[\App\Http\Controllers\Admin\MainController::class,'index'])->name('adminIndex');
 
