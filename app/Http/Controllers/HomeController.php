@@ -7,6 +7,7 @@ use App\Models\AboutAbout;
 use App\Models\CategoryNew;
 use App\Models\Item;
 use App\Models\NewHeader;
+use App\Models\ProductType;
 use App\Models\Slider;
 use App\Models\Team;
 use App\Models\Text;
@@ -32,11 +33,13 @@ class HomeController extends Controller
         $about = About::select("title_$lang as title","title_short_$lang as title_short", "text_$lang as text","text_right_$lang as text_right", "image","video_link","video_image")->first();
         $items = Item::select("title_$lang as title", "count")->latest()->get();
         $video = Video::latest()->first();
+        $productTypes = ProductType::select("id","title_$lang as title","info_$lang as info","title_short_$lang as title_short","text_$lang as text","button_url")->where('status',1)->get();
         return view('index',[
             'sliders' => $sliders,
             'about' => $about,
             'items' => $items,
             'video' => $video,
+            'productTypes' => $productTypes,
         ]);
     }
 

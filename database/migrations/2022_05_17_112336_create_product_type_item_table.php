@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('title_ru');
             $table->string('title_en');
             $table->string('image');
-            $table->string('button_url');
             $table->timestamps();
         });
     }

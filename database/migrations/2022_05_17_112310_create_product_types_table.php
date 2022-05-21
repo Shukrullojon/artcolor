@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('text_uz');
             $table->string('text_ru');
             $table->string('text_en');
+            $table->string('button_url');
             $table->tinyInteger('status');
             $table->timestamps();
         });

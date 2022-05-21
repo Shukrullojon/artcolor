@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ProductType\StoreRequest;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,8 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        ProductType::create($request->all());
+        return redirect()->route('producttype.index')->with("success","Saved successful!");
     }
 
     /**
@@ -50,7 +52,10 @@ class ProductTypeController extends Controller
      */
     public function show($id)
     {
-        //
+        $productType = ProductType::where('id',$id)->first();
+        return view('admin.product-type.show',[
+            'productType' => $productType,
+        ]);
     }
 
     /**
@@ -61,7 +66,10 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productType = ProductType::where('id',$id)->first();
+        return view('admin.product-type.edit',[
+            'productType' => $productType,
+        ]);
     }
 
     /**
@@ -73,7 +81,10 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productType=ProductType::where('id',$id)->first();
+        $input = $request->all();
+        $productType->fill($input)->save();
+        return redirect()->route('producttype.index')->with("success","Update successful!");
     }
 
     /**
@@ -84,6 +95,8 @@ class ProductTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productType = ProductType::where('id',$id)->first();
+        $productType->delete();
+        return redirect()->route('producttype.index')->with('success',"Delete successful!");
     }
 }

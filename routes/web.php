@@ -21,7 +21,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('videos' , \App\Http\Controllers\Admin\VideoController::class);
     Route::resource('news' , \App\Http\Controllers\Admin\NewsController::class);
     Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
-    Route::resource('product-type', \App\Http\Controllers\Admin\ProductTypeController::class);
+    Route::resource('producttype', \App\Http\Controllers\Admin\ProductTypeController::class);
+    Route::resource('producttypeitem', \App\Http\Controllers\Admin\ProductTypeItemController::class);
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
 
 });

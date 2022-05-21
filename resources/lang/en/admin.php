@@ -27,7 +27,8 @@ return [
         "footer_text" => "Footer text",
         "video" => "Video",
         'category' => "Category news",
-        'news' => 'News'
+        "product_type" => "Product type",
+        "product_type_item" => "Product type item",
     ],
     'crud' => [
         "add" => "Add",

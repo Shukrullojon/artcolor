@@ -125,114 +125,104 @@
         @endsection
     @endif
 
+    @if(count($productTypes)>0)
     <!-- forProduct -->
     <div class="forProduct">
         <div class="container">
             <div class="forProduct-content">
-
-                <div class="forProduct-header d-flex justify-content-center justify-content-sm-between  align-items-center flex-wrap flex-sm-nowrap">
-                    <div data-aos="fade-up"  data-aos-duration="1500">
-                        <h1>Особенности наших декоративных покрытий</h1>
-                    </div>
-                    <div data-aos="fade-up"  data-aos-duration="1500">
-                        <p>
-                            ART STONE — наша новинка, покрытие, позволяющее добиться имитации натурального камня и скалистых пород, идеальное решение для любителей классики, рустикального стиля и тех, кто следит за эко-трендами.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="forProduct-body my-5 d-flex justify-content-between align-items-center">
-                    <div class="forProduct-left">
-
-                        <div class="forProduct-img">
-                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item1" alt="">
-                            <img src="{{ asset('artColor/images/about-right.png')}}" class="product-item2" alt="">
-                            <img src="{{ asset('artColor/images/main.png')}}" class="product-item3" alt="">
-                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item4" alt="">
-                            <img src="{{ asset('artColor/images/about-right.png')}}" class="product-item5"  alt="">
-                            <img src="{{ asset('artColor/images/forProduct.png')}}" class="product-item6"  alt="">
-
-                            <div class="slide-product-content">
-                                <div class="pulse slide-product-item item-1" data-aos="fade-up"  data-aos-duration="1500">
-                                    1
-                                </div>
-                                <div class="pulse slide-product-item item-2" data-aos="fade-up"  data-aos-duration="2000">
-                                    2
-                                </div>
-                                <div class="pulse slide-product-item item-3" data-aos="fade-up"  data-aos-duration="2500">
-                                    3
-                                </div>
-                                <div class="pulse slide-product-item item-4" data-aos="fade-up"  data-aos-duration="3000">
-                                    4
-                                </div>
-                                <div class="pulse slide-product-item item-5" data-aos="fade-up"  data-aos-duration="3000">
-                                    5
-                                </div>
-                                <div class="pulse slide-product-item item-6" data-aos="fade-up"  data-aos-duration="3000">
-                                    6
-                                </div>
-                            </div>
-
+                @php $j=1 @endphp
+                @foreach($productTypes as $pt)
+                    <div class="forProduct-header d-flex justify-content-center justify-content-sm-between  align-items-center flex-wrap flex-sm-nowrap">
+                        <div data-aos="fade-up"  data-aos-duration="1500">
+                            <h1>{{ $pt->title }}</h1>
                         </div>
-
-
-                    </div>
-                    <div class="forProduct-right" data-aos="fade-up"  data-aos-duration="1500">
-                        <h2>ШТУКАТУРКИ НА ОСНОВЕ ГАШЕНОЙ ИЗВЕСТИ</h2>
-                        <p>
-                            Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала, обеспечивается высокая паропроницаемость и бактерицидные свойства, предотвращая появление плесени и грибка.
-                        </p>
-
-                        <div class="forProduct-btn d-flex  gap-3 align-items-center py-3">
-                            <button class="prevBtn pulse" onclick="prevBtnOne()">
-                                <i class="fas fa-solid fa-chevron-left"></i>
-                            </button>
-                            <span class="answereOne">1</span>
-                            <button class="nextBtn pulse" onclick="nextBtnOne()">
-                                <i class="fas fa-solid fa-chevron-right"></i>
-                            </button>
+                        <div data-aos="fade-up"  data-aos-duration="1500">
+                            <p>
+                                {!! $pt->info !!}
+                            </p>
                         </div>
+                    </div>
 
-                        <div class="slide-p">
-                            <div class="slide-p-item-One">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала
-                                </p>
-                            </div>
-                            <div class="slide-p-item-Two">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала 2
-                                </p>
-                            </div>
-                            <div class="slide-p-item-Three">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала 3
-                                </p>
-                            </div>
-                            <div class="slide-p-item-Four">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала 4
-                                </p>
-                            </div>
-                            <div class="slide-p-item-Five">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала 5
-                                </p>
-                            </div>
-                            <div class="slide-p-item-Six">
-                                <p>
-                                    Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала 6
-                                </p>
+                    <div class="forProduct-body my-5 d-flex justify-content-between align-items-center @if($j%2 == 0) flex-row-reverse @endif">
+                        <div class="forProduct-left">
+                            <div class="forProduct-img">
+                                @php $i=1; @endphp
+
+                                @foreach($pt->items as $pti)
+                                    <img src="{{ asset('uploads/'.$pti->image)}}" class="@if($j%2 ==0) product-item-{{ $i++ }}@else product-item{{ $i++ }} @endif" alt="">
+                                @endforeach
+                                <div class="slide-product-content">
+                                    @php
+                                        $i=1;
+                                        $duration = 1500;
+                                    @endphp
+
+                                    @foreach($pt->items as $pti)
+                                        <div class="pulse slide-product-item item-{{ $i }} @if($j%2 ==0)item-1-{{$i}}@endif" data-aos="fade-up"  data-aos-duration="{{ $duration+500 }}">
+                                            {{ $i++ }}
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
-                        <div class="about-us-btn" data-aos="fade-up"  data-aos-duration="1500">
-                            <a href="pages/kraska.html"><button>Подробнее</button></a>
+                        <div class="forProduct-right" data-aos="fade-up"  data-aos-duration="1500">
+                            <h2>{{ $pt->title_short }}</h2>
+                            <p>
+                                {!! $pt->text !!}
+                            </p>
+
+                            <div class="forProduct-btn d-flex  gap-3 align-items-center py-3">
+                                <button class="prevBtn pulse" onclick="@if($j%2==0)prevBtn() @else prevBtnOne() @endif">
+                                    <i class="fas fa-solid fa-chevron-left"></i>
+                                </button>
+                                <span class="@if($j%2==0) answere @else answereOne @endif">1</span>
+                                <button class="nextBtn pulse" onclick="@if($j%2==0)nextBtn() @else nextBtnOne() @endif">
+                                    <i class="fas fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="slide-p">
+                                @php
+                                    $numberString = [
+                                        1 => "One",
+                                        2 => "Two",
+                                        3 => "Three",
+                                        4 => "Four",
+                                        5 => "Five",
+                                        6 => "Six",
+                                    ];
+                                @endphp
+
+                                @php
+                                    $i=1;
+                                    $lang = session('locale');
+                                    if(strlen($lang)>2)
+                                        $lang = "ru";
+                                @endphp
+
+                                @foreach($pt->items as $pti)
+                                    <div class="slide-p-item-{{ $numberString[$i] }} @if($j%2 == 0) active @endif">
+                                        <p>
+                                            @if($lang == "uz")
+                                                {{ $pti->title_uz }}
+                                            @elseif($lang == "ru")
+                                                {{ $pti->title_ru }}
+                                            @else
+                                                {{ $pti->title_en }}
+                                            @endif
+                                        </p>
+                                    </div>
+                                    @php $i++ @endphp
+                                @endforeach
+
+                            </div>
+                            <div class="about-us-btn" data-aos="fade-up"  data-aos-duration="1500">
+                                <a href="{{ $pt->button_url }}"><button>@lang('front.text.more')</button></a>
+                            </div>
                         </div>
-
-
                     </div>
-                </div>
-
+                    @php $j++; @endphp
+                @endforeach
                 <!-- next content -->
 
                 <div class="forProduct-header d-flex justify-content-center justify-content-sm-between  align-items-center flex-wrap flex-sm-nowrap">
@@ -245,11 +235,8 @@
                         </p>
                     </div>
                 </div>
-
-
                 <div class="forProduct-body my-5 d-flex justify-content-between align-items-center flex-row-reverse">
                     <div class="forProduct-left">
-
                         <div class="forProduct-img">
                             <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-1" alt="">
                             <img src="{{ asset('artColor/images/about-right.png')}}" class=" product-item-2" alt="">
@@ -257,7 +244,6 @@
                             <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-4" alt="">
                             <img src="{{ asset('artColor/images/about-right.png')}}" class=" product-item-5" alt="">
                             <img src="{{ asset('artColor/images/forProduct.png')}}" class=" product-item-6" alt="">
-
                             <div class="slide-product-content">
                                 <div class="pulse slide-product-item item-1 item-1-1" data-aos="fade-up"  data-aos-duration="1500">
                                     1
@@ -278,17 +264,13 @@
                                     6
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                     <div class="forProduct-right" data-aos="fade-up"  data-aos-duration="1500">
                         <h2>ШТУКАТУРКИ НА ОСНОВЕ ГАШЕНОЙ ИЗВЕСТИ</h2>
                         <p>
                             Натуральность и естественность на первом месте. Высокая прочность и стойкость к загрязнениям. Благодаря щелочи, входящей в состав материала, обеспечивается высокая паропроницаемость и бактерицидные свойства, предотвращая появление плесени и грибка.
                         </p>
-
                         <div class="forProduct-btn d-flex  gap-3 align-items-center py-3">
                             <button class="prevBtn pulse" onclick="prevBtn()">
                                 <i class="fas fa-solid fa-chevron-left"></i>
@@ -298,7 +280,6 @@
                                 <i class="fas fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-
                         <div class="slide-p">
                             <div class="slide-p-item-1 active">
                                 <p>
@@ -334,8 +315,6 @@
                         <div class="about-us-btn" data-aos="fade-up"  data-aos-duration="1500">
                             <a href="pages/galleryAll.html"><button>Подробнее</button></a>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -343,6 +322,7 @@
         </div>
     </div>
     <!-- forProduct -->
+    @endif
 
     <!-- product card item -->
     <div class="cards">
