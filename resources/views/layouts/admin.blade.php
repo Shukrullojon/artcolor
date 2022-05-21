@@ -91,6 +91,15 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- jQuery -->
+
+<script>
+    $(document).ready(function(){
+
+        function add(){
+            $( "#one" ).append( $( "#two" ) );
+        }
+    });
+</script>
 <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>

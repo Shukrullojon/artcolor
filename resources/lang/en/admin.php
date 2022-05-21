@@ -63,6 +63,16 @@ return [
         'category' => "Category news" ,
         'category_name' => "Category Name" ,
         'news' => 'News' ,
-        'slug' => "Slug"
+        'slug' => "Slug" ,
+        'contact' => "Contact" ,
+        'phone' => "Phone" ,
+        'email' => "Email" ,
+        'address' => "Address" ,
+        'logo' => "Logo" ,
+        'telegram' => "Telegram" ,
+        'instagram' => "Instagram" ,
+        'youtube' => "YouTube" ,
+        'facebook' => "Facebook" ,
+        'timetable' => "Time Table"
     ],
 ];

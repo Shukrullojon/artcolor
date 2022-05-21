@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreCategoryRequest;
 use App\Http\Requests\Admin\Category\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Models\CategoryNew;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -17,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->paginate(20);
+        $categories = CategoryNew::latest()->paginate(20);
         return view('admin.categories.index' , compact('categories'));
     }
 
@@ -39,7 +40,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        Category::create($request->all());
+        CategoryNew::create($request->all());
         return redirect()->route('categories.index');
     }
 
@@ -49,7 +50,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(CategoryNew $category)
     {
         return  view('admin.categories.show' , compact('category'));
     }
@@ -60,7 +61,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(CategoryNew $category)
     {
         return  view('admin.categories.edit' , compact('category'));
     }
@@ -72,7 +73,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCategoryRequest $request, CategoryNew $category)
     {
         $category->update($request->all());
         return redirect()->route('categories.index');
@@ -84,7 +85,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(CategoryNew $category)
     {
         $category->delete();
         return redirect()->route('categories.index');
