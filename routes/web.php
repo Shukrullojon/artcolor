@@ -7,6 +7,8 @@ Auth::routes();
 
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
 Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name('about');
+Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
+Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::get('/',[\App\Http\Controllers\Admin\MainController::class,'index'])->name('adminIndex');
 
@@ -20,7 +22,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('news' , \App\Http\Controllers\Admin\NewsController::class);
     Route::resource('contacts' , \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
-    Route::resource('product-type', \App\Http\Controllers\Admin\ProductTypeController::class);
+    Route::resource('producttype', \App\Http\Controllers\Admin\ProductTypeController::class);
+    Route::resource('producttypeitem', \App\Http\Controllers\Admin\ProductTypeItemController::class);
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
 
 });
@@ -29,6 +32,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
 Route::get('/language/{lang}',function ($lang){
     if ($lang == 'ru' || $lang == 'uz' || $lang == "en")
     {
+        $lang = strtolower($lang);
         session([
             'locale' => $lang
         ]);

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\ProductType;
+namespace App\Http\Requests\Admin\CategoryProductText;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
 
     /**

@@ -27,7 +27,8 @@ return [
         "footer_text" => "Текст нижнего колонтитула",
         "video" => "Bидео",
         'category' => "Category news" ,
-        'news' => 'Новости'
+        "product_type" => "Тип продукта",
+        "product_type_item"=>"Элемент типа продукта",
     ],
     'crud' => [
         "add" => "Добавлять",

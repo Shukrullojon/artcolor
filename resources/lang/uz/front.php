@@ -10,4 +10,10 @@ return [
         "contact" => "Aloqa",
         "product" => "Mahsulotlar",
     ],
+    "text" => [
+        "management" => "Boshqaruv",
+        "News_events" => "Yangiliklar va Voqealar",
+        "subscribe_to_news" => "Yangiliklarga obuna bo'ling",
+        "more" => "Ko'proq",
+    ],
 ];

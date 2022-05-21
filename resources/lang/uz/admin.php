@@ -27,7 +27,8 @@ return [
         "footer_text" => "Pastki matn",
         'video' => "Video",
         'category' => "Category news" ,
-        'news' => 'Yangiliklar' ,
+        "product_type" => "Mahsulot turlari",
+        "product_type_item"=>"Mahsulot turi elementi",
     ],
     'crud' => [
         "add" => "Qo'shish",

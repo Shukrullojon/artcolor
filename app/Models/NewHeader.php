@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductType extends Model
+class NewHeader extends Model
 {
     use HasFactory;
 
-    protected $table = 'product_types';
+    protected $table = 'new_header';
 
     protected $guarded = [];
 
-    public function items(){
-        return $this -> hasMany(ProductTypeItem::class);
-    }
 }
