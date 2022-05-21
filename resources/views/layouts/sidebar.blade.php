@@ -134,7 +134,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('contacts.index')}}" class="nav-link">
                     <i class="nav-icon fa fa-address-book"></i>
                     <p>
                         @lang('admin.sidebar.contact')
@@ -143,7 +143,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('contacts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.contact')</p>
                         </a>

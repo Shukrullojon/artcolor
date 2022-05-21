@@ -18,6 +18,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('activity' , \App\Http\Controllers\Admin\ActivityController::class);
     Route::resource('videos' , \App\Http\Controllers\Admin\VideoController::class);
     Route::resource('news' , \App\Http\Controllers\Admin\NewsController::class);
+    Route::resource('contacts' , \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('product-type', \App\Http\Controllers\Admin\ProductTypeController::class);
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
