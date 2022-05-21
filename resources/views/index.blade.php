@@ -201,7 +201,7 @@
                                 @endphp
 
                                 @foreach($pt->items as $pti)
-                                    <div class="slide-p-item-{{ $numberString[$i] }} @if($j%2 == 0) active @endif">
+                                    <div class="@if($j%2 == 0) slide-p-item-{{ $i }} @else slide-p-item-{{ $numberString[$i] }} @endif @if($j%2 == 0) active @endif">
                                         <p>
                                             @if($lang == "uz")
                                                 {{ $pti->title_uz }}
@@ -225,6 +225,7 @@
                 @endforeach
                 <!-- next content -->
 
+                <div style="display:none">
                 <div class="forProduct-header d-flex justify-content-center justify-content-sm-between  align-items-center flex-wrap flex-sm-nowrap">
                     <div data-aos="fade-up"  data-aos-duration="1500">
                         <h1>АКРИЛОВЫЕ И СИЛИКОНОВЫЕ ШТУКАТУРКИ</h1>
@@ -317,7 +318,7 @@
                         </div>
                     </div>
                 </div>
-
+                </div>
             </div>
         </div>
     </div>
