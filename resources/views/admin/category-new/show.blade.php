@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">@lang('admin.sidebar.category')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('category-new.index') }}">@lang('admin.sidebar.category')</a></li>
                         <li class="breadcrumb-item active"></li>
                     </ol>
                 </div>

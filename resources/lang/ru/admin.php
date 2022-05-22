@@ -26,7 +26,9 @@ return [
         "country" => "Страна",
         "footer_text" => "Текст нижнего колонтитула",
         "video" => "Bидео",
-        'category' => "Category news" ,
+        'category' => "Категория",
+        "sub_category" => "Подкатегория",
+        "category_new" => "Новости категории",
         "product_type" => "Тип продукта",
         "product_type_item"=>"Элемент типа продукта",
         'contact' => "Контакт"
@@ -74,6 +76,8 @@ return [
         'instagram' => "Инстаграм" ,
         'youtube' => "YouTube" ,
         'facebook' => "Фейсбук" ,
-        'timetable' => "Рабочее время"
+        'timetable' => "Рабочее время",
+        "items" => "Предметы",
+        "colss" => "Крах",
     ],
 ];

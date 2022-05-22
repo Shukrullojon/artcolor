@@ -62,7 +62,7 @@ class ContactController extends Controller
         $address_uz = $inputs['address_uz'];
         $address_ru = $inputs['address_ru'];
         $address_en = $inputs['address_en'];
-        
+
         foreach($address_uz as $key => $item){
             Address::create([
                 'address_uz' => $item,

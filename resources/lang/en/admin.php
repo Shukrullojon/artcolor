@@ -26,7 +26,9 @@ return [
         "country" => "Country",
         "footer_text" => "Footer text",
         "video" => "Video",
-        'category' => "Category news",
+        'category' => "Category",
+        "sub_category" => "Sub category",
+        "category_new" => "Category news",
         "product_type" => "Product type",
         "product_type_item" => "Product type item",
     ],
@@ -73,6 +75,8 @@ return [
         'instagram' => "Instagram" ,
         'youtube' => "YouTube" ,
         'facebook' => "Facebook" ,
-        'timetable' => "Time Table"
+        'timetable' => "Time Table",
+        "items" => "Items",
+        "colss" => "Colls",
     ],
 ];

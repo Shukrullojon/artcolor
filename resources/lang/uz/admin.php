@@ -26,10 +26,12 @@ return [
         "country" => "Mamlakat",
         "footer_text" => "Pastki matn",
         'video' => "Video",
-        'category' => "Category news" ,
+        'category' => "Kategoriya",
+        "sub_category" => "Sub kategoriya",
+        "category_new" => "Kategoriya yangiliklari",
         "product_type" => "Mahsulot turlari",
         "product_type_item"=>"Mahsulot turi elementi",
-        'contact' => "Kontakt"
+        'contact' => "Kontakt",
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -74,6 +76,8 @@ return [
         'instagram' => "Instagram" ,
         'youtube' => "YouTube" ,
         'facebook' => "Facebook" ,
-        'timetable' => "Ish vaqti"
+        'timetable' => "Ish vaqti",
+        "items" => "Elementlar",
+        "colss" => "Ustunlar",
     ],
 ];
