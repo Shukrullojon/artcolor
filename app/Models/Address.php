@@ -9,7 +9,7 @@ class Address extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['address_uz' , 'address_ru' , 'address_en'];
+    protected $fillable = ['address_uz' , 'address_ru' , 'address_en','contact_id'];
 
     public function contact(){
         return $this->belongsTo(Contact::class);

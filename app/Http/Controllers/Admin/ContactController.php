@@ -37,7 +37,7 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreContactRequest $request)
+    public function store(Request $request)
     {
 
         $image = '';
@@ -49,7 +49,11 @@ class ContactController extends Controller
             'phone_1' => $request->phone_1,
             'phone_2' => $request->phone_2 ,
             'email' => $request->email ,
+<<<<<<< HEAD
             'timetable' => $request->timetable ,
+=======
+            'timetable' => $request->timetable,
+>>>>>>> 8bff6c0384cddc091d82f9fa144ec1505d2a1923
             'telegram' => $request->telegram,
             'youtube'  => $request->youtube,
             'facebook' => $request->facebook,
@@ -58,20 +62,28 @@ class ContactController extends Controller
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
         ]);
+<<<<<<< HEAD
 
        $inputs = $request->all();
         $address_uz[] = $inputs['address_uz'];
         $address_ru[] = $inputs['address_ru'];
         $address_en[] = $inputs['address_en'];
+=======
+        $inputs = $request->all();
+        $address_uz = $inputs['address_uz'];
+        $address_ru = $inputs['address_ru'];
+        $address_en = $inputs['address_en'];
+>>>>>>> 8bff6c0384cddc091d82f9fa144ec1505d2a1923
 
         foreach($address_uz as $key => $item){
             Address::create([
-                'address_uz' => $item ,
-                'address_ru' => $address_ru[$key] ,
-                'address_en' => $address_en[$key] ,
-                'contact_id' => $contact->id ,
+                'address_uz' => $item,
+                'address_ru' => $address_ru[$key],
+                'address_en' => $address_en[$key],
+                'contact_id' => $contact->id,
             ]);
         }
+        dd($address_ru);
     }
 
 
