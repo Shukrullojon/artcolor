@@ -49,7 +49,7 @@ class ContactController extends Controller
             'phone_1' => $request->phone_1,
             'phone_2' => $request->phone_2 ,
             'email' => $request->email ,
-            'timetable' => $request->time_table ,
+            'timetable' => $request->timetable ,
             'telegram' => $request->telegram,
             'youtube'  => $request->youtube,
             'facebook' => $request->facebook,
@@ -58,10 +58,11 @@ class ContactController extends Controller
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
         ]);
+
        $inputs = $request->all();
-        $address_uz = $inputs['address_uz'];
-        $address_ru = $inputs['address_ru'];
-        $address_en = $inputs['address_en'];
+        $address_uz[] = $inputs['address_uz'];
+        $address_ru[] = $inputs['address_ru'];
+        $address_en[] = $inputs['address_en'];
 
         foreach($address_uz as $key => $item){
             Address::create([
