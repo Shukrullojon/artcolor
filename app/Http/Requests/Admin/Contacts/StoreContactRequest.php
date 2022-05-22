@@ -24,14 +24,14 @@ class StoreContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'logo' => 'required' ,
+            'image' => 'required' ,
             'title_uz' => 'required' ,
             'title_ru' => 'required' ,
             'title_en' => 'required' ,
             'phone_1' => 'required' ,
             'phone_2' => 'required' ,
             'email' => 'required' ,
-            'time_table' => 'required' ,
+            'timetable' => 'required' ,
             'telegram' => 'required' ,
             'youtube' => 'required' ,
             'instagram' => 'required' ,
