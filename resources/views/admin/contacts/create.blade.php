@@ -159,43 +159,45 @@
 
                             </div>
 
-                            <div class="row" id="two">
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.address')(UZ)</label><label style="color: red">*</label>
-                                        <input type="text" name="address_uz" class="form-control {{ $errors->has('address_uz') ? "is-invalid":"" }}" value="{{ old('address_uz') }}" required>
-                                        @if($errors->has('address_uz'))
-                                            <span class="error invalid-feedback">{{ $errors->first('address_uz') }}</span>
-                                        @endif
+                            <div id="addressInputs">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.address')(UZ)</label><label style="color: red">*</label>
+                                            <input type="text" name="address_uz[]" class="form-control {{ $errors->has('address_uz') ? "is-invalid":"" }}" value="{{ old('address_uz') }}" required>
+                                            @if($errors->has('address_uz'))
+                                                <span class="error invalid-feedback">{{ $errors->first('address_uz') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.address')(RU)</label><label style="color: red">*</label>
-                                        <input type="text" name="address_ru" class="form-control {{ $errors->has('address_ru') ? "is-invalid":"" }}" value="{{ old('address_ru') }}" required>
-                                        @if($errors->has('address_ru'))
-                                            <span class="error invalid-feedback">{{ $errors->first('address_ru') }}</span>
-                                        @endif
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.address')(RU)</label><label style="color: red">*</label>
+                                            <input type="text" name="address_ru[]" class="form-control {{ $errors->has('address_ru') ? "is-invalid":"" }}" value="{{ old('address_ru') }}" required>
+                                            @if($errors->has('address_ru'))
+                                                <span class="error invalid-feedback">{{ $errors->first('address_ru') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.address')(ENG)</label><label style="color: red">*</label>
+                                            <input type="text" name="address_en[]" class="form-control {{ $errors->has('address_en') ? "is-invalid":"" }}" value="{{ old('address_en') }}" required>
+                                            @if($errors->has('address_en'))
+                                                <span class="error invalid-feedback">{{ $errors->first('address_en') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.address')(ENG)</label><label style="color: red">*</label>
-                                        <input type="text" name="address_en" class="form-control {{ $errors->has('address_en') ? "is-invalid":"" }}" value="{{ old('address_en') }}" required>
-                                        @if($errors->has('address_en'))
-                                            <span class="error invalid-feedback">{{ $errors->first('address_en') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
+                            </div>
+
+                            <div id="showAddressInput">
 
                             </div>
-                            <div id="one">
 
-                            </div>
-
-                            <a id="bos"  onclick="add()" class="btn btn-primary mb-2">+</a>
-
+                            <a id="add_address" class="btn btn-primary mb-2 form-control">+</a>
 
 
                             <div class="form-group">
@@ -209,4 +211,13 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).on("click","#add_address",function() {
+            var inputs = $("#addressInputs").html();
+            $("#showAddressInput").append(inputs);
+        });
+    </script>
 @endsection
