@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('admin.sidebar.our_team')</h1>
+                    <h1>@lang('admin.sidebar.contact')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('activity.index') }}">@lang('admin.sidebar.activity')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('contacts.index') }}">@lang('admin.sidebar.contact')</a></li>
                         <li class="breadcrumb-item active"></li>
                     </ol>
                 </div>
@@ -29,50 +29,68 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th>@lang('admin.crud.title')(uz)</th>
-                                <td>{{ $activity->title_uz }}</td>
+                                <td>{{ $contact->title_uz }}</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.title')(ru)</th>
-                                <td>{{ $activity->title_ru }}</td>
+                                <td>{{ $contact->title_ru }}</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.title')(en)</th>
-                                <td>{{ $activity->title_en }}</td>
+                                <td>{{ $contact->title_en }}</td>
                             </tr>
                             <tr>
-                                <th>@lang('admin.crud.short_text')(uz)</th>
-                                <td>{{ $activity->short_text_uz }}</td>
+                                <th>@lang('admin.crud.phone')(uz)</th>
+                                <td>{{ $contact->phone_1 }}</td>
+                            </tr>
+                            <tr>
+                                <th>@lang('admin.crud.phone')(uz)</th>
+                                <td>{{ $contact->phone_2 }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.short_text')(ru)</th>
-                                <td>{{ $activity->short_text_ru }}</td>
+                                <th>@lang('admin.crud.email')(ru)</th>
+                                <td>{{ $contact->email }}</td>
                             </tr>
 
                             <tr>
-                                <th>@lang('admin.crud.short_text')(en)</th>
-                                <td>{{ $activity->short_text_en }}</td>
+                                <th>@lang('admin.crud.timetable')(en)</th>
+                                <td>{{ $contact->timetable }}</td>
                             </tr>
                             <tr>
-                                <th>@lang('admin.crud.text')(uz)</th>
-                                <td>{{ $activity->text_uz }}</td>
+                                <th>@lang('admin.crud.instagram')(en)</th>
+                                <td>{{ $contact->instagram }}</td>
+                            </tr><tr>
+                                <th>@lang('admin.crud.facebook')(en)</th>
+                                <td>{{ $contact->facebook }}</td>
+                            </tr><tr>
+                                <th>@lang('admin.crud.youtube')(en)</th>
+                                <td>{{ $contact->youtube }}</td>
                             </tr>
 
-                            <tr>
-                                <th>@lang('admin.crud.text')(ru)</th>
-                                <td>{{ $activity->text_ru }}</td>
-                            </tr>
+                            @foreach($contact->addresses as $address)
+                                <tr>
+                                    <th>@lang('admin.crud.address')(uz)</th>
+                                    <td>{{ $address->address_uz }}</td>
+                                </tr>
 
-                            <tr>
-                                <th>@lang('admin.crud.text')(en)</th>
-                                <td>{{ $activity->text_en }}</td>
-                            </tr>
+                                <tr>
+                                    <th>@lang('admin.crud.address')(ru)</th>
+                                    <td>{{ $address->address_ru }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>@lang('admin.crud.address')(en)</th>
+                                    <td>{{ $address->address_en }}</td>
+                                </tr>
+
+                            @endforeach
                             <tr>
                                 <th>@lang('admin.crud.image')</th>
                                 <td>
-                                    <img src="{{ asset("uploads/".$activity->image) }}" class="img_admin">
+                                    <img src="{{ asset("uploads/".$contact->logo) }}" class="img_admin">
                                 </td>
                             </tr>
                         </table>

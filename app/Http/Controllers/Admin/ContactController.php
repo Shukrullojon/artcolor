@@ -62,7 +62,7 @@ class ContactController extends Controller
         $address_uz = $inputs['address_uz'];
         $address_ru = $inputs['address_ru'];
         $address_en = $inputs['address_en'];
-        
+
         foreach($address_uz as $key => $item){
             Address::create([
                 'address_uz' => $item,
@@ -71,7 +71,7 @@ class ContactController extends Controller
                 'contact_id' => $contact->id,
             ]);
         }
-        dd($address_ru);
+        return  redirect()->route('contacts.index');
     }
 
 
@@ -86,9 +86,10 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contact $contact)
     {
-        //
+        return view('admin.contacts.show' , ['contact' => $contact ]);
+
     }
 
     /**
@@ -97,9 +98,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Contact $contact)
     {
-        //
+        return view('admin.contacts.edit' , ['contact' => $contact]);
     }
 
     /**
@@ -109,9 +110,52 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Contact $contact)
     {
-        //
+        $image = '';
+        if(isset($request->image)){
+            $image = $this->uploadImage($request);
+        }else{
+            $image = $contact->logo;
+        }
+        $contact->update([
+            'logo' => $image ,
+            'phone_1' => $request->phone_1,
+            'phone_2' => $request->phone_2 ,
+            'email' => $request->email ,
+            'timetable' => $request->timetable,
+            'telegram' => $request->telegram,
+            'youtube'  => $request->youtube,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'title_uz' => $request->title_uz,
+            'title_ru' => $request->title_ru,
+            'title_en' => $request->title_en,
+        ]);
+
+
+        $old_adresses = $contact->addresses ;
+
+        foreach ($old_adresses as $adress){
+            $adress->delete();
+        }
+
+        $inputs = $request->all();
+
+
+        $address_uz = $inputs['address_uz'];
+        $address_ru = $inputs['address_ru'];
+        $address_en = $inputs['address_en'];
+
+        foreach($address_uz as $key => $item){
+            Address::create([
+                'address_uz' => $item,
+                'address_ru' => $address_ru[$key],
+                'address_en' => $address_en[$key],
+                'contact_id' => $contact->id,
+            ]);
+        }
+        return  redirect()->route('contacts.index');
     }
 
     /**
