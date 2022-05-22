@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Contacts\StoreContactRequest;
+use App\Models\Address;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -38,8 +40,46 @@ class ContactController extends Controller
     public function store(Request $request)
     {
 
+        $image = '';
+        if(isset($request->image)){
+            $image = $this->uploadImage($request);
+        }
+        $contact = Contact::create([
+            'logo' => $image ,
+            'phone_1' => $request->phone_1,
+            'phone_2' => $request->phone_2 ,
+            'email' => $request->email ,
+            'timetable' => $request->timetable,
+            'telegram' => $request->telegram,
+            'youtube'  => $request->youtube,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'title_uz' => $request->title_uz,
+            'title_ru' => $request->title_ru,
+            'title_en' => $request->title_en,
+        ]);
+        $inputs = $request->all();
+        $address_uz = $inputs['address_uz'];
+        $address_ru = $inputs['address_ru'];
+        $address_en = $inputs['address_en'];
+
+        foreach($address_uz as $key => $item){
+            Address::create([
+                'address_uz' => $item,
+                'address_ru' => $address_ru[$key],
+                'address_en' => $address_en[$key],
+                'contact_id' => $contact->id,
+            ]);
+        }
+        dd($address_ru);
     }
 
+
+    public function uploadImage($request){
+        $name =  rand(1000,9999).time()."." . $request->file('image')->getClientOriginalExtension();
+        $request->image->move(public_path('uploads/'), $name);
+        return $name;
+    }
     /**
      * Display the specified resource.
      *
