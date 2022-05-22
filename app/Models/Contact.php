@@ -17,7 +17,12 @@ class Contact extends Model
         'title_uz' , 'title_ru' , 'title_en'
     ];
 
-    public function address(){
-        return $this->hasOne(Address::class);
+    public function addresses(){
+        return $this->hasMany(Address::class);
+    }
+
+    public function first(){
+        $address = $this->addresses()->first();
+        return $address;
     }
 }

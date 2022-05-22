@@ -39,7 +39,8 @@
                                 <th>@lang('admin.crud.title')</th>
                                 <th>@lang('admin.crud.phone')</th>
                                     <th>@lang('admin.crud.email')</th>
-                                    <th>@lang('admin.crud.address')</th>
+                                    <th>@lang('admin.crud.address')(1)</th>
+                                    <th>@lang('admin.crud.address')(2)</th>
                                 <th>@lang('admin.crud.logo')</th>
                                 <th></th>
                             </tr>
@@ -48,9 +49,10 @@
                                     <td>{{ $contact->title_uz }}</td>
                                     <td>{{ $contact->phone_1 }}</td>
                                     <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->address }}</td>
+                                         <td>{{ $contact->first()->address_uz }}</td>
+
                                     <td>
-                                        <img src="{{ asset('uploads')}}/{{ $contact->image  }}" class="img_admin">
+                                        <img src="{{ asset('uploads')}}/{{ $contact->logo  }}" class="img_admin">
                                     </td>
                                     <td>
                                         <form action="{{ route('contacts.destroy',$contact->id) }}" method="POST">
