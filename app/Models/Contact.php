@@ -18,4 +18,8 @@ class Contact extends Model
         'address_1_ru' , 'address_1_en' , 'address_2_uz' , 'address_2_ru' ,
         'address_2_en' , 'address_3_uz' , 'address_3_ru' , 'address_3_en' ,
     ];
+
+    public function address(){
+        return $this->hasOne(Address::class);
+    }
 }

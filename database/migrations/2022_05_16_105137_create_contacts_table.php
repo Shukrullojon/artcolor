@@ -27,15 +27,6 @@ return new class extends Migration
             $table->string('title_uz');
             $table->string('title_ru');
             $table->string('title_en');
-            $table->string('address_1_uz');
-            $table->string('address_1_ru');
-            $table->string('address_1_en');
-            $table->string('address_2_uz');
-            $table->string('address_2_ru');
-            $table->string('address_2_en');
-            $table->string('address_3_uz');
-            $table->string('address_3_ru');
-            $table->string('address_3_en');
             $table->timestamps();
         });
     }
