@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('logo');
             $table->string('phone_1',20);
             $table->string('phone_2',20);
-            $table->string('email',20);
+            $table->string('email',50);
             $table->string('timetable');
             $table->string('telegram');
             $table->string('youtube');

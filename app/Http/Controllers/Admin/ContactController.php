@@ -39,7 +39,6 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
@@ -59,7 +58,7 @@ class ContactController extends Controller
             'title_en' => $request->title_en,
         ]);
 
-       $inputs = $request->all();
+        $inputs = $request->all();
         $address_uz[] = $inputs['address_uz'];
         $address_ru[] = $inputs['address_ru'];
         $address_en[] = $inputs['address_en'];
