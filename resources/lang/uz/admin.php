@@ -29,6 +29,7 @@ return [
         'category' => "Category news" ,
         "product_type" => "Mahsulot turlari",
         "product_type_item"=>"Mahsulot turi elementi",
+        'contact' => "Kontakt"
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -63,6 +64,16 @@ return [
         'category' => "Category news" ,
         'category_name' => "Kategoriya nomi" ,
         'news' => 'Yangiliklar' ,
-        'slug' => "Slug"
+        'slug' => "Slug" ,
+        'contact' => "Kontakt" ,
+        'phone' => "Telefon" ,
+        'email' => "Email" ,
+        'address' => "Manzil" ,
+        'logo' => "Logotip" ,
+        'telegram' => "Telegram" ,
+        'instagram' => "Instagram" ,
+        'youtube' => "YouTube" ,
+        'facebook' => "Facebook" ,
+        'timetable' => "Ish vaqti"
     ],
 ];

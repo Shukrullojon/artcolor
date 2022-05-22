@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Category\StoreCategoryRequest;
-use App\Http\Requests\Admin\Category\UpdateCategoryRequest;
-use App\Models\Category;
-use App\Models\CategoryNew;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = CategoryNew::latest()->paginate(20);
-        return view('admin.categories.index' , compact('categories'));
+        $contacts = Contact::latest()->paginate(10);
+        return view('admin.contacts.index' , compact('contacts'));
     }
 
     /**
@@ -29,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.contacts.create');
     }
 
     /**
@@ -38,10 +35,9 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(Request $request)
     {
-        CategoryNew::create($request->all());
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -50,9 +46,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryNew $category)
+    public function show($id)
     {
-        return  view('admin.categories.show' , compact('category'));
+        //
     }
 
     /**
@@ -61,9 +57,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoryNew $category)
+    public function edit($id)
     {
-        return  view('admin.categories.edit' , compact('category'));
+        //
     }
 
     /**
@@ -73,10 +69,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, CategoryNew $category)
+    public function update(Request $request, $id)
     {
-        $category->update($request->all());
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -85,9 +80,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryNew $category)
+    public function destroy($id)
     {
-        $category->delete();
-        return redirect()->route('categories.index');
+        //
     }
 }
