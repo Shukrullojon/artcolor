@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
-
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{ asset("adminstyle.css") }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -122,7 +123,23 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.js')}}"></script>
 
 <script src="{{ asset('adminlte/dist/js/pages/dashboard.js')}}"></script>
+<!-- Summernote -->
+<script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
+<script>
+    $(function () {
+        // Summernote
+        $('#summernote').summernote()
+        $('#summernote1').summernote()
+        $('#summernote2').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
+</script>
 @yield('scripts')
 </body>
 </html>

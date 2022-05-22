@@ -31,6 +31,8 @@ return [
         "category_new" => "Category news",
         "product_type" => "Product type",
         "product_type_item" => "Product type item",
+        "category_text" => "Category text",
+        "sub_category_header"=> "Sub category header",
     ],
     'crud' => [
         "add" => "Add",

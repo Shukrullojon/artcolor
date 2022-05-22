@@ -38,9 +38,23 @@
                     </li>
 
                     <li class="nav-item">
+                        <a href="{{ route("categorytext.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.category_text')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a href="{{ route("subcategory.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.sub_category')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("subcategoryheader.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.sub_category_header')</p>
                         </a>
                     </li>
 

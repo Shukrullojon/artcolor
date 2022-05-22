@@ -31,7 +31,8 @@ return [
         "category_new" => "Новости категории",
         "product_type" => "Тип продукта",
         "product_type_item"=>"Элемент типа продукта",
-        'contact' => "Контакт"
+        "category_text" => "Текст категории",
+        "sub_category_header"=> "Заголовок подкатегории",
     ],
     'crud' => [
         "add" => "Добавлять",

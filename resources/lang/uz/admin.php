@@ -31,7 +31,8 @@ return [
         "category_new" => "Kategoriya yangiliklari",
         "product_type" => "Mahsulot turlari",
         "product_type_item"=>"Mahsulot turi elementi",
-        'contact' => "Kontakt",
+        "category_text" => "Kategoriya matni",
+        "sub_category_header"=> "Sub kategoriya matni",
     ],
     'crud' => [
         "add" => "Qo'shish",

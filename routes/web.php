@@ -27,6 +27,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('subcategory', \App\Http\Controllers\Admin\SubCategoryController::class);
+    Route::resource('categorytext', \App\Http\Controllers\Admin\CategoryTextController::class);
+    Route::resource('subcategoryheader', \App\Http\Controllers\Admin\SubCategoryHeaderController::class);
 
 });
 
