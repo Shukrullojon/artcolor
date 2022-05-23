@@ -29,7 +29,9 @@ return [
         'category' => "Category news" ,
         "product_type" => "Mahsulot turlari",
         "product_type_item"=>"Mahsulot turi elementi",
-        'contact' => "Kontakt"
+        'contact' => "Kontakt" ,
+        "contact_header" => "Kontakt sarlavhasi" ,
+        "contact_footer" => "Pastki Sarlavha" ,
     ],
     'crud' => [
         "add" => "Qo'shish",
@@ -58,7 +60,7 @@ return [
         "image_right" => "Rasmi o'ng",
         "image_back" => "Rasm orqa",
         "button" => "Kinopka",
-        "button_url" => "Kimopka URL",
+        "button_url" => "Kinopka URL",
         "button_target" => "Kinopka Target",
         'video' => "Video" ,
         'category' => "Category news" ,
@@ -74,6 +76,10 @@ return [
         'instagram' => "Instagram" ,
         'youtube' => "YouTube" ,
         'facebook' => "Facebook" ,
-        'timetable' => "Ish vaqti"
+        'timetable' => "Ish vaqti" ,
+        "contact_header" => "Kontakt sarlavhasi" ,
+        "contact_footer" => "Pastki Sarlavha" ,
+        "contact_type" => "Aloqa turi",
+        "country" => "Mamlakat",
     ],
 ];

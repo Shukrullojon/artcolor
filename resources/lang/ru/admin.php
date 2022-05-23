@@ -29,7 +29,9 @@ return [
         'category' => "Category news" ,
         "product_type" => "Тип продукта",
         "product_type_item"=>"Элемент типа продукта",
-        'contact' => "Контакт"
+        'contact' => "Контакт" ,
+        "contact_header" => "Заголовок контакта" ,
+        "contact_footer" => "Нижний колонтитул контакта" ,
     ],
     'crud' => [
         "add" => "Добавлять",
@@ -74,6 +76,10 @@ return [
         'instagram' => "Инстаграм" ,
         'youtube' => "YouTube" ,
         'facebook' => "Фейсбук" ,
-        'timetable' => "Рабочее время"
+        'timetable' => "Рабочее время" ,
+        "contact_header" => "Заголовок контакта" ,
+        "contact_footer" => "Нижний колонтитул контакта" ,
+        "contact_type" => "Тип Контакта",
+        "country" => "Страна",
     ],
 ];

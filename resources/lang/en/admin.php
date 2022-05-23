@@ -29,6 +29,8 @@ return [
         'category' => "Category news",
         "product_type" => "Product type",
         "product_type_item" => "Product type item",
+        "contact_header" => "Contact Header" ,
+        "contact_footer" => "Contact Footer" ,
     ],
     'crud' => [
         "add" => "Add",
@@ -73,6 +75,10 @@ return [
         'instagram' => "Instagram" ,
         'youtube' => "YouTube" ,
         'facebook' => "Facebook" ,
-        'timetable' => "Time Table"
+        'timetable' => "Time Table" ,
+        "contact_header" => "Contact Header" ,
+        "contact_footer" => "Contact Footer" ,
+        "contact_type" => "Contact type",
+        "country" => "Country",
     ],
 ];
