@@ -36,6 +36,37 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
+                                        <label>@lang('admin.crud.category')</label><label style="color: red">*</label>
+                                        <select name="sub_category_id" class="form-control">
+                                            @foreach($subs as $sub)
+                                                <option value="{{ $sub->id }}">{{ $sub->title_uz }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('sub_category_id'))
+                                            <span class="error invalid-feedback">{{ $errors->first('sub_category_id') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.sidebar.product_filter')</label><label style="color: red">*</label>
+                                        <select name="filter_id" class="form-control">
+                                            @foreach($filters as $filter)
+                                                <option value="{{ $filter->id }}">{{ $filter->title_uz }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('filter_id'))
+                                            <span class="error invalid-feedback">{{ $errors->first('filter_id') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
                                         <label>@lang('admin.crud.title')(uz)</label><label style="color: red">*</label>
                                         <input type="text" name="title_uz" class="form-control {{ $errors->has('title_uz') ? "is-invalid":"" }}" value="{{ old('title_uz') }}" required>
                                         @if($errors->has('title_uz'))
@@ -295,6 +326,74 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.image')</label>
+                                        <input type="file" name="image[]" multiple class="form-control">
+                                        </textarea>
+                                        @if($errors->has('accordion_info_uz'))
+                                            <span class="error invalid-feedback">{{ $errors->first('accordion_info_uz') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.gallery_image')</label>
+                                        <input type="file" name="gallery_image[]" multiple class="form-control">
+                                        </textarea>
+                                        @if($errors->has('gallery_image'))
+                                            <span class="error invalid-feedback">{{ $errors->first('gallery_image') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{--character start--}}
+                            <div id="character">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.character')(uz)</label>
+                                            <input type="text" name="character_uz[]" class="form-control {{ $errors->has('character_uz') ? "is-invalid":"" }}" value="{{ old('character_uz') }}">
+                                            @if($errors->has('character_uz'))
+                                                <span class="error invalid-feedback">{{ $errors->first('character_uz') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.character')(ru)</label>
+                                            <input type="text" name="character_ru[]" class="form-control {{ $errors->has('character_ru') ? "is-invalid":"" }}" value="{{ old('character_ru') }}">
+                                            @if($errors->has('character_ru'))
+                                                <span class="error invalid-feedback">{{ $errors->first('character_ru') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.character')(en)</label>
+                                            <input type="text" name="character_en[]" class="form-control {{ $errors->has('character_en') ? "is-invalid":"" }}" value="{{ old('character_en') }}">
+                                            @if($errors->has('character_en'))
+                                                <span class="error invalid-feedback">{{ $errors->first('character_en') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="addCharacter"></div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="form-group">
+                                        <a class="btn btn-primary form-control" id="add_character">@lang('admin.crud.character') @lang('admin.crud.add')</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--character end--}}
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
                                 <a href="{{ route('team.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
@@ -306,4 +405,13 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).on("click","#add_character",function() {
+            var inputs = $("#character").html();
+            $("#addCharacter").append(inputs);
+        });
+    </script>
 @endsection

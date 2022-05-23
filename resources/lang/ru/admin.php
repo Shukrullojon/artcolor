@@ -97,5 +97,7 @@ return [
         "peculiarit" => "Особенности",
         "accordion_title" => "Название аккордеона",
         "accordion_info" => "Информация об аккордеоне",
+        "gallery_image" => "Галерея",
+        "character" => "Характер",
     ],
 ];

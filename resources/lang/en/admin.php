@@ -96,5 +96,7 @@ return [
         "peculiarit" => "Peculiarit",
         "accordion_title" => "Accordion title",
         "accordion_info" => "Accordion info",
+        "gallery_image" => "Galery",
+        "character" => "Character",
     ],
 ];

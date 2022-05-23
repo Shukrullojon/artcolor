@@ -13,4 +13,11 @@ class Product extends Model
 
     protected $guarded = [];
 
+    public function filter(){
+        return $this->belongsTo(ProductFilter::class,'filter_id','id');
+    }
+
+    public function category(){
+        return $this->belongsTo(SubCategory::class,'sub_category_id','id');
+    }
 }

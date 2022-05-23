@@ -97,5 +97,7 @@ return [
         "peculiarit" => "O'ziga xoslik",
         "accordion_title" => "Akkordeon sarlavhasi",
         "accordion_info" => "Akkordeon ma'lumoti",
+        "gallery_image" => "Galereya",
+        "character" => "Xarakteristika",
     ],
 ];
