@@ -101,5 +101,7 @@ return [
         "accordion_info" => "Akkordeon ma'lumoti",
         'card_header' => "Karta sarlavhasi" ,
         'card_about' => "Karta haqida" ,
+        "gallery_image" => "Galereya",
+        "character" => "Xarakteristika",
     ],
 ];

@@ -100,5 +100,7 @@ return [
         "accordion_info" => "Accordion info",
         'card_header'  => "Card Header" ,
         'card_about' => "Card About" ,
+        "gallery_image" => "Galery",
+        "character" => "Character",
     ],
 ];

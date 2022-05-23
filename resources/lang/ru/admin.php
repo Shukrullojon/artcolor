@@ -101,5 +101,7 @@ return [
         "accordion_info" => "Информация об аккордеоне",
         'card_header'  => "Заголовок карты" ,
         'card_about' => "Карточка О" ,
+        "gallery_image" => "Галерея",
+        "character" => "Характер",
     ],
 ];

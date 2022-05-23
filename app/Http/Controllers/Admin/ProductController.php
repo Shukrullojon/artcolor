@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductCharacter;
 use App\Models\ProductFilter;
+use App\Models\ProductImage;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
@@ -46,7 +48,88 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $product = Product::create([
+            'sub_category_id'=>$request->sub_category_id,
+            'filter_id'=>$request->filter_id,
+            'title_uz'=>$request->title_uz,
+            'title_ru'=>$request->title_ru,
+            'title_en'=>$request->title_en,
+            'info_uz'=>$request->info_uz,
+            'info_ru'=>$request->info_ru,
+            'info_en'=>$request->info_en,
+            'application_uz'=>$request->application_uz,
+            'application_ru'=>$request->application_ru,
+            'application_en'=>$request->application_en,
+            'compound_uz'=>$request->compound_uz,
+            'compound_ru'=>$request->compound_ru,
+            'compound_en'=>$request->compound_en,
+            'consumption_uz'=>$request->consumption_uz,
+            'consumption_ru'=>$request->consumption_ru,
+            'consumption_en'=>$request->consumption_en,
+            'peculiarit_uz'=>$request->peculiarit_uz,
+            'peculiarit_ru'=>$request->peculiarit_ru,
+            'peculiarit_en'=>$request->peculiarit_en,
+            'accordion_title_uz'=>$request->accordion_title_uz,
+            'accordion_title_ru'=>$request->accordion_title_ru,
+            'accordion_title_en'=>$request->accordion_title_en,
+            'accordion_info_uz'=>$request->accordion_info_uz,
+            'accordion_info_ru'=>$request->accordion_info_ru,
+            'accordion_info_en'=>$request->accordion_info_en,
+        ]);
+
+        if(isset($request->image)){
+            foreach($request->image as $image){
+                $name=rand(1000,9999).time().".".$image->getClientOriginalExtension();
+                $image->move(public_path().'/uploads/', $name);
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image' => $name,
+                    'type' => 1
+                ]);
+            }
+        }
+
+        if(isset($request->gallery_image)){
+            foreach($request->gallery_image as $image){
+                $name=rand(1000,9999).time().".".$image->getClientOriginalExtension();
+                $image->move(public_path().'/uploads/', $name);
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image' => $name,
+                    'type' => 2
+                ]);
+            }
+        }
+
+        $inputs = $request->all();
+        $character_uz = $inputs['character_uz'];
+        $character_ru = $inputs['character_ru'];
+        $character_en = $inputs['character_en'];
+        foreach($character_uz as $key => $item){
+            ProductCharacter::create([
+                'product_id'=>$product->id,
+                'title_uz' => $character_uz[$key] ?? "",
+                'title_ru' => $character_ru[$key] ?? "",
+                'title_en' => $character_en[$key] ?? "",
+            ]);
+        }
+
+
+        return redirect()->route('product.index')->with("success","Saved successful!");
+    }
+
+    public function uploadImage($request){
+        dd($request);
+        $name =  rand(1000,9999).time()."." . $request->file('image')->getClientOriginalExtension();
+        $request->image->move(public_path('uploads/'), $name);
+        return $name;
+    }
+
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
     }
 
     /**
@@ -55,9 +138,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('admin.product.show',[
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -66,9 +151,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-
+        $filters = ProductFilter::where('parent_id','!=',0)->latest()->get();
+        $subs = SubCategory::latest()->get();
+        return view('admin.product.edit',[
+            'product' => $product,
+            'subs' => $subs,
+            'filters'=>$filters,
+        ]);
     }
 
     /**
@@ -78,9 +169,38 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        dd($request->image);
+        $product->update([
+            'sub_category_id'=>$request->sub_category_id,
+            'filter_id'=>$request->filter_id,
+            'title_uz'=>$request->title_uz,
+            'title_ru'=>$request->title_ru,
+            'title_en'=>$request->title_en,
+            'info_uz'=>$request->info_uz,
+            'info_ru'=>$request->info_ru,
+            'info_en'=>$request->info_en,
+            'application_uz'=>$request->application_uz,
+            'application_ru'=>$request->application_ru,
+            'application_en'=>$request->application_en,
+            'compound_uz'=>$request->compound_uz,
+            'compound_ru'=>$request->compound_ru,
+            'compound_en'=>$request->compound_en,
+            'consumption_uz'=>$request->consumption_uz,
+            'consumption_ru'=>$request->consumption_ru,
+            'consumption_en'=>$request->consumption_en,
+            'peculiarit_uz'=>$request->peculiarit_uz,
+            'peculiarit_ru'=>$request->peculiarit_ru,
+            'peculiarit_en'=>$request->peculiarit_en,
+            'accordion_title_uz'=>$request->accordion_title_uz,
+            'accordion_title_ru'=>$request->accordion_title_ru,
+            'accordion_title_en'=>$request->accordion_title_en,
+            'accordion_info_uz'=>$request->accordion_info_uz,
+            'accordion_info_ru'=>$request->accordion_info_ru,
+            'accordion_info_en'=>$request->accordion_info_en,
+        ]);
+        return redirect()->route('product.index')->with("success","Update successful!");
     }
 
     /**
@@ -89,8 +209,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.index')->with('success',"Delete successful!");
     }
 }

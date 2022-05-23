@@ -57,13 +57,6 @@
                             <p>@lang('admin.sidebar.sub_category_header')</p>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>@lang('admin.sidebar.product')</p>
-                        </a>
-                    </li>
                 </ul>
             </li>
 

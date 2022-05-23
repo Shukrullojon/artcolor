@@ -44,8 +44,8 @@
                             @foreach($products as $product)
                                 <tr>
                                     <td>{{ $product->title_uz }}</td>
-                                    <td>{{ $product->sub_category_id }}</td>
-                                    <td>{{ $product->info }}</td>
+                                    <td>@if(!empty($product->category)) {{ $product->category->title_uz }} @endif</td>
+                                    <td>{{ $product->info_uz }}</td>
                                     <td>
                                         <form action="{{ route('product.destroy',$product->id) }}" method="POST">
                                             <a class="btn btn-info" href="{{ route('product.show',$product->id) }}"><i class="fa fa-eye"></i></a>
