@@ -31,6 +31,52 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="{{ route("category.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.category')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("categorytext.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.category_text')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("subcategory.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.sub_category')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("subcategoryheader.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.sub_category_header')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.product')</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-chart-bar"></i>
+                    <p>
+                        @lang('admin.sidebar.product_type')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
                         <a href="{{ route("producttype.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.product_type')</p>
@@ -41,13 +87,6 @@
                         <a href="{{ route("producttypeitem.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.product_type_item')</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>@lang('admin.sidebar.product')</p>
                         </a>
                     </li>
                 </ul>
@@ -111,7 +150,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('categories.index')}}" class="nav-link">
+                        <a href="{{route('categorynew.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Category new </p>
                         </a>

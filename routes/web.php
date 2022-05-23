@@ -26,9 +26,14 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('contact_types' , \App\Http\Controllers\Admin\ContactTypeController::class);
     Route::resource('countries' , \App\Http\Controllers\Admin\CountryController::class);
     Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('categorynew' , \App\Http\Controllers\Admin\CategoryNewController::class);
     Route::resource('producttype', \App\Http\Controllers\Admin\ProductTypeController::class);
     Route::resource('producttypeitem', \App\Http\Controllers\Admin\ProductTypeItemController::class);
     Route::resource('download-header', \App\Http\Controllers\Admin\DownloadHeaderController::class);
+    Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('subcategory', \App\Http\Controllers\Admin\SubCategoryController::class);
+    Route::resource('categorytext', \App\Http\Controllers\Admin\CategoryTextController::class);
+    Route::resource('subcategoryheader', \App\Http\Controllers\Admin\SubCategoryHeaderController::class);
 
 });
 

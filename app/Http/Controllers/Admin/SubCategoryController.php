@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\CategoryItem;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->paginate(20);
-        return view('admin.category.index',[
-            'categories' => $categories,
+        $subs = SubCategory::latest()->paginate(20);
+        return view('admin.sub-category.index',[
+            'subs' => $subs,
         ]);
     }
 
@@ -29,7 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $categoris = Category::get();
+        return view('admin.sub-category.create',compact('categoris'));
     }
 
     /**
@@ -44,30 +45,17 @@ class CategoryController extends Controller
         if(isset($request->image)){
             $image = $this->uploadImage($request);
         }
-        $category = Category::create([
+        SubCategory::create([
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
             'info_uz' => $request->info_uz,
             'info_ru' => $request->info_ru,
             'info_en' => $request->info_en,
-            'colls' => $request->colls,
+            'category_id' => $request->category_id,
             'image' => $image,
         ]);
-
-        $inputs = $request->all();
-        $item_uz = $inputs['item_uz'];
-        $item_ru = $inputs['item_ru'];
-        $item_en = $inputs['item_en'];
-        foreach($item_uz as $key => $item){
-            CategoryItem::create([
-                'category_id' => $category->id,
-                'title_uz' => $item_uz[$key] ?? "",
-                'title_ru' => $item_ru[$key] ?? "",
-                'title_en' => $item_en[$key] ?? "",
-            ]);
-        }
-        return redirect()->route('category.index')->with("success","Saved successful!");
+        return redirect()->route('subcategory.index')->with("success","Saved successful!");
     }
 
     public function uploadImage($request){
@@ -81,15 +69,17 @@ class CategoryController extends Controller
             unlink(public_path('uploads/'.$data));
         }
     }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        return view('admin.category.show',compact('category'));
+        $subCategory = SubCategory::where('id',$id)->first();
+        return view('admin.sub-category.show', compact('subCategory'));
     }
 
     /**
@@ -98,9 +88,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        return view('admin.category.edit',compact('category'));
+        $subCategory = SubCategory::where('id',$id)->first();
+        $categories = Category::all();
+        return view('admin.sub-category.edit',[
+            'subCategory' => $subCategory,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -110,41 +105,25 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        $id = $category->id;
-        $image = $category->image;
+        $subCategory = SubCategory::where('id',$id)->first();
+        $image = $subCategory->image;
         if(isset($request->image)){
-            $this->deleteImage($category->image);
+            $this->deleteImage($subCategory->image);
             $image = $this->uploadImage($request);
         }
-        $category = $category->update([
+        $subCategory->update([
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
             'info_uz' => $request->info_uz,
             'info_ru' => $request->info_ru,
             'info_en' => $request->info_en,
-            'colls' => $request->colls,
+            'category_id' => $request->category_id,
             'image' => $image,
         ]);
-
-        CategoryItem::where('category_id',$id)->delete();
-        $inputs = $request->all();
-        $item_uz = $inputs['item_uz'];
-        $item_ru = $inputs['item_ru'];
-        $item_en = $inputs['item_en'];
-        foreach($item_uz as $key => $item){
-            if(!empty($item_uz[$key])){
-                CategoryItem::create([
-                    'category_id' => $id,
-                    'title_uz' => $item_uz[$key] ?? "",
-                    'title_ru' => $item_ru[$key] ?? "",
-                    'title_en' => $item_en[$key] ?? "",
-                ]);
-            }
-        }
-        return redirect()->route('category.index')->with("success","Update successful!");
+        return redirect()->route('subcategory.index')->with("success","Update successful!");
     }
 
     /**
@@ -153,11 +132,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $this->deleteImage($category->image);
-        CategoryItem::where('category_id',$category->id)->delete();
-        $category->delete();
-        return redirect()->route('category.index')->with('success',"Delete successful!");
+        $sub = SubCategory::where('id',$id)->first();
+        $this->deleteImage($sub->image);
+        $sub->delete();
+        return redirect()->route('subcategory.index')->with('success',"Delete successful!");
     }
 }
