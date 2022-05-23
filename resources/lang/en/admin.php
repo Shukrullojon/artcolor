@@ -37,6 +37,8 @@ return [
         "sub_category_header"=> "Sub category header",
         "product_main" => "Product main",
         "product_filter" => "Product filter",
+        'card_header'  => "Card Header" ,
+        'card_about' => "Card About" ,
     ],
     'crud' => [
         "parent" => "Main",
@@ -96,5 +98,7 @@ return [
         "peculiarit" => "Peculiarit",
         "accordion_title" => "Accordion title",
         "accordion_info" => "Accordion info",
+        'card_header'  => "Card Header" ,
+        'card_about' => "Card About" ,
     ],
 ];

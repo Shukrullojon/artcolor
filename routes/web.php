@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('contact_footers' , \App\Http\Controllers\Admin\ContactFooterController::class);
     Route::resource('contact_types' , \App\Http\Controllers\Admin\ContactTypeController::class);
     Route::resource('countries' , \App\Http\Controllers\Admin\CountryController::class);
+    Route::resource('card_headers' , \App\Http\Controllers\Admin\CardHeaderController::class);
+    Route::resource('card_abouts' , \App\Http\Controllers\Admin\CardAboutController::class);
     Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('categorynew' , \App\Http\Controllers\Admin\CategoryNewController::class);
     Route::resource('producttype', \App\Http\Controllers\Admin\ProductTypeController::class);

@@ -38,6 +38,8 @@ return [
         "sub_category_header"=> "Sub kategoriya matni",
         "product_main" => "Asosiy mahsulotlar",
         "product_filter" => "Mahsulot filtri",
+        'card_header' => "Karta sarlavhasi" ,
+        'card_about' => "Karta haqida" ,
     ],
     'crud' => [
         "parent" => "Asosiy",
@@ -97,5 +99,7 @@ return [
         "peculiarit" => "O'ziga xoslik",
         "accordion_title" => "Akkordeon sarlavhasi",
         "accordion_info" => "Akkordeon ma'lumoti",
+        'card_header' => "Karta sarlavhasi" ,
+        'card_about' => "Karta haqida" ,
     ],
 ];

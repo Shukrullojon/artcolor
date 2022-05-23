@@ -116,19 +116,18 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('card_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Card header Johon</p>
+                            <p>Card header</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('card_abouts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Card about johon</p>
+                            <p>Card about</p>
                         </a>
                     </li>
-
 
                 </ul>
             </li>
