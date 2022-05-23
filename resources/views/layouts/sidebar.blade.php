@@ -244,28 +244,28 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('contact_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.header_text')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('contact_types.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.contact_type')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('countries.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.country')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('contact_footers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.footer_text')</p>
                         </a>
