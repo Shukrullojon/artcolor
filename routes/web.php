@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('subcategory', \App\Http\Controllers\Admin\SubCategoryController::class);
     Route::resource('categorytext', \App\Http\Controllers\Admin\CategoryTextController::class);
     Route::resource('subcategoryheader', \App\Http\Controllers\Admin\SubCategoryHeaderController::class);
+    Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('productfilter', \App\Http\Controllers\Admin\ProductFilterController::class);
 
 });
 

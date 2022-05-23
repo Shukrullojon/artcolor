@@ -94,6 +94,47 @@
 
             <li class="nav-item">
                 <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-chart-bar"></i>
+                    <p>
+                        @lang('admin.sidebar.product_main')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route("product.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.product')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("productfilter.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.product_filter')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Card header Johon</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Card about johon</p>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-info"></i>
                     <p>
                         @lang('admin.sidebar.about_company')
