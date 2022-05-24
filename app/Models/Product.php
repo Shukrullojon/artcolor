@@ -20,4 +20,8 @@ class Product extends Model
     public function category(){
         return $this->belongsTo(SubCategory::class,'sub_category_id','id');
     }
+
+    public function image(){
+        return $this->hasOne(ProductImage::class)->where('type',1);
+    }
 }

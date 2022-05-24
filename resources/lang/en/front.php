@@ -16,5 +16,8 @@ return [
         "News_events" => "News & Events",
         "subscribe_to_news" => "Subscribe to news",
         "more" => "More",
+        "product" => "Product",
+        "FILTERS"=>"FILTERS",
+        "CHOOSE"=>"CHOOSE",
     ],
 ];
