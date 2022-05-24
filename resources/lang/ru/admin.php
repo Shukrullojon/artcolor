@@ -38,6 +38,8 @@ return [
         "sub_category_header"=> "Заголовок подкатегории",
         "product_main" => "Основной продукт",
         "product_filter" => "Фильтр товаров",
+        'card_header'  => "Заголовок карты" ,
+        'card_about' => "Карточка О" ,
     ],
     'crud' => [
         "parent" => "Главный",
@@ -97,6 +99,8 @@ return [
         "peculiarit" => "Особенности",
         "accordion_title" => "Название аккордеона",
         "accordion_info" => "Информация об аккордеоне",
+        'card_header'  => "Заголовок карты" ,
+        'card_about' => "Карточка О" ,
         "gallery_image" => "Галерея",
         "character" => "Характер",
     ],

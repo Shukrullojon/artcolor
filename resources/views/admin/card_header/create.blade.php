@@ -7,13 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('admin.sidebar.country') @lang('admin.sidebar.add')</h1>
+                    <h1>@lang('admin.sidebar.card_header') @lang('admin.sidebar.add')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('countries.index') }}">@lang('admin.sidebar.country')</a></li>
-                        <li class="breadcrumb-item active">@lang('admin.crud.country')</li>
+                        <li class="breadcrumb-item"><a href="{{ route('about.index') }}">@lang('admin.sidebar.card_header')</a></li>
+                        <li class="breadcrumb-item active">@lang('admin.crud.add')</li>
                     </ol>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
 
-                        <form action="{{ route('countries.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('card_headers.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
@@ -65,10 +65,54 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.info')(uz)</label><label style="color: red">*</label>
+                                        <input type="text" name="info_uz" class="form-control {{ $errors->has('info_uz') ? "is-invalid":"" }}" value="{{ old('info_uz') }}" required>
+                                        @if($errors->has('info_uz'))
+                                            <span class="error invalid-feedback">{{ $errors->first('info_uz') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.info')(ru)</label><label style="color: red">*</label>
+                                        <input type="text" name="info_ru" class="form-control {{ $errors->has('info_ru') ? "is-invalid":"" }}" value="{{ old('info_ru') }}" required>
+                                        @if($errors->has('info_ru'))
+                                            <span class="error invalid-feedback">{{ $errors->first('info_ru') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.info')(en)</label><label style="color: red">*</label>
+                                        <input type="text" name="info_en" class="form-control {{ $errors->has('info_en') ? "is-invalid":"" }}" value="{{ old('info_en') }}" required>
+                                        @if($errors->has('info_en'))
+                                            <span class="error invalid-feedback">{{ $errors->first('info_en') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.image')</label><label style="color: red">*</label>
+                                        <input type="file" name="image" class="form-control {{ $errors->has('image') ? "is-invalid":"" }}" value="{{ old('image') }}" required>
+                                        @if($errors->has('image'))
+                                            <span class="error invalid-feedback">{{ $errors->first('image') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
-                                <a href="{{ route('countries.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                                <a href="{{ route('card_headers.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                             </div>
                         </form>
 
