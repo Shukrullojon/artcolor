@@ -9,6 +9,7 @@ return [
         "download" => "Скачать",
         "contact" => "Контакты",
         "product" => "Продукция",
+        "product_category" => "Категории продуктов",
     ],
     "text" => [
         "management" => "Руководство",

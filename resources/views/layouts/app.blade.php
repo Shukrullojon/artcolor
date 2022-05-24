@@ -61,7 +61,7 @@
                 <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
             </li>
             <li>
-                <a href="pages/product.html">@lang('front.sidebar.product')</a>
+                <a href="{{ route("product") }}">@lang('front.sidebar.product')</a>
             </li>
             <li>
                 <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
@@ -114,16 +114,16 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
+                        <a href="{{ url("/") }}" @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
                     </li>
                     <li>
-                        <a href="pages/product.html">@lang('front.sidebar.product')</a>
+                        <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
                     </li>
                     <li>
-                        <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
+                        <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
                     </li>
                     <li>
-                        <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
+                        <a href="pages/contact.html" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
                     </li>
                 </ul>
             </div>

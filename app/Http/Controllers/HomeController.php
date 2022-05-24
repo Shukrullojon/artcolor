@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\AboutAbout;
+use App\Models\Category;
 use App\Models\CategoryNew;
 use App\Models\Item;
 use App\Models\NewHeader;
@@ -81,5 +82,16 @@ class HomeController extends Controller
 
     public function contact(){
         return view('contact');
+    }
+
+    public function product(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $categories = Category::select('id',"title_$lang as title","info_$lang as info","image","slug","colls")->latest()->get();
+        return view('product',[
+            'categories' => $categories,
+        ]);
     }
 }

@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\App;
 
 Auth::routes();
 
-Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name("index");
 Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/product',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
+
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::get('/',[\App\Http\Controllers\Admin\MainController::class,'index'])->name('adminIndex');
 

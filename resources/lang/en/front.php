@@ -9,6 +9,7 @@ return [
         "download" => "Download",
         "contact" => "Contact",
         "product" => "Product",
+        "product_category" => "Product category",
     ],
     "text" => [
         "management" => "Management",

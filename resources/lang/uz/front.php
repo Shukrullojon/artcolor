@@ -9,6 +9,7 @@ return [
         "download" => "Yuklash",
         "contact" => "Aloqa",
         "product" => "Mahsulotlar",
+        "product_category" => "Mahsulot toifalari",
     ],
     "text" => [
         "management" => "Boshqaruv",
