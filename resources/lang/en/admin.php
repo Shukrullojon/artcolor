@@ -39,6 +39,9 @@ return [
         "product_filter" => "Product filter",
         'card_header'  => "Card Header" ,
         'card_about' => "Card About" ,
+        'work' => "Our Works" ,
+        'work_item' => "Work Item" ,
+
     ],
     'crud' => [
         "parent" => "Main",
@@ -102,5 +105,11 @@ return [
         'card_about' => "Card About" ,
         "gallery_image" => "Galery",
         "character" => "Character",
+        'work' => "Our Works" ,
+        'work_item' => "Work Item" ,
+        'name' => "Name" ,
+        'region' => "Region" ,
+        'product_image' => 'Product Image' ,
+        'image_small' => "Small Image"
     ],
 ];
