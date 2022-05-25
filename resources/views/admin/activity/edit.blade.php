@@ -145,7 +145,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
-                        <a href="{{ route('team.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                        <a href="{{ route('activities.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                     </div>
                     </form>
 

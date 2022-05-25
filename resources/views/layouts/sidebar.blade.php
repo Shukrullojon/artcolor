@@ -18,6 +18,18 @@
                             <p>@lang('admin.sidebar.slider')</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route("works.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.work')</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route("work_items.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.work_item')</p>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

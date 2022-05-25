@@ -40,6 +40,8 @@ return [
         "product_filter" => "Mahsulot filtri",
         'card_header' => "Karta sarlavhasi" ,
         'card_about' => "Karta haqida" ,
+        'work' => "Bizning ishlarimiz" ,
+        'work_item' => "Ish elementi"
     ],
     'crud' => [
         "parent" => "Asosiy",
@@ -103,5 +105,11 @@ return [
         'card_about' => "Karta haqida" ,
         "gallery_image" => "Galereya",
         "character" => "Xarakteristika",
+        'work' => "Bizning ishlarimiz" ,
+        'work_item' => "Ish elementi" ,
+        'name' => "Nomi" ,
+        'region' => "Viloyat" ,
+        'product_image' => 'Mahsulot Rasmi' ,
+        'image_small' => "Kichik Rasm"
     ],
 ];
