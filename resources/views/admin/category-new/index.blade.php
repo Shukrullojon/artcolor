@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">@lang('admin.crud.add')</h3>
-                        <a href="{{ route('category-new.create') }}" class="btn btn-success btn-sm float-right">
+                        <a href="{{ route('categorynew.create') }}" class="btn btn-success btn-sm float-right">
                             <span class="fas fa-plus-circle"></span>
                             @lang('admin.crud.add')
                         </a>
@@ -39,13 +39,13 @@
                                 <th>@lang('admin.crud.category_name')</th>
                                 <th></th>
                             </tr>
-                            @foreach($categories as $item)
+                            @foreach($categoryNews as $categoryNew)
                                 <tr>
-                                    <td>{{ $item->name_uz }}</td>
+                                    <td>{{ $categoryNew->name_uz }}</td>
                                     <td>
-                                        <form action="{{ route('category-new.destroy',$item->id) }}" method="POST">
-                                            <a class="btn btn-info" href="{{ route('category-new.show',$item->id) }}"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-primary" href="{{ route('category-new.edit',$item->id) }}"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('categorynew.destroy',$categoryNew->id) }}" method="POST">
+                                            <a class="btn btn-info" href="{{ route('categorynew.show',$categoryNew->id) }}"><i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-primary" href="{{ route('categorynew.edit',$categoryNew->id) }}"><i class="fa fa-edit"></i></a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -58,7 +58,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{ $categories->links() }}
+                {{ $categoryNews->links() }}
             </div>
             <!-- /.col -->
         </div>

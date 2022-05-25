@@ -31,7 +31,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
 
-                        <form action="{{ route('category-new.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('categorynew.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
@@ -67,7 +67,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
-                                <a href="{{ route('category-new.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                                <a href="{{ route('categorynew.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                             </div>
                         </form>
 

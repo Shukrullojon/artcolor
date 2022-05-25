@@ -18,9 +18,9 @@ class CategoryNewController extends Controller
      */
     public function index()
     {
-        dd("11");
-        $categories = CategoryNew::latest()->paginate(20);
-        return view('admin.category-new.index' , compact('categories'));
+
+        $categoryNews = CategoryNew::latest()->paginate(20);
+        return view('admin.category-new.index' , compact('categoryNews'));
     }
 
     /**
@@ -42,7 +42,7 @@ class CategoryNewController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         CategoryNew::create($request->all());
-        return redirect()->route('category-new.index');
+        return redirect()->route('categorynew.index');
     }
 
     /**
@@ -51,9 +51,10 @@ class CategoryNewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryNew $category)
+    public function show($id)
     {
-        return  view('admin.category-new.show' , compact('category'));
+        $categoryNew = CategoryNew::find($id);
+        return  view('admin.category-new.show' , compact('categoryNew'));
     }
 
     /**
@@ -62,9 +63,10 @@ class CategoryNewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoryNew $category)
+    public function edit($id)
     {
-        return  view('admin.category-new.edit' , compact('category'));
+        $categoryNew = CategoryNew::find($id);
+        return  view('admin.category-new.edit' , compact('categoryNew'));
     }
 
     /**
@@ -74,10 +76,11 @@ class CategoryNewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, CategoryNew $category)
+    public function update(UpdateCategoryRequest $request,$id)
     {
-        $category->update($request->all());
-        return redirect()->route('category-new.index');
+        $categoryNew = CategoryNew::find($id);
+        $categoryNew->update($request->all());
+        return redirect()->route('categorynew.index');
     }
 
     /**
@@ -86,9 +89,10 @@ class CategoryNewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryNew $category)
+    public function destroy($id)
     {
-        $category->delete();
-        return redirect()->route('category-new.index');
+        $categoryNew = CategoryNew::find($id);
+        $categoryNew->delete();
+        return redirect()->route('categorynew.index');
     }
 }
