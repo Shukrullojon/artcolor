@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\News\StoreNewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -50,7 +51,7 @@ class NewsController extends Controller
                 'text_uz' => $request->text_uz ,
                 'text_ru' => $request->text_ru ,
                 'text_en' => $request->text_en ,
-                'slug' => $request->slug ,
+                'slug' => Str::slug($request->title_en) ,
                 'status' => $request->status ,
                 'image' => $image ,
                 'category_new_id' => $request->category ,
@@ -110,7 +111,7 @@ class NewsController extends Controller
                 'text_uz' => $request->text_uz ,
                 'text_ru' => $request->text_ru ,
                 'text_en' => $request->text_en ,
-                'slug' => $request->slug ,
+                'slug' => Str::slug($request->title_en) ,
                 'status' => $request->status ,
                 'image' => $image ,
                 'category_new_id' => $request->category ,

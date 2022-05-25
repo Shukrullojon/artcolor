@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('category-new.index') }}">@lang('admin.sidebar.category')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('categorynew.index') }}">@lang('admin.sidebar.category')</a></li>
                         <li class="breadcrumb-item active"></li>
                     </ol>
                 </div>
@@ -29,17 +29,17 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th>@lang('admin.crud.category_name')(uz)</th>
-                                <td>{{ $category->name_uz }}</td>
+                                <td>{{ $categoryNew->name_uz }}</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.category_name')(ru)</th>
-                                <td>{{ $category->name_ru }}</td>
+                                <td>{{ $categoryNew->name_ru }}</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.category_name')(en)</th>
-                                <td>{{ $category->name_en }}</td>
+                                <td>{{ $categoryNew->name_en }}</td>
                             </tr>
 
 

@@ -31,14 +31,14 @@
                     <!-- /.card-header -->
                     <div class="card-body">
 
-                        <form action="{{ route('category-new.update' , $category->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('categorynew.update',$categoryNew->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.category_name')(uz)</label><label style="color: red">*</label>
-                                        <input type="text" name="name_uz" class="form-control {{ $errors->has('name_uz') ? "is-invalid":"" }}" value="{{ $category->name_uz }}" required>
+                                        <input type="text" name="name_uz" class="form-control {{ $errors->has('name_uz') ? "is-invalid":"" }}" value="{{ $categoryNew->name_uz }}" required>
                                         @if($errors->has('name_uz'))
                                             <span class="error invalid-feedback">{{ $errors->first('name_uz') }}</span>
                                         @endif
@@ -48,7 +48,7 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.category_name')(ru)</label><label style="color: red">*</label>
-                                        <input type="text" name="name_ru" class="form-control {{ $errors->has('name_ru') ? "is-invalid":"" }}" value="{{ $category->name_ru }}" required>
+                                        <input type="text" name="name_ru" class="form-control {{ $errors->has('name_ru') ? "is-invalid":"" }}" value="{{ $categoryNew->name_ru }}" required>
                                         @if($errors->has('name_ru'))
                                             <span class="error invalid-feedback">{{ $errors->first('name_ru') }}</span>
                                         @endif
@@ -58,7 +58,7 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.category_name')(en)</label><label style="color: red">*</label>
-                                        <input type="text" name="name_en" class="form-control {{ $errors->has('name_en') ? "is-invalid":"" }}" value="{{ $category->name_en }}" required>
+                                        <input type="text" name="name_en" class="form-control {{ $errors->has('name_en') ? "is-invalid":"" }}" value="{{ $categoryNew->name_en }}" required>
                                         @if($errors->has('name_en'))
                                             <span class="error invalid-feedback">{{ $errors->first('name_en') }}</span>
                                         @endif
@@ -68,7 +68,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
-                                <a href="{{ route('category-new.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                                <a href="{{ route('categorynew.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                             </div>
                         </form>
 
