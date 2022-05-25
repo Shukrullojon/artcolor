@@ -426,101 +426,45 @@
         <!-- our work -->
     @endif
 
-    <!-- blog -->
-    <div class="blog ">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 blog-texts">
-                    <h2 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">Новости и блог</h2>
-                </div>
-                <div class="col-sm-6 blog-btns">
-                    <div class="swiper-button-prev pulse"></div>
-                    <div class="swiper-button-next pulse"></div>
-                </div>
-            </div>
 
-            <section class="swiper">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/forProduct.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/about-right.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/our-item.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/about-right.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/forProduct.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="pages/blog.html">
-                                <div class="splide-card-item">
-                                    <img src="{{ asset('artColor/images/our-item.png')}}"  alt="">
-                                    <h5>С ЧЕГО НАЧАТЬ РЕМОНТ В НОВОСТРОЙКЕ?</h5>
-                                    <div class="date-content d-flex justify-content-between">
-                                        <div class="date">23 марта 2022 г.</div>
-                                        <div class="blog-text">блог</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+    @if(count($news))
+        <!-- blog -->
+        <div class="blog ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 blog-texts">
+                        <h2 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">Новости и блог</h2>
+                    </div>
+                    <div class="col-sm-6 blog-btns">
+                        <div class="swiper-button-prev pulse"></div>
+                        <div class="swiper-button-next pulse"></div>
                     </div>
                 </div>
-            </section>
+
+                <section class="swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            @foreach($news as $new)
+                                <div class="swiper-slide">
+                                    <a href="{{ route("blogitem",$new->id) }}">
+                                        <div class="splide-card-item">
+                                            <img src="{{ asset('artColor/images/forProduct.png')}}"  alt="">
+                                            <h5>{{ $new->title }}</h5>
+                                            <div class="date-content d-flex justify-content-between">
+                                                <div class="date">{{ date("Y-m-d",strtotime($new->updated_at)) }}</div>
+                                                <div class="blog-text">@if($new->type == 1) @lang('front.text.new') @else @lang('front.text.blog') @endif</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    <!-- blog -->
+        <!-- blog -->
+    @endif
 
     <!-- input form -->
     <div class="form-input">

@@ -21,5 +21,7 @@ return [
         "CHOOSE"=>"CHOOSE",
         "view_all" => "View all",
         "our_work" => "Our work",
+        "blog" => "blog",
+        "new" => "news",
     ],
 ];

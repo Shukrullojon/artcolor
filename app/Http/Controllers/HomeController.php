@@ -11,6 +11,7 @@ use App\Models\CategoryNew;
 use App\Models\CategoryText;
 use App\Models\Item;
 use App\Models\NewHeader;
+use App\Models\News;
 use App\Models\Product;
 use App\Models\ProductFilter;
 use App\Models\ProductType;
@@ -49,6 +50,8 @@ class HomeController extends Controller
         $products = Product::select("id","filter_id","title_$lang as title","application_$lang as application","compound_$lang as compound")->limit(8)->latest()->get();
         $work = Work::select("title_$lang as title")->latest()->first();
         $workitems = WorkItem::select("name_$lang as name","region_$lang as region","application_$lang as application","product_image","image","image_small")->latest()->get();
+        $news = News::select("id","title_$lang as title","type","updated_at")->where('status',1)->latest()->limit(10)->get();
+
         return view('index',[
             'sliders' => $sliders,
             'about' => $about,
@@ -59,6 +62,7 @@ class HomeController extends Controller
             'products' => $products,
             'work' => $work,
             'workitems' => $workitems,
+            'news' => $news,
         ]);
     }
 

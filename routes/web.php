@@ -9,6 +9,7 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name("ind
 
 Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
+Route::get('/blogitem/{id}',[\App\Http\Controllers\HomeController::class,'blogitem'])->name('blogitem');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/product',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
 Route::get('/subcategory/{id?}',[\App\Http\Controllers\HomeController::class,'subcategory'])->name('subcategory');

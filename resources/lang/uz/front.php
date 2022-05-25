@@ -21,5 +21,7 @@ return [
         "CHOOSE"=>"TANLANG",
         "view_all" => "Hammasini ko'rish",
         "our_work" => "Bizning ishlar",
+        "blog" => "blog",
+        "new" => "yangilik",
     ],
 ];
