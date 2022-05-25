@@ -20,6 +20,8 @@ use App\Models\SubCategoryHeader;
 use App\Models\Team;
 use App\Models\Text;
 use App\Models\Video;
+use App\Models\Work;
+use App\Models\WorkItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -43,12 +45,20 @@ class HomeController extends Controller
         $items = Item::select("title_$lang as title", "count")->latest()->get();
         $video = Video::latest()->first();
         $productTypes = ProductType::select("id","title_$lang as title","info_$lang as info","title_short_$lang as title_short","text_$lang as text","button_url")->where('status',1)->get();
+        $subs = SubCategory::select("id","title_$lang as title")->latest()->get();
+        $products = Product::select("id","filter_id","title_$lang as title","application_$lang as application","compound_$lang as compound")->limit(8)->latest()->get();
+        $work = Work::select("title_$lang as title")->latest()->first();
+        $workitems = WorkItem::select("name_$lang as name","region_$lang as region","application_$lang as application","product_image","image","image_small")->latest()->get();
         return view('index',[
             'sliders' => $sliders,
             'about' => $about,
             'items' => $items,
             'video' => $video,
             'productTypes' => $productTypes,
+            'subs' => $subs,
+            'products' => $products,
+            'work' => $work,
+            'workitems' => $workitems,
         ]);
     }
 
@@ -105,7 +115,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function subcategory($id){
+    public function subcategory($id = null){
         $lang = strtolower(App::getLocale('locale'));
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);

@@ -41,7 +41,7 @@ return [
         'card_about' => "Card About" ,
         'work' => "Our Works" ,
         'work_item' => "Work Item" ,
-
+        'service' => "Services",
     ],
     'crud' => [
         "parent" => "Main",

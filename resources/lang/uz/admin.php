@@ -41,7 +41,8 @@ return [
         'card_header' => "Karta sarlavhasi" ,
         'card_about' => "Karta haqida" ,
         'work' => "Bizning ishlarimiz" ,
-        'work_item' => "Ish elementi"
+        'work_item' => "Ish elementi",
+        'service' => "Xizmatlar",
     ],
     'crud' => [
         "parent" => "Asosiy",

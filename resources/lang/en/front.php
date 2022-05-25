@@ -19,5 +19,7 @@ return [
         "product" => "Product",
         "FILTERS"=>"FILTERS",
         "CHOOSE"=>"CHOOSE",
+        "view_all" => "View all",
+        "our_work" => "Our work",
     ],
 ];

@@ -325,270 +325,106 @@
     <!-- forProduct -->
     @endif
 
-    <!-- product card item -->
-    <div class="cards">
-        <div class="container">
-            <h2 class="text-capitalize" data-aos="fade-up"  data-aos-duration="1500">Продукция</h2>
-            <form onchange="filterCard()">
-                <div class="card-head d-flex justify-content-between justify-content-sm-center align-items-center">
-                    <div class="card-head-item" data-aos="fade-up" data-card="1"  data-aos-duration="500">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="1">
-                            <h6>Цветные краски</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="2"  data-aos-duration="1000">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="2">
-                            <h6>Масляная</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="3"  data-aos-duration="1500">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="3">
-                            <h6>Водоэмульсионная</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="4"  data-aos-duration="2000">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="4">
-                            <h6>Силикатная</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="5"  data-aos-duration="2500">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="5">
-                            <h6>Алкидные</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="6"  data-aos-duration="3000">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="6">
-                            <h6>Эмалевая</h6>
-                        </label>
-                    </div>
-                    <div class="card-head-item" data-aos="fade-up" data-card="7"  data-aos-duration="3000">
-                        <label for="">
-                            <input type="radio" name="card-filter" id="card-input" data-value="7">
-                            <h6>Силиконовые</h6>
-                        </label>
-                    </div>
-                </div>
-            </form>
-
-            <div class="card-foot d-flex  align-items-center flex-wrap gap-4">
-
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="1">
-                    <div class="card-foot-item">
-                        <div class="card-shape-hover"></div>
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-1.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>LAK</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                        <div class="card-shape-hover-1"></div>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="2">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-2.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>Encanto</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="3">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-3.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>JOKER</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="7">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>POWER 7</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="6">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-5.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>LAK</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="5">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-6.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>Encanto</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="4">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-7.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>JOKER</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-                <a href="pages/product-item.html" class="card-foot-item-a" data-card-id="1">
-                    <div class="card-foot-item">
-                        <div class="card-img text-center">
-                            <img src="{{ asset('artColor/images/card-item-8.png')}}" class="img-fluid" alt="">
-                        </div>
-                        <h5>POWER 7</h5>
-                        <p>
-                            <span>Область применения:</span>
-                            <span><b>Интерьер, широкий спектр</b></span>
-                        </p>
-                    </div>
-                </a>
-
-            </div>
-
-            <div class="about-us-btn text-center my-4" data-aos="fade-up"  data-aos-duration="1500">
-                <a href="pages/card-item.html">
-                    <button>Посмотреть все</button>
-                </a>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- product card item -->
-
-    <!-- our work -->
-    <div class="our-work">
-        <div class="container">
-            <div class="our-work-content d-flex justify-content-between text-white gap-3">
-                <div class="our-left">
-                    <h3 data-aos="fade-up" data-aos-duration="1500">Наши работы</h3>
-                    <p>Идеальным можно назвать интерьер, в котором гармонично сочетаются все, даже мельчайшие детали. Посмотрите реализованные нашими специалистами проекты.</p>
-
-                    <div class="our-product-content-item">
-                        <div class="our-product-item active">
-                            <h4>Encanto</h4>
-                            <p class="about-product">
-                                <span>Область применения:</span>
-                                <span>Интерьер, широкий спектр</span>
-                            </p>
-
-                            <div class="py-3">
-                                <img src="{{ asset('artColor/images/card-item-2.png')}}" class="img-fluid" alt="">
+    @if(count($subs))
+        <!-- product card item -->
+        <div class="cards">
+            <div class="container">
+                <h2 class="text-capitalize" data-aos="fade-up"  data-aos-duration="1500">@lang('front.sidebar.product')</h2>
+                <form onchange="filterCard()">
+                    <div class="card-head d-flex justify-content-between justify-content-sm-center align-items-center">
+                        @php $sum = 500 @endphp
+                        @foreach($subs as $sub)
+                            <div class="card-head-item sub_category" data-aos="fade-up" data-card="{{ $sub->id }}"  data-aos-duration="{{ $sum+500 }}">
+                                <label for="" class="sub_category" data-card="{{ $sub->id }}">
+                                    <input type="radio" name="card-filter" id="card-input" data-value="{{ $sub->id }}">
+                                    <h6>{{ $sub->title }}</h6>
+                                </label>
                             </div>
-                        </div>
-
-                        <div class="our-product-item">
-                            <h4>Lak</h4>
-                            <p class="about-product">
-                                <span>Область применения:</span>
-                                <span>Интерьер, широкий спектр</span>
-                            </p>
-
-                            <div class="py-3">
-                                <img src="{{ asset('artColor/images/card-item-3.png')}}" class="img-fluid" alt="">
-                            </div>
-                        </div>
-
-                        <div class="our-product-item">
-                            <h4>Encanto</h4>
-                            <p class="about-product">
-                                <span>Область применения:</span>
-                                <span>Интерьер, широкий спектр</span>
-                            </p>
-
-                            <div class="py-3">
-                                <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
-                            </div>
-                        </div>
-
-                        <div class="our-product-item">
-                            <h4>Encanto</h4>
-                            <p class="about-product">
-                                <span>Область применения:</span>
-                                <span>Интерьер, широкий спектр</span>
-                            </p>
-
-                            <div class="py-3">
-                                <img src="{{ asset('artColor/images/card-item-4.png')}}" class="img-fluid" alt="">
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
+                </form>
 
+                <div class="card-foot d-flex  align-items-center flex-wrap gap-4">
+                    @foreach($products as $product)
+                        <a href="{{ route("productitem",$product->id) }}" class = "card-foot-item-a" data-card-id="{{ $product->filter_id }}">
+                            <div class="card-foot-item">
+                                <div class="card-shape-hover"></div>
+                                <div class="card-img text-center">
+                                    @if(!empty($product->image))
+                                        <img src="{{ asset('uploads/'.$product->image->image)}}" class="img-fluid" alt="">
+                                    @endif
+                                </div>
+                                <h5>{{ $product->title }}</h5>
+                                <p>
+                                    <span>{{ $product->application }}</span>
+                                    <span><b>{{ $product->compound }}</b></span>
+                                </p>
+                                <div class="card-shape-hover-1"></div>
+                            </div>
+                        </a>
+                    @endforeach
                 </div>
 
-                <div class="our-right">
-
-                    <div class="our-right-content">
-
-                        <div class="our-right-item nextOur activeItem">
-                            <img src="{{ asset('artColor/images/forProduct.png')}}" alt="">
-                        </div>
-
-                        <div class="our-right-item nextOur nextItem">
-                            <img src="{{ asset('artColor/images/our-item.png')}}" alt="">
-                        </div>
-                        <div class="our-right-item nextOur ">
-                            <img src="{{ asset('artColor/images/about-right.png')}}" alt="">
-                        </div>
-                        <div class="our-right-item nextOur">
-                            <img src="{{ asset('artColor/images/main.png')}}" alt="">
-                        </div>
-
-                    </div>
-
-                    <div class="our-right-btn">
-
-                        <button class="prevOurBtn pulse" >
-                            <span>&#10094;</span>
-                        </button>
-                        <button class="nextOurBtn pulse">
-                            <span>&#10095;</span>
-                        </button>
-                    </div>
-
-
+                <div class="about-us-btn text-center my-4" data-aos="fade-up"  data-aos-duration="1500">
+                    <a href="{{ route("product") }}">
+                        <button>@lang('front.text.view_all')</button>
+                    </a>
                 </div>
-
-
             </div>
         </div>
-    </div>
-    <!-- our work -->
+        <!-- product card item -->
+    @endif
+
+    @if(!empty($work))
+        <!-- our work -->
+        <div class="our-work">
+            <div class="container">
+                <div class="our-work-content d-flex justify-content-between text-white gap-3">
+                    <div class="our-left">
+                        <h3 data-aos="fade-up" data-aos-duration="1500">@lang('front.text.our_work')</h3>
+                        <p>{{ $work->title }}</p>
+
+                        @if(count($workitems))
+                            <div class="our-product-content-item">
+                                @foreach($workitems as $workitem)
+                                    <div class="our-product-item @if ($loop->first) active @endif">
+                                        <h4>{{ $workitem->name }}</h4>
+                                        <p class="about-product">
+                                            <span>{{ $workitem->region }}</span>
+                                            <span>{{ $workitem->application }}</span>
+                                        </p>
+                                        <div class="py-3">
+                                            <img src="{{ asset('uploads/'.$workitem->product_image)}}" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="our-right">
+                        <div class="our-right-content">
+                            @foreach($workitems as $workitem)
+                                <div class="our-right-item nextOur @if ($loop->first) activeItem @endif">
+                                    <img src="{{ asset('uploads/'.$workitem->image)}}" alt="">
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="our-right-btn">
+                            <button class="prevOurBtn pulse" >
+                                <span>&#10094;</span>
+                            </button>
+                            <button class="nextOurBtn pulse">
+                                <span>&#10095;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- our work -->
+    @endif
 
     <!-- blog -->
     <div class="blog ">
@@ -679,11 +515,9 @@
                                 </div>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
     <!-- blog -->
@@ -719,7 +553,6 @@
 
                         <div id="map-content">
                             <div id="map" style="width: 100%; height: 100%; z-index: -1; ">
-
                                 <div class="map-content-bg-display " id="btn-cl">
                                     <div class="map-content-bg">
                                         <div>
@@ -728,11 +561,8 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </form>
@@ -740,6 +570,15 @@
     </div>
     <!-- input form -->
 
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).on("click",".sub_category",function(){
+           var sub_id = $(this).attr("data-card");
+           alert(sub_id);
+        });
+    </script>
 @endsection
 
 @section('swiper')

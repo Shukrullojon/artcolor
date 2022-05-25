@@ -17,7 +17,7 @@ function nextSlide() {
 }
 
 function previousSlide() {
-    showSlides(slideIndex -= 1);  
+    showSlides(slideIndex -= 1);
 }
 
 function currentSlide(n) {
@@ -26,18 +26,18 @@ function currentSlide(n) {
 
 function showSlides(n) {
     let slides = document.getElementsByClassName("main-slider-item");
-    
+
     if (n > slides.length) {
       slideIndex = 1
     }
     if (n < 1) {
         slideIndex = slides.length
     }
-  
+
     for (let slide of slides) {
         slide.style.display = "none";
-    }   
-    slides[slideIndex - 1].style.display = "block"; 
+    }
+    slides[slideIndex - 1].style.display = "block";
 }
 
 // progress bar
@@ -54,13 +54,13 @@ document.addEventListener("scroll", () => {
       (scrollContainer().scrollTop /
         (scrollContainer().scrollHeight - scrollContainer().clientHeight)) *
       100;
-  
+
     pageProgressBar.style.width = `${scrolledPercentage}%`;
-  
-    
+
+
   });
 
-//  to check input 
+//  to check input
 
 
 
@@ -79,7 +79,7 @@ if(checkbox){
         let name = document.getElementById('Имя').value ;
         let tel = document.getElementById('tel').value ;
         let mail = document.getElementById('mail').value ;
-        
+
         // input
         let mailInput = document.getElementById('mail');
         let telInput = document.getElementById('tel') ;
@@ -90,7 +90,7 @@ if(checkbox){
         }else{
           mailInput.style.borderBottom = '2px solid red'
         }
-        
+
         if(name == ''){
           nameInput.style.borderBottom = '2px solid red'
         }else{
@@ -102,7 +102,7 @@ if(checkbox){
         }else{
           telInput.style.borderBottom = '2px solid green'
         }
-        
+
 
 
       }else{
@@ -141,7 +141,7 @@ function filterCard(){
   let cardBtn = document.querySelectorAll('.card-head-item');
   let cardInput = document.querySelectorAll('#card-input:checked') ;
   let cards = document.querySelectorAll('.card-foot-item-a');
-  
+
   cards.forEach(card => {
       let cardId = card.getAttribute('data-card-id');
 
@@ -156,18 +156,12 @@ function filterCard(){
               item.classList.remove('active')
             }
         });
-        
-
         if(!(cardId == inputItem)){
           card.style.display = 'none'
         }else{
           card.style.display = 'block'
         }
-
-
       });
-      
-
   });
 
 }
@@ -420,7 +414,7 @@ function nextBtn(sliderProductIndex) {
       productitem5.style.display = 'none';
       productitem6.style.display = 'block';
     }
-    
+
 }
 
 function prevBtn(sliderProductIndex) {
@@ -550,7 +544,7 @@ function prevBtn(sliderProductIndex) {
 
 
 
-// item slider -2 
+// item slider -2
 item1.onclick = function(){
   answere.innerHTML = '1'
   item1.style.border = '5px solid #FFC300';
@@ -825,7 +819,7 @@ function nextBtnOne(sliderProductIndexOne) {
       productitemFive.style.display = 'none';
       productitemSix.style.display = 'block';
     }
-    
+
 }
 
 function prevBtnOne(sliderProductIndexOne) {

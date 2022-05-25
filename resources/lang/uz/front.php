@@ -19,5 +19,7 @@ return [
         "product" => "Mahsulot",
         "FILTERS"=>"FILTRLAR",
         "CHOOSE"=>"TANLANG",
+        "view_all" => "Hammasini ko'rish",
+        "our_work" => "Bizning ishlar",
     ],
 ];

@@ -11,7 +11,7 @@ Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name
 Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/product',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
-Route::get('/subcategory/{id}',[\App\Http\Controllers\HomeController::class,'subcategory'])->name('subcategory');
+Route::get('/subcategory/{id?}',[\App\Http\Controllers\HomeController::class,'subcategory'])->name('subcategory');
 Route::get('/carditem/{id}',[\App\Http\Controllers\HomeController::class,'carditem'])->name('carditem');
 Route::get('/productitem/{id}',[\App\Http\Controllers\HomeController::class,'productitem'])->name('productitem');
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
