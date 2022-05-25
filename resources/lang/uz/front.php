@@ -10,6 +10,7 @@ return [
         "contact" => "Aloqa",
         "product" => "Mahsulotlar",
         "product_category" => "Mahsulot toifalari",
+        "service" => "Xizmatlar",
     ],
     "text" => [
         "management" => "Boshqaruv",

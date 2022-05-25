@@ -10,6 +10,7 @@ return [
         "contact" => "Contact",
         "product" => "Product",
         "product_category" => "Product category",
+        "service" => "Service",
     ],
     "text" => [
         "management" => "Management",

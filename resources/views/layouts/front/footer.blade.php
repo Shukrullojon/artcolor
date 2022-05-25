@@ -27,7 +27,7 @@
                 <a href="pages/product.html">Продукция</a>
                 <a href="{{ route("about") }}">О компании</a>
                 <a href="pages/blog.html">Новости</a>
-                <a href="pages/servise.html">Сервисы</a>
+                <a href="{{ route("service") }}">Сервисы</a>
                 <a href="pages/downloadmaterial.html">Материалы для скачивания</a>
                 <a href="pages/contact.html">Контакты</a>
             </div>

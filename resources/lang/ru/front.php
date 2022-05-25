@@ -10,6 +10,7 @@ return [
         "contact" => "Контакты",
         "product" => "Продукция",
         "product_category" => "Категории продуктов",
+        "service" => "Сервисы",
     ],
     "text" => [
         "management" => "Руководство",

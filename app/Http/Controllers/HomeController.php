@@ -15,6 +15,11 @@ use App\Models\News;
 use App\Models\Product;
 use App\Models\ProductFilter;
 use App\Models\ProductType;
+use App\Models\Service;
+use App\Models\ServiceImage;
+use App\Models\ServiceItem;
+use App\Models\ServiceItemHeader;
+use App\Models\ServiceText;
 use App\Models\Slider;
 use App\Models\SubCategory;
 use App\Models\SubCategoryHeader;
@@ -30,11 +35,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function index()
     {
         $lang = strtolower(App::getLocale('locale'));
@@ -161,5 +162,33 @@ class HomeController extends Controller
 
     public function productitem($id){
         return view('product-item');
+    }
+
+    public function service(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $serviceheader = ServiceText::select("title_$lang as title","info_$lang as info","image")->first();
+        $services = Service::select("id","title_$lang as title","image")->latest()->get();
+        return view("service",[
+            'serviceheader' => $serviceheader,
+            'services' => $services,
+        ]);
+    }
+
+    public function serviceitem($id){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $serviceitems = ServiceItem::select("image","title_$lang as title","info_$lang as info")->where('service_id',$id)->latest()->get();
+        $image = ServiceImage::select("image")->latest()->first();
+        $header = ServiceItemHeader::select("title_$lang as title","button_$lang as button","button_url")->where("service_id",$id)->latest()->first();
+        return view('serviceitem',[
+            'serviceitems' => $serviceitems,
+            'image' => $image,
+            'header' => $header,
+        ]);
     }
 }
