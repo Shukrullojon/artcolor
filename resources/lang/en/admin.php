@@ -42,6 +42,7 @@ return [
         'work' => "Our Works" ,
         'work_item' => "Work Item" ,
         'service' => "Services",
+        "galery" => "Galery",
     ],
     'crud' => [
         "parent" => "Main",

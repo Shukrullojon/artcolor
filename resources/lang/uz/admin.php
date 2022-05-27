@@ -43,6 +43,7 @@ return [
         'work' => "Bizning ishlarimiz" ,
         'work_item' => "Ish elementi",
         'service' => "Xizmatlar",
+        "galery" => "Galereya",
     ],
     'crud' => [
         "parent" => "Asosiy",

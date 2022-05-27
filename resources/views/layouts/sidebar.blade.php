@@ -280,7 +280,7 @@
 
             <li class="nav-item">
                 <a href="" class="nav-link">
-                    <i class="nav-icon fa fa-address-book"></i>
+                    <i class="nav-icon fa fa-wrench"></i>
                     <p>
                         @lang('admin.sidebar.service')
                         <i class="right fas fa-angle-left"></i>
@@ -319,6 +319,60 @@
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Services image</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa fa-image"></i>
+                    <p>
+                        @lang('admin.sidebar.galery')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galeries table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galery category table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galery item heder table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galery filter table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galery items table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Galery item footer table</p>
                         </a>
                     </li>
 
