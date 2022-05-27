@@ -42,6 +42,7 @@ class ContactController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+
         }
         $contact = Contact::create([
             'logo' => $image ,
@@ -115,6 +116,7 @@ class ContactController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+            $this->deleteImage($contact->image);
         }else{
             $image = $contact->logo;
         }
@@ -157,15 +159,21 @@ class ContactController extends Controller
         }
         return  redirect()->route('contacts.index');
     }
-
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
-        //
+        $this->deleteImage($contact->image);
+        $contact->delete();
+        return  redirect()->route('contacts.index');
     }
 }

@@ -142,6 +142,8 @@ class WorkItemController extends Controller
 
         return redirect()->route('work_items.index');
     }
+
+
     public function deleteImage($data){
         if(file_exists(public_path('uploads/'.$data))){
             unlink(public_path('uploads/'.$data));

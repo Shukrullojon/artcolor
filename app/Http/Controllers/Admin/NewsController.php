@@ -95,11 +95,18 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
     public function update(Request $request, News $news)
     {
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+            $this->deleteImage($news->image);
         }else{
             $image = $news->image;
         }
@@ -129,6 +136,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
+        $this->deleteImage($news->image);
         $news->delete();
         return redirect()->route('news.index');
     }

@@ -95,6 +95,7 @@ class ActivityController extends Controller
     {
         $image = '';
         if(isset($request->image)){
+            $this->deleteImage($activity->image);
             $image = $this->uploadImage($request);
         }else{
             $image = $activity->image;
@@ -114,6 +115,12 @@ class ActivityController extends Controller
         return redirect()->route('activity.index')->with("success","Updated successful!");
     }
 
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -122,6 +129,7 @@ class ActivityController extends Controller
      */
     public function destroy(Activity $activity)
     {
+        $this->deleteImage($activity->image);
         $activity->delete();
         return redirect()->route('activity.index');
     }

@@ -96,6 +96,7 @@ class CardHeaderController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+            $this->deleteImage($cardHeader->image);
         }else{
             $image = $cardHeader->image;
         }
@@ -112,6 +113,11 @@ class CardHeaderController extends Controller
         return redirect()->route('card_headers.index');
     }
 
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -121,6 +127,7 @@ class CardHeaderController extends Controller
     public function destroy(CardHeader $cardHeader)
     {
         $cardHeader->delete();
+        $this->deleteImage($cardHeader->image);
         return  redirect()->route('card_headers.index');
     }
 }

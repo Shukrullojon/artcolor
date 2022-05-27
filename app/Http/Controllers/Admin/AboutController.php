@@ -70,6 +70,7 @@ class AboutController extends Controller
         return redirect()->route('about.index')->with('success' ,"Saved successful!") ;
     }
 
+
     public function uploadImage($request){
         $name =  rand(1000,9999).time()."." . $request->file('image')->getClientOriginalExtension();
         $request->image->move(public_path('uploads/'), $name);

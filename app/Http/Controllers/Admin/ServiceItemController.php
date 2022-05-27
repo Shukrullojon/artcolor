@@ -103,6 +103,7 @@ class ServiceItemController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+            $this->deleteImage($serviceItem->image);
         }else{
             $image = $serviceItem->image;
         }
@@ -120,6 +121,13 @@ class ServiceItemController extends Controller
         return redirect()->route('service_items.index');
     }
 
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -128,6 +136,7 @@ class ServiceItemController extends Controller
      */
     public function destroy(ServiceItem $serviceItem)
     {
+        $this->deleteImage($serviceItem->image);
         $serviceItem->delete();
         return redirect()->route('service_items.index');
     }

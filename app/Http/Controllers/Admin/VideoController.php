@@ -37,11 +37,13 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(StoreVideoRequest $request)
     {
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+
         }
         Video::create(
             [
@@ -91,6 +93,7 @@ class VideoController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
+            $this->deleteImage($video->image);
         }else{
             $image = $video->image ;
         }
@@ -103,6 +106,12 @@ class VideoController extends Controller
         return redirect()->route('videos.index')->with("success","Saved successful!");
     }
 
+    public function deleteImage($data){
+        if(file_exists(public_path('uploads/'.$data))){
+            unlink(public_path('uploads/'.$data));
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -111,6 +120,7 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
+        $this->deleteImage($video->image);
         $video->delete();
         return redirect()->route('videos.index')->with("success","Deleted successful!");
     }
