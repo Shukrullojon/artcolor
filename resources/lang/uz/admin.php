@@ -46,6 +46,7 @@ return [
         "galery" => "Galereya",
         "galery_video" => "Galery video",
         "portfolio" => "Portfolio",
+        "system" => "Tizim",
     ],
     'crud' => [
         "parent" => "Asosiy",

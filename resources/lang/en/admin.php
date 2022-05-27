@@ -45,6 +45,7 @@ return [
         "galery" => "Galery",
         "galery_video" => "Galery video",
         "portfolio" => "Portfolio",
+        "system" => "System",
     ],
     'crud' => [
         "parent" => "Main",

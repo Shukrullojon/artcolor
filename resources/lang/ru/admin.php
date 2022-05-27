@@ -46,6 +46,7 @@ return [
         "galery" => "Галерея",
         "galery_video" => "Галерея видео",
         "portfolio" => "Портфолио",
+        "system" => "Система",
     ],
     'crud' => [
         "parent" => "Главный",
