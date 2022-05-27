@@ -42,6 +42,10 @@ return [
         'work' => "Our Works" ,
         'work_item' => "Work Item" ,
         'service' => "Services",
+        'service_text' => "Service Text" ,
+        'service_header' => "Service Item Header" ,
+        'service_item' => "Service Item " ,
+        'service_image' => "Service Image " ,
     ],
     'crud' => [
         "parent" => "Main",
@@ -110,6 +114,11 @@ return [
         'name' => "Name" ,
         'region' => "Region" ,
         'product_image' => 'Product Image' ,
-        'image_small' => "Small Image"
+        'image_small' => "Small Image" ,
+        'service' => "Services" ,
+        'service_text' => "Service Text" ,
+        'service_header' => "Service Item Header" ,
+        'service_item' => "Service Item " ,
+        'service_image' => "Service Image " ,
     ],
 ];

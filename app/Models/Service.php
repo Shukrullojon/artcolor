@@ -12,4 +12,11 @@ class Service extends Model
     protected $table = 'services';
 
     protected $guarded = [];
+
+    public function headers(){
+        return $this->hasMany(ServiceItemHeader::class);
+    }
+    public function items(){
+        return $this->hasMany(ServiceItem::class);
+    }
 }

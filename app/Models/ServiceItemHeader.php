@@ -12,4 +12,8 @@ class ServiceItemHeader extends Model
     protected $table = "service_item_header";
 
     protected $guarded = [];
+
+    public function service(){
+        return$this->belongsTo(Service::class);
+    }
 }

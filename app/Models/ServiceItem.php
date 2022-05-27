@@ -12,4 +12,8 @@ class ServiceItem extends Model
     protected $table = "service_items";
 
     protected $guarded = [];
+
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
 }

@@ -43,6 +43,10 @@ return [
         'work' => "Bizning ishlarimiz" ,
         'work_item' => "Ish elementi",
         'service' => "Xizmatlar",
+        'service_text' => "Xizmat matni" ,
+        'service_header' => "Xizmat elementi sarlavhasi" ,
+        'service_item' => "Xizmat elementi" ,
+        'service_image' => "Xizmat tasviri"
     ],
     'crud' => [
         "parent" => "Asosiy",
@@ -111,6 +115,11 @@ return [
         'name' => "Nomi" ,
         'region' => "Viloyat" ,
         'product_image' => 'Mahsulot Rasmi' ,
-        'image_small' => "Kichik Rasm"
+        'image_small' => "Kichik Rasm" ,
+        'service' => "Xizmatlar",
+        'service_text' => "Xizmat matni",
+        'service_header' => "Xizmat elementi sarlavhasi",
+        'service_item' => "Xizmat elementi"  ,
+        'service_image' => "Xizmat tasviri"
     ],
 ];

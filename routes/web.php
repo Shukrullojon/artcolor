@@ -51,6 +51,11 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('subcategoryheader', \App\Http\Controllers\Admin\SubCategoryHeaderController::class);
     Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('productfilter', \App\Http\Controllers\Admin\ProductFilterController::class);
+    Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
+    Route::resource('service_texts', \App\Http\Controllers\Admin\ServiceTextController::class);
+    Route::resource('service_headers', \App\Http\Controllers\Admin\ServiceHeaderController::class);
+    Route::resource('service_items', \App\Http\Controllers\Admin\ServiceItemController::class);
+    Route::resource('service_images', \App\Http\Controllers\Admin\ServiceImageController::class);
 
 });
 

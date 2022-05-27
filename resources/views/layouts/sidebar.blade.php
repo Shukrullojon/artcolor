@@ -288,35 +288,35 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('service_texts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service text table</p>
+                            <p>Service text</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('services.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Services table</p>
+                            <p>Services</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('service_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service item header table</p>
+                            <p>Service item header</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('service_items.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service items table</p>
+                            <p>Service items </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('service_images.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Services image</p>
                         </a>
