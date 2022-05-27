@@ -394,6 +394,84 @@
                             </div>
                             {{--character end--}}
 
+                            {{--price start--}}
+                            <div id="price">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.litr')(uz)</label>
+                                            <input type="text" name="litr_uz[]" class="form-control {{ $errors->has('litr_uz') ? "is-invalid":"" }}" value="{{ old('litr_uz') }}">
+                                            @if($errors->has('litr_uz'))
+                                                <span class="error invalid-feedback">{{ $errors->first('litr_uz') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.litr')(ru)</label>
+                                            <input type="text" name="litr_ru[]" class="form-control {{ $errors->has('litr_ru') ? "is-invalid":"" }}" value="{{ old('litr_ru') }}">
+                                            @if($errors->has('litr_ru'))
+                                                <span class="error invalid-feedback">{{ $errors->first('litr_ru') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.litr')(en)</label>
+                                            <input type="text" name="litr_en[]" class="form-control {{ $errors->has('litr_en') ? "is-invalid":"" }}" value="{{ old('litr_en') }}">
+                                            @if($errors->has('litr_en'))
+                                                <span class="error invalid-feedback">{{ $errors->first('litr_en') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.price')(uz)</label>
+                                            <input type="text" name="price_uz[]" class="form-control {{ $errors->has('price_uz') ? "is-invalid":"" }}" value="{{ old('price_uz') }}">
+                                            @if($errors->has('price_uz'))
+                                                <span class="error invalid-feedback">{{ $errors->first('price_uz') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.price')(ru)</label>
+                                            <input type="text" name="price_ru[]" class="form-control {{ $errors->has('price_ru') ? "is-invalid":"" }}" value="{{ old('price_ru') }}">
+                                            @if($errors->has('price_ru'))
+                                                <span class="error invalid-feedback">{{ $errors->first('price_ru') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.price')(en)</label>
+                                            <input type="text" name="price_en[]" class="form-control {{ $errors->has('price_en') ? "is-invalid":"" }}" value="{{ old('price_en') }}">
+                                            @if($errors->has('price_en'))
+                                                <span class="error invalid-feedback">{{ $errors->first('price_en') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="addPrice"></div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="form-group">
+                                        <a class="btn btn-primary form-control" id="add_price">@lang('admin.crud.litr') / @lang('admin.crud.price') @lang('admin.crud.add')</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--price end--}}
+
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
                                 <a href="{{ route('team.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
@@ -412,6 +490,11 @@
         $(document).on("click","#add_character",function() {
             var inputs = $("#character").html();
             $("#addCharacter").append(inputs);
+        });
+
+        $(document).on("click","#add_price",function() {
+            var inputs = $("#price").html();
+            $("#addPrice").append(inputs);
         });
     </script>
 @endsection

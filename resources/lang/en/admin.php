@@ -42,10 +42,17 @@ return [
         'work' => "Our Works" ,
         'work_item' => "Work Item" ,
         'service' => "Services",
+<<<<<<< HEAD
         'service_text' => "Service Text" ,
         'service_header' => "Service Item Header" ,
         'service_item' => "Service Item " ,
         'service_image' => "Service Image " ,
+=======
+        "galery" => "Galery",
+        "galery_video" => "Galery video",
+        "portfolio" => "Portfolio",
+        "system" => "System",
+>>>>>>> 8fc9dec71822371fb97a52c946dabb2f9d98fa9f
     ],
     'crud' => [
         "parent" => "Main",
@@ -114,11 +121,17 @@ return [
         'name' => "Name" ,
         'region' => "Region" ,
         'product_image' => 'Product Image' ,
+<<<<<<< HEAD
         'image_small' => "Small Image" ,
         'service' => "Services" ,
         'service_text' => "Service Text" ,
         'service_header' => "Service Item Header" ,
         'service_item' => "Service Item " ,
         'service_image' => "Service Image " ,
+=======
+        'image_small' => "Small Image",
+        "price" => "Price",
+        "litr" => "Litr",
+>>>>>>> 8fc9dec71822371fb97a52c946dabb2f9d98fa9f
     ],
 ];

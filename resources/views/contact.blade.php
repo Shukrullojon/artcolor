@@ -1,48 +1,49 @@
 @extends('layouts.app_second')
 
 @section('content')
-    <!-- main -->
-    <div class="main py-5">
-        <div class="container">
-            <div class="main-content">
 
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
-                        <li class="breadcrumb-item active" ><a href="contact.html">Контакты</a></li>
-                    </ol>
-                </nav>
-                <h4 data-aos="fade-up" data-aos-duration="1500">
-                    Контакты
-                </h4>
+    @if(!empty($header))
+        <!-- main -->
+        <div class="main py-5">
+            <div class="container">
+                <div class="main-content">
 
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <p>
-                            Мы всегда рады помочь Вам и ответить на все вопросы, исходя из нашего опыта.
-                            Давайте вместе создавать красивые проекты.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="about-us-btn">
-                            <a href="buyPage.html">
-                                <button>
-                                    НАПИСАТЬ НАМ
-                                </button>
-                            </a>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route("index") }}">@lang('front.sidebar.home')</a></li>
+                            <li class="breadcrumb-item active" ><a href="{{ route("contact") }}">@lang('front.sidebar.contact')</a></li>
+                        </ol>
+                    </nav>
+                    <h4 data-aos="fade-up" data-aos-duration="1500">
+                        {{ $header->title }}
+                    </h4>
+
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <p>
+                                {{ $header->info }}
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-us-btn">
+                                <a href="{{ $header->button_link }}">
+                                    <button>
+                                        {{ $header->button }}
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- main -->
+        <!-- main -->
+    @endif
 
 
     <!-- map contact -->
     <div class="map-content">
         <div id="map" style="width: 100%;"></div>
-
         <div class="container">
             <div class="map-content-display">
                 <div class="map-content-item">
@@ -53,7 +54,6 @@
                         <img src="{{ asset('artColor/images/contact-img.png')}}" alt="">
                         <div class="map-text">
                             <p class="pb-3">Магазин «Маляр»</p>
-
                             <div>
                                 <span>АДРЕС</span>
                                 <p>
@@ -72,8 +72,6 @@
                                     <a href="tel:+38 050 602 16 75" class="text-dark">+38 050 602 16 75</a>
                                 </p>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -123,12 +121,7 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-
-
-
                     </div>
                 </div>
 
@@ -237,29 +230,16 @@
 
 
     <!-- map about content -->
-    <!-- pages About -->
-    <div class="pagesAbout">
-        <div class="container">
-
-            <h3 data-aos="fade-up" data-aos-duration="1500">ДЕКОРАТИВНЫЕ ПОКРЫТИЯ И ШТУКАТУРКИ ОТ КОМПАНИИ ELF DECOR™</h3>
-
-            <p data-aos="fade-up" data-aos-duration="1500">
-                Создавая новые материалы, наши специалисты всегда ориентируются на последние мировые тенденции в декоре и дизайне.
-            </p>
-
-            <p data-aos="fade-up" data-aos-duration="1500">
-                Декоративная штукатурка (декоративка) – это специальный материал для отделки стен. В отличие от других видов покрытия. На сайте Elf-decor.com можно найти дилера и недорого купить декоративную штукатурку от производителя с доставкой по Украине.
-            </p>
-            <p data-aos="fade-up" data-aos-duration="1500">
-                Вы ознакомитесь с полным каталогом современных облицовочных материалов от производителя. Декоративные покрытия Elf Decor открывают новые возможности для ценителей прекрасного. Огромный выбор фактур позволяет создавать различные эффекты – натуральный мрамор, шелк, металл, гранит.
-            </p>
-            <p data-aos="fade-up" data-aos-duration="1500">
-                В нашем салоне вы сможете легко и просто подобрать оптимальный вариант, узнать цену декоративной штукатурки и получить консультацию специалиста.
-            </p>
-
+    @if(!empty($footer))
+        <!-- pages About -->
+        <div class="pagesAbout">
+            <div class="container">
+                <h3 data-aos="fade-up" data-aos-duration="1500">{{ $footer->title }}</h3>
+                {{ $footer->info }}
+            </div>
         </div>
-    </div>
-    <!-- pages About -->
+        <!-- pages About -->
+    @endif
     <!-- map about content -->
 
 @endsection

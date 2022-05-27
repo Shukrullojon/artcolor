@@ -24,5 +24,13 @@ return [
         "our_work" => "Наши работы",
         "blog" => "блог",
         "new" => "новости",
+        "discuss_your_project" => "Обсудим ваш проект",
+        "Name" => "Имя",
+        "Phone" => "Телефон",
+        "email" => "Эл. адрес",
+        "submit_an_application" => "Отправить заявку",
+        "i_agre" => "Я согласен с",
+        "terms_of_personal_data_processing" => "условиями обработки персональных данных",
+        "Packing" => "Фасовка",
     ],
 ];

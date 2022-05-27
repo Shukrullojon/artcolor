@@ -46,7 +46,11 @@ return [
         'service_text' => "Xizmat matni" ,
         'service_header' => "Xizmat elementi sarlavhasi" ,
         'service_item' => "Xizmat elementi" ,
-        'service_image' => "Xizmat tasviri"
+        'service_image' => "Xizmat tasviri" ,
+        "galery" => "Galereya",
+        "galery_video" => "Galery video",
+        "portfolio" => "Portfolio",
+        "system" => "Tizim",
     ],
     'crud' => [
         "parent" => "Asosiy",
@@ -120,6 +124,10 @@ return [
         'service_text' => "Xizmat matni",
         'service_header' => "Xizmat elementi sarlavhasi",
         'service_item' => "Xizmat elementi"  ,
-        'service_image' => "Xizmat tasviri"
+        'service_image' => "Xizmat tasviri" ,
+        'image_small' => "Kichik Rasm",
+        "price" => "Narxi",
+        "litr" => "Litr",
+
     ],
 ];

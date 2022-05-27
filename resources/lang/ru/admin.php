@@ -47,6 +47,10 @@ return [
         'service_header' => "Заголовок элемента услуги" ,
         'service_item' => "Пункт обслуживания" ,
         'service_image' => "Образ службы" ,
+        "galery" => "Галерея",
+        "galery_video" => "Галерея видео",
+        "portfolio" => "Портфолио",
+        "system" => "Система",
     ],
     'crud' => [
         "parent" => "Главный",
@@ -120,5 +124,8 @@ return [
         'service_text' => "Сервисный текст" ,
         'service_header' => "Заголовок элемента услуги" ,
         'service_image' => "Образ службы" ,
+        'image_small' => "Маленькое изображение",
+        "price" => "Цена",
+        "litr" => "Литр",
     ],
 ];

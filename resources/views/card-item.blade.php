@@ -101,7 +101,6 @@
         window.onscroll = function () {
             scrollFunction();
         };
-
         function scrollFunction() {
             if (
                 document.body.scrollTop > 20 ||
@@ -113,7 +112,6 @@
             }
         }
         mybutton.addEventListener("click", backToTop);
-
         function backToTop() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
@@ -121,38 +119,26 @@
         // progress bar
         const showOnPx = 100;
         const pageProgressBar = document.querySelector(".progress-bar");
-
         const scrollContainer = () => {
             return document.documentElement || document.body;
         };
-
         document.addEventListener("scroll", () => {
-
             const scrolledPercentage =
                 (scrollContainer().scrollTop /
                     (scrollContainer().scrollHeight - scrollContainer().clientHeight)) *
                 100;
-
             pageProgressBar.style.width = `${scrolledPercentage}%`;
-
-
         });
-
         // filter
         function filter(){
             let ilove = document.querySelector('#ilova').value;
             let foydalar = document.querySelector('#foydalar').value;
             let murojat = document.querySelector('#murojat').value;
             let another = document.querySelector('#another').value;
-
-
             if(ilove , foydalar , murojat , another){
-
                 let cardItem = document.querySelectorAll('.card-item-filter');
-
                 cardItem.forEach(element => {
                     let cardId  = element.getAttribute('data-id');
-
                     if(!(cardId == ilove)){
                         element.style.display = 'none'
                     }
@@ -177,14 +163,9 @@
                     if(cardId == another){
                         element.style.display = 'block'
                     }
-
                 });
             }
         }
-
-
-
     </script>
     <!-- my js code -->
-
 @endsection
