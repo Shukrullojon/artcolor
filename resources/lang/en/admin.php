@@ -110,6 +110,8 @@ return [
         'name' => "Name" ,
         'region' => "Region" ,
         'product_image' => 'Product Image' ,
-        'image_small' => "Small Image"
+        'image_small' => "Small Image",
+        "price" => "Price",
+        "litr" => "Litr",
     ],
 ];

@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('product_price', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id');
-            $table->string('litr_uz');
-            $table->string('litr_ru');
-            $table->string('litr_en');
-            $table->string('price_uz');
-            $table->string('price_ru');
-            $table->string('price_en');
+            $table->string('litr_uz')->nullable();
+            $table->string('litr_ru')->nullable();
+            $table->string('litr_en')->nullable();
+            $table->string('price_uz')->nullable();
+            $table->string('price_ru')->nullable();
+            $table->string('price_en')->nullable();
             $table->timestamps();
         });
     }

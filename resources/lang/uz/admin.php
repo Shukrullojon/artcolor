@@ -111,6 +111,8 @@ return [
         'name' => "Nomi" ,
         'region' => "Viloyat" ,
         'product_image' => 'Mahsulot Rasmi' ,
-        'image_small' => "Kichik Rasm"
+        'image_small' => "Kichik Rasm",
+        "price" => "Narxi",
+        "litr" => "Litr",
     ],
 ];

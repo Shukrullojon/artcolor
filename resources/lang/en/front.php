@@ -24,5 +24,13 @@ return [
         "our_work" => "Our work",
         "blog" => "blog",
         "new" => "news",
+        "discuss_your_project" => "Let's discuss your project",
+        "Name" => "Name",
+        "Phone" => "Phone",
+        "email" => "Email the address",
+        "submit_an_application" => "Submit an application",
+        "i_agre" => "I agree with",
+        "terms_of_personal_data_processing" => "terms of personal data processing",
+        "Packing" => "Packing",
     ],
 ];

@@ -24,5 +24,13 @@ return [
         "our_work" => "Bizning ishlar",
         "blog" => "blog",
         "new" => "yangilik",
+        "discuss_your_project" => "Keling, loyihangizni muhokama qilaylik",
+        "Name" => "Ism",
+        "Phone" => "Telefon",
+        "email" => "Elektron pochta manzil",
+        "submit_an_application" => "Arizani yuboring",
+        "i_agre" => "Men roziman",
+        "terms_of_personal_data_processing" => "shaxsiy ma'lumotlarni qayta ishlash shartlari",
+        "Packing" => "Qadoqlash9",
     ],
 ];

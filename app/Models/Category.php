@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'category-new';
+    protected $table = 'categories';
 
     protected $guarded = [];
 

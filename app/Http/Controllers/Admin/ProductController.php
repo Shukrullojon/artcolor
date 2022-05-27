@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\ProductCharacter;
 use App\Models\ProductFilter;
 use App\Models\ProductImage;
+use App\Models\ProductPrice;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
@@ -115,6 +116,24 @@ class ProductController extends Controller
             ]);
         }
 
+        $litr_uz = $inputs['litr_uz'];
+        $litr_ru = $inputs['litr_ru'];
+        $litr_en = $inputs['litr_en'];
+
+        $price_uz = $inputs['price_uz'];
+        $price_ru = $inputs['price_ru'];
+        $price_en = $inputs['price_en'];
+        foreach($litr_uz as $key => $item){
+            ProductPrice::create([
+                'product_id'=>$product->id,
+                'litr_uz' => $litr_uz[$key] ?? "",
+                'litr_ru' => $litr_ru[$key] ?? "",
+                'litr_en' => $litr_en[$key] ?? "",
+                'price_uz' => $price_uz[$key] ?? "",
+                'price_ru' => $price_ru[$key] ?? "",
+                'price_en' => $price_en[$key] ?? "",
+            ]);
+        }
 
         return redirect()->route('product.index')->with("success","Saved successful!");
     }
