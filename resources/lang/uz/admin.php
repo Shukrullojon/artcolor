@@ -44,6 +44,8 @@ return [
         'work_item' => "Ish elementi",
         'service' => "Xizmatlar",
         "galery" => "Galereya",
+        "galery_video" => "Galery video",
+        "portfolio" => "Portfolio",
     ],
     'crud' => [
         "parent" => "Asosiy",

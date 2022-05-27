@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galery_items', function (Blueprint $table) {
+        Schema::create('gallery_video_filter', function (Blueprint $table) {
             $table->id();
-            $table->integer('galery_id');
-            $table->integer('filter_id');
-            $table->string('image');
             $table->string('title_uz');
             $table->string('title_ru');
             $table->string('title_en');
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galery_items');
+        Schema::dropIfExists('gallery_video_filter');
     }
 };

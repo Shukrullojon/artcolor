@@ -380,6 +380,93 @@
             </li>
 
             <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa fa-video"></i>
+                    <p>
+                        @lang('admin.sidebar.galery_video')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Gallery video header</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>GAllery video filter</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Gallery videoes</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Gallery video footer</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa fa-briefcase"></i>
+                    <p>
+                        @lang('admin.sidebar.portfolio')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Portfolio header table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Portfolio about table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Portfolio images table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Portfolio character table</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Portfolio products table</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
                 <a href="#" class="nav-link ">
                     <i class="fa fa-language"></i>
                     <p> @lang('admin.sidebar.language')</p>

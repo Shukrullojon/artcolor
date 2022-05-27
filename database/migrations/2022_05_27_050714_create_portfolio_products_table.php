@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galery_items', function (Blueprint $table) {
+        Schema::create('portfolio_products', function (Blueprint $table) {
             $table->id();
-            $table->integer('galery_id');
-            $table->integer('filter_id');
-            $table->string('image');
             $table->string('title_uz');
             $table->string('title_ru');
             $table->string('title_en');
+            $table->string('file');
+            $table->string('file_info')->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galery_items');
+        Schema::dropIfExists('portfolio_products');
     }
 };

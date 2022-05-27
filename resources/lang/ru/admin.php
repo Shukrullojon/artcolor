@@ -44,6 +44,8 @@ return [
         'work_item' => "Рабочий элемент",
         'service' => "Сервисы",
         "galery" => "Галерея",
+        "galery_video" => "Галерея видео",
+        "portfolio" => "Портфолио",
     ],
     'crud' => [
         "parent" => "Главный",
