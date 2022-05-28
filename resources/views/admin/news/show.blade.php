@@ -44,17 +44,17 @@
 
                             <tr>
                                 <th>@lang('admin.crud.category_name')(uz)</th>
-                                <td>{{ $news->category->name_uz }}</td>
+                                <td>@if(!empty($news->category)) {{ $news->category->name_uz }} @endif</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.category_name')(ru)</th>
-                                <td>{{ $news->category->name_ru }}</td>
+                                <td>@if(!empty($news->category)) {{ $news->category->name_ru }} @endif</td>
                             </tr>
 
                             <tr>
                                 <th>@lang('admin.crud.category_name')(en)</th>
-                                <td>{{ $news->category->name_en }}</td>
+                                <td>@if(!empty($news->category)) {{ $news->category->name_en }} @endif</td>
                             </tr>
 
                             <tr>

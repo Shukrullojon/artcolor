@@ -335,44 +335,44 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryheader.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galeries table</p>
+                            <p>@lang('admin.sidebar.gallery_header')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("gallerycategory.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galery category table</p>
+                            <p>@lang('admin.sidebar.gallery_category')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryitemheader.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galery item heder table</p>
+                            <p>@lang('admin.sidebar.gallery_item_header')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryfilter.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galery filter table</p>
+                            <p>@lang('admin.sidebar.gallery_filter')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryitem.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galery items table</p>
+                            <p>@lang('admin.sidebar.gallery_item')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryitemfooter.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Galery item footer table</p>
+                            <p>@lang('admin.sidebar.gallery_item_footer')</p>
                         </a>
                     </li>
 

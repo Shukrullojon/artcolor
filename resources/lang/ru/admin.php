@@ -51,6 +51,12 @@ return [
         "galery_video" => "Галерея видео",
         "portfolio" => "Портфолио",
         "system" => "Система",
+        "gallery_header" => "Заголовок галереи",
+        "gallery_category" => "Категория галереи",
+        "gallery_item_header" => "Заголовок элемента галереи",
+        "gallery_filter" => "Фильтр галереи",
+        "gallery_item" => "Элемент галереи",
+        "gallery_item_footer" => "Текст элемента галереи",
     ],
     'crud' => [
         "parent" => "Главный",
@@ -127,5 +133,6 @@ return [
         'image_small' => "Маленькое изображение",
         "price" => "Цена",
         "litr" => "Литр",
+        "gallery" => "Галерея",
     ],
 ];

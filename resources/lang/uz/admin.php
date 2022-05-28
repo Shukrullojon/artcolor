@@ -51,6 +51,12 @@ return [
         "galery_video" => "Galery video",
         "portfolio" => "Portfolio",
         "system" => "Tizim",
+        "gallery_header" => "Galereya sarlavhasi",
+        "gallery_category" => "Galereya toifasi",
+        "gallery_item_header" => "Galereya elementi sarlavhasi",
+        "gallery_filter" => "Galereya filtri",
+        "gallery_item" => "Galereya elementi",
+        "gallery_item_footer" => "Galereya elementi matni",
     ],
     'crud' => [
         "parent" => "Asosiy",
@@ -128,6 +134,6 @@ return [
         'image_small' => "Kichik Rasm",
         "price" => "Narxi",
         "litr" => "Litr",
-
+        "gallery" => "Galereya",
     ],
 ];

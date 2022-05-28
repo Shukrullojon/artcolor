@@ -56,6 +56,13 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('service_headers', \App\Http\Controllers\Admin\ServiceHeaderController::class);
     Route::resource('service_items', \App\Http\Controllers\Admin\ServiceItemController::class);
     Route::resource('service_images', \App\Http\Controllers\Admin\ServiceImageController::class);
+    Route::resource('galleryheader', \App\Http\Controllers\Admin\GalleryHeaderController::class);
+    Route::resource('gallerycategory', \App\Http\Controllers\Admin\GalleryCategoryController::class);
+    Route::resource('galleryitemheader', \App\Http\Controllers\Admin\GalleryItemHeaderController::class);
+    Route::resource('galleryfilter', \App\Http\Controllers\Admin\GalleryFilterController::class);
+    Route::resource('galleryitem', \App\Http\Controllers\Admin\GalleryItemController::class);
+    Route::resource('galleryitemfooter', \App\Http\Controllers\Admin\GalleryItemFooterController::class);
+
 
 });
 

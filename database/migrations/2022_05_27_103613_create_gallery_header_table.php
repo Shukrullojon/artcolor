@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galeries', function (Blueprint $table) {
+        Schema::create('gallery_header', function (Blueprint $table) {
             $table->id();
             $table->string('title_uz');
             $table->string('title_ru');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeries');
+        Schema::dropIfExists('gallery_header');
     }
 };
