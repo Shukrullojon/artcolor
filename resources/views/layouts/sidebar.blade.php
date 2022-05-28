@@ -349,6 +349,13 @@
                     </li>
 
                     <li class="nav-item">
+                        <a href="{{ route("galleryabout.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.gallery_about')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a href="{{ route("galleryitemheader.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>@lang('admin.sidebar.gallery_item_header')</p>

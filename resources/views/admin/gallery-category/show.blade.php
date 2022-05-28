@@ -42,17 +42,22 @@
                                 <td>{{ $category->title_en }}</td>
                             </tr>
 
-
-
                             <tr>
                                 <th>@lang('admin.crud.info')(uz)</th>
                                 <td>{{ $category->info_uz }}</td>
-                            </tr><tr>
+                            </tr>
+                            <tr>
                                 <th>@lang('admin.crud.info')(ru)</th>
                                 <td>{{ $category->info_ru }}</td>
-                            </tr><tr>
+                            </tr>
+                            <tr>
                                 <th>@lang('admin.crud.info')(en)</th>
                                 <td>{{ $category->info_en }}</td>
+                            </tr>
+
+                            <tr>
+                                <th>@lang('admin.crud.button_url')</th>
+                                <td>{{ $category->button_url }}</td>
                             </tr>
 
                             <tr>

@@ -71,12 +71,12 @@
                                     <div class="form-group">
                                         <label>@lang('admin.crud.gallery')</label><label style="color: red">*</label>
                                         <select class="form-control" name="galery_id">
-                                            @foreach($categories as $category)
-                                                <option @if($category->id == $item->galery_id) selected @endif value="{{ $category->id }}">{{ $category->title_uz }}</option>
+                                            @foreach($filters as $filter)
+                                                <option @if($filter->id == $item->filter_id) selected @endif value="{{ $filter->id }}">{{ $category->title_uz }}</option>
                                             @endforeach
                                         </select>
-                                        @if($errors->has('galery_id'))
-                                            <span class="error invalid-feedback">{{ $errors->first('galery_id') }}</span>
+                                        @if($errors->has('filter_id'))
+                                            <span class="error invalid-feedback">{{ $errors->first('filter_id') }}</span>
                                         @endif
                                     </div>
                                 </div>

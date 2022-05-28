@@ -16,4 +16,8 @@ class GalleryItem extends Model
     public function category(){
         return $this->belongsTo(GalleryCategory::class,'galery_id','id');
     }
+
+    public function filter(){
+        return $this->belongsTo(GalleryFilter::class,'filter_id','id');
+    }
 }

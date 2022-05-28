@@ -17,6 +17,8 @@ Route::get('/carditem/{id}',[\App\Http\Controllers\HomeController::class,'cardit
 Route::get('/productitem/{id}',[\App\Http\Controllers\HomeController::class,'productitem'])->name('productitem');
 Route::get('/service',[\App\Http\Controllers\HomeController::class,'service'])->name("service");
 Route::get('/serviceitem/{id}',[\App\Http\Controllers\HomeController::class,'serviceitem'])->name("serviceitem");
+Route::get('/gallery',[\App\Http\Controllers\HomeController::class,'gallery'])->name("gallery");
+Route::get('/galleryitem',[\App\Http\Controllers\HomeController::class,'galleryitem'])->name("galleryitem");
 
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
@@ -57,6 +59,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('service_items', \App\Http\Controllers\Admin\ServiceItemController::class);
     Route::resource('service_images', \App\Http\Controllers\Admin\ServiceImageController::class);
     Route::resource('galleryheader', \App\Http\Controllers\Admin\GalleryHeaderController::class);
+    Route::resource('galleryabout', \App\Http\Controllers\Admin\GalleryAboutController::class);
     Route::resource('gallerycategory', \App\Http\Controllers\Admin\GalleryCategoryController::class);
     Route::resource('galleryitemheader', \App\Http\Controllers\Admin\GalleryItemHeaderController::class);
     Route::resource('galleryfilter', \App\Http\Controllers\Admin\GalleryFilterController::class);

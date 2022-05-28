@@ -11,6 +11,7 @@ return [
         "product" => "Mahsulotlar",
         "product_category" => "Mahsulot toifalari",
         "service" => "Xizmatlar",
+        "gallery" => "Galereya",
     ],
     "text" => [
         "management" => "Boshqaruv",

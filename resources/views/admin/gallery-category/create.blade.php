@@ -97,6 +97,15 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.button_url')</label><label style="color: red">*</label>
+                                        <input type="text" name="button_url" class="form-control {{ $errors->has('button_url') ? "is-invalid":"" }}" value="{{ old('button_url') }}" required>
+                                        @if($errors->has('button_url'))
+                                            <span class="error invalid-feedback">{{ $errors->first('button_url') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">

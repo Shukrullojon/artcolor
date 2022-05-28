@@ -36,14 +36,14 @@
                         <!-- Data table -->
                         <table class="table table-bordered">
                             <tr>
-                                <th>@lang('admin.crud.gallery')</th>
+                                <th>@lang('admin.crud.filter')</th>
                                 <th>@lang('admin.crud.title')</th>
-                                <th>@lang('admin.crud.image')</th>
+                                <th>@lang('admin.crud.h')</th>
                                 <th></th>
                             </tr>
                             @foreach($items as $item)
                                 <tr>
-                                    <td>@if(!empty($item->category)){{ $item->category->title_uz }}@endif</td>
+                                    <td>@if(!empty($item->filter)){{ $item->filter->title_uz }}@endif</td>
                                     <td>{{ $item->title_uz }}</td>
                                     <td>
                                         <img src="{{ asset('uploads')}}/{{ $item->image  }}" class="img_admin">

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\GalleryCategory;
+use App\Models\GalleryAbout;
 use Illuminate\Http\Request;
 
-class GalleryCategoryController extends Controller
+class GalleryAboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class GalleryCategoryController extends Controller
      */
     public function index()
     {
-        $categories = GalleryCategory::latest()->paginate(20);
-        return view('admin.gallery-category.index',[
-            'categories' => $categories,
+        $abouts = GalleryAbout::latest()->paginate(20);
+        return view('admin.gallery-about.index',[
+            'abouts' => $abouts,
         ]);
     }
 
@@ -28,7 +28,7 @@ class GalleryCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.gallery-category.create');
+        return view('admin.gallery-about.create');
     }
 
     /**
@@ -39,34 +39,17 @@ class GalleryCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $image = '';
-        if(isset($request->image)){
-            $image = $this->uploadImage($request);
-        }
-        GalleryCategory::create([
+        GalleryAbout::create([
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
             'info_uz' => $request->info_uz,
             'info_ru' => $request->info_ru,
             'info_en' => $request->info_en,
-            'button_url' => $request->button_url,
-            'image' => $image,
         ]);
-        return redirect()->route('gallerycategory.index')->with("success","Saved successful!");
+        return redirect()->route('galleryabout.index')->with("success","Saved successful!");
     }
 
-    public function uploadImage($request){
-        $name =  rand(1000,9999).time()."." . $request->file('image')->getClientOriginalExtension();
-        $request->image->move(public_path('uploads/'), $name);
-        return $name;
-    }
-
-    public function deleteImage($data){
-        if(file_exists(public_path('uploads/'.$data))){
-            unlink(public_path('uploads/'.$data));
-        }
-    }
     /**
      * Display the specified resource.
      *
@@ -75,9 +58,9 @@ class GalleryCategoryController extends Controller
      */
     public function show($id)
     {
-        $category = GalleryCategory::where('id',$id)->first();
-        return view('admin.gallery-category.show',[
-            'category' => $category,
+        $about = GalleryAbout::where('id',$id)->first();
+        return view('admin.gallery-about.show',[
+            'about' => $about,
         ]);
     }
 
@@ -89,9 +72,9 @@ class GalleryCategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = GalleryCategory::where('id',$id)->first();
-        return view('admin.gallery-category.edit',[
-            'category' => $category,
+        $about = GalleryAbout::where('id',$id)->first();
+        return view('admin.gallery-about.edit',[
+            'about' => $about,
         ]);
     }
 
@@ -104,23 +87,16 @@ class GalleryCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = GalleryCategory::where('id',$id)->first();
-        $image = $category->image;
-        if(isset($request->image)){
-            $this->deleteImage($category->image);
-            $image = $this->uploadImage($request);
-        }
-        $category->update([
+        $about = GalleryAbout::where('id',$id)->first();
+        $about->update([
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
             'info_uz' => $request->info_uz,
             'info_ru' => $request->info_ru,
             'info_en' => $request->info_en,
-            'button_url' => $request->button_url,
-            'image' => $image,
         ]);
-        return redirect()->route('gallerycategory.index')->with("success","Update successful!");
+        return redirect()->route('galleryabout.index')->with("success","Update successful!");
     }
 
     /**
@@ -131,9 +107,8 @@ class GalleryCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = GalleryCategory::where('id',$id)->first();
-        $this->deleteImage($category->image);
-        $category->delete();
-        return redirect()->route('gallerycategory.index')->with('success',"Delete successful!");
+        $about = GalleryAbout::where('id',$id)->first();
+        $about->delete();
+        return redirect()->route('galleryabout.index')->with('success',"Delete successful!");
     }
 }

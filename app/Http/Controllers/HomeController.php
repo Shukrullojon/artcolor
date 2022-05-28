@@ -12,6 +12,13 @@ use App\Models\CategoryText;
 use App\Models\Comment;
 use App\Models\ContactFooter;
 use App\Models\ContactHeader;
+use App\Models\GalleryAbout;
+use App\Models\GalleryCategory;
+use App\Models\GalleryFilter;
+use App\Models\GalleryHeader;
+use App\Models\GalleryItem;
+use App\Models\GalleryItemFooter;
+use App\Models\GalleryItemHeader;
 use App\Models\Item;
 use App\Models\NewHeader;
 use App\Models\News;
@@ -233,5 +240,37 @@ class HomeController extends Controller
             'image' => $image,
             'header' => $header,
         ])->with("success",$sms);;
+    }
+
+    public function gallery(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = GalleryHeader::select("title_$lang as title","info_$lang as info","image")->first();
+        $categories = GalleryCategory::select("id","button_url","title_$lang as title","info_$lang as info","image")->latest()->get();
+        $about = GalleryAbout::select("title_$lang as title","info_$lang as info")->first();
+        return view('gallery',[
+            'header' => $header,
+            'categories' => $categories,
+            'about' => $about,
+        ]);
+    }
+
+    public function galleryitem(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = GalleryItemHeader::select("title_$lang as title")->first();
+        $items = GalleryItem::select("filter_id","image","title_$lang as title")->latest()->get();
+        $filters = GalleryFilter::where('parent_id',0)->latest()->get();
+        $footer = GalleryItemFooter::select("title_$lang as title","info_$lang as info")->first();
+        return view('gallery-item',[
+            'header' => $header,
+            'items' => $items,
+            'filters' => $filters,
+            'footer' => $footer,
+        ]);
     }
 }

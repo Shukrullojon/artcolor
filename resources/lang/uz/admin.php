@@ -57,8 +57,10 @@ return [
         "gallery_filter" => "Galereya filtri",
         "gallery_item" => "Galereya elementi",
         "gallery_item_footer" => "Galereya elementi matni",
+        "gallery_about" => "Galereya haqida",
     ],
     'crud' => [
+        "filter" => "Filtr",
         "parent" => "Asosiy",
         "add" => "Qo'shish",
         "save" => "Saqlash",

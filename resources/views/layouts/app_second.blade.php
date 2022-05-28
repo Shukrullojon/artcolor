@@ -407,5 +407,7 @@
 </script>
 <!-- my js -->
 
+@yield('scripts')
+
 </body>
 </html>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('info_ru');
             $table->string('info_en');
             $table->string('image');
+            $table->string('button_url');
             $table->timestamps();
         });
     }

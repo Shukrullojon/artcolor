@@ -56,8 +56,10 @@ return [
         "gallery_filter" => "Gallery filter",
         "gallery_item" => "Gallery item",
         "gallery_item_footer" => "Gallery item footer",
+        "gallery_about" => "Gallery about",
     ],
     'crud' => [
+        "filter" => "Filter",
         "parent" => "Main",
         "add" => "Add",
         "save" => "Save",

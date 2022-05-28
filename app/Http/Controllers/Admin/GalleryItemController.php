@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\GalleryCategory;
+use App\Models\GalleryFilter;
 use App\Models\GalleryItem;
 use Illuminate\Http\Request;
 
@@ -29,9 +30,9 @@ class GalleryItemController extends Controller
      */
     public function create()
     {
-        $categories = GalleryCategory::get();
+        $filters = GalleryFilter::where('parent_id','!=',0)->get();
         return view('admin.gallery-item.create',[
-            'categories' => $categories,
+            'filters' => $filters,
         ]);
     }
 
@@ -48,7 +49,7 @@ class GalleryItemController extends Controller
             $image = $this->uploadImage($request);
         }
         GalleryItem::create([
-            'galery_id' => $request->galery_id,
+            'filter_id' => $request->filter_id,
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
@@ -92,10 +93,10 @@ class GalleryItemController extends Controller
     public function edit($id)
     {
         $item = GalleryItem::where('id',$id)->first();
-        $categories = GalleryCategory::get();
+        $filters = GalleryFilter::where('parent_id','!=',0)->get();
         return view('admin.gallery-item.edit',[
             'item' => $item,
-            'categories' => $categories,
+            'filters' => $filters,
         ]);
     }
 
@@ -115,7 +116,7 @@ class GalleryItemController extends Controller
             $image = $this->uploadImage($request);
         }
         $item->update([
-            'galery_id' => $request->galery_id,
+            'filter_id' => $request->filter_id,
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,

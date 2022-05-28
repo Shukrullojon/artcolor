@@ -11,6 +11,7 @@ return [
         "product" => "Product",
         "product_category" => "Product category",
         "service" => "Service",
+        "gallery" => "Gallery",
     ],
     "text" => [
         "management" => "Management",

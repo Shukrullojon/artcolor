@@ -11,6 +11,7 @@ return [
         "product" => "Продукция",
         "product_category" => "Категории продуктов",
         "service" => "Сервисы",
+        "gallery" => "Галерея",
     ],
     "text" => [
         "management" => "Руководство",

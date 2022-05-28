@@ -57,8 +57,10 @@ return [
         "gallery_filter" => "Фильтр галереи",
         "gallery_item" => "Элемент галереи",
         "gallery_item_footer" => "Текст элемента галереи",
+        "gallery_about" => "Галерея о",
     ],
     'crud' => [
+        "filter" => "Фильтр",
         "parent" => "Главный",
         "add" => "Добавлять",
         "save" => "Сохранять",
