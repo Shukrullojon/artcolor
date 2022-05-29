@@ -21,6 +21,8 @@ Route::get('/serviceitem/{id}',[\App\Http\Controllers\HomeController::class,'ser
 Route::get('/gallery',[\App\Http\Controllers\HomeController::class,'gallery'])->name("gallery");
 Route::get('/galleryitem',[\App\Http\Controllers\HomeController::class,'galleryitem'])->name("galleryitem");
 Route::get("/buypage",[\App\Http\Controllers\HomeController::class,'buypage'])->name("buypage");
+Route::get("/portfolio",[\App\Http\Controllers\HomeController::class,'portfolio'])->name("portfolio");
+Route::get("/portfoliodownload/{id}",[\App\Http\Controllers\HomeController::class,'portfoliodownload'])->name("portfoliodownload");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
@@ -71,7 +73,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('portfolioheader', \App\Http\Controllers\Admin\PortfolioHeaderController::class);
     Route::resource('portfolioimage', \App\Http\Controllers\Admin\PortfolioImageController::class);
     Route::resource('portfolioproduct', \App\Http\Controllers\Admin\PortfolioProductController::class);
-    
+
 });
 
 // Change language session condition

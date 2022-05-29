@@ -22,6 +22,11 @@ use App\Models\GalleryItemHeader;
 use App\Models\Item;
 use App\Models\NewHeader;
 use App\Models\News;
+use App\Models\PortfolioAbout;
+use App\Models\PortfolioCharacter;
+use App\Models\PortfolioHeader;
+use App\Models\PortfolioImage;
+use App\Models\PortfolioProduct;
 use App\Models\Product;
 use App\Models\ProductDownload;
 use App\Models\ProductFilter;
@@ -290,5 +295,30 @@ class HomeController extends Controller
             'filters' => $filters,
             'footer' => $footer,
         ]);
+    }
+
+    public function portfolio(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = PortfolioHeader::select("id","title_$lang as title")->latest()->first();
+        $about = PortfolioAbout::select("info_$lang as info","social_$lang as social","link")->latest()->first();
+        $images = PortfolioImage::select("image")->latest()->get();
+        $characters = PortfolioCharacter::select("title_$lang as title","info_$lang as info")->latest()->get();
+        $products = PortfolioProduct::select("id","title_$lang as title","image","file","origin","mb")->latest()->get();
+        return view('portfolio',[
+            'header' => $header,
+            'about' => $about,
+            'images'=>$images,
+            'characters' => $characters,
+            'products' => $products,
+        ]);
+    }
+
+    public function portfoliodownload($id){
+        $download = PortfolioProduct::where('id',$id)->first();
+        $filepath = public_path('uploads/'.$download->file);
+        return Response()->download($filepath);
     }
 }

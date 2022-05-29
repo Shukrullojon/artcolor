@@ -12,6 +12,7 @@ return [
         "product_category" => "Product category",
         "service" => "Service",
         "gallery" => "Gallery",
+        "portfolio" => "Portfolio",
     ],
     "text" => [
         "management" => "Management",
@@ -46,5 +47,6 @@ return [
         "Downloads" => "Downloads",
         "Catalogs" => "Catalogs",
         "Download" => "Download",
+        "see_also" => "See also",
     ],
 ];

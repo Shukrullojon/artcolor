@@ -12,6 +12,7 @@ return [
         "product_category" => "Mahsulot toifalari",
         "service" => "Xizmatlar",
         "gallery" => "Galereya",
+        "portfolio" => "Portfel",
     ],
     "text" => [
         "management" => "Boshqaruv",
@@ -46,5 +47,6 @@ return [
         "Downloads" => "Yuklashlar",
         "Catalogs" => "Kataloglar",
         "Download" => "Yuklab olish",
+        "see_also" => "Shuningdek qarang",
     ],
 ];

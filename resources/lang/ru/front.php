@@ -12,6 +12,7 @@ return [
         "product_category" => "Категории продуктов",
         "service" => "Сервисы",
         "gallery" => "Галерея",
+        "portfolio" => "Портфолио",
     ],
     "text" => [
         "management" => "Руководство",
@@ -46,5 +47,6 @@ return [
         "Downloads" => "Материалы для скачивания",
         "Catalogs" => "Каталоги",
         "Download" => "Скачать",
+        "see_also" => "Посмотрите также",
     ],
 ];
