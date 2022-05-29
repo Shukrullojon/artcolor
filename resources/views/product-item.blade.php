@@ -216,17 +216,23 @@
                 <p class="py-3" data-aos="fade-up" data-aos-duration="1500"><b>@lang('front.text.Packing'):</b></p>
                 <div class="cost-content" data-aos="fade-up" data-aos-duration="1500">
                     <div class="cost-left">
+                        @php $i=0 @endphp
                         @foreach($product->prices as $price)
-                            <div class="cost-item @if($loop->first) active @endif"><p>{{ $price->litr }}</p></div>
+                            <div class="cost-item @if($i==0) active @endif change_price" price="{{ $price->price }}">
+                                <p>{{ $price->litr }}</p>
+                            </div>
+                        @php $i++ @endphp
                         @endforeach
+
                     </div>
                     <div class="cost-right">
                         <div class="cost-all">
                             <h5>
+                                @php $i=0; @endphp
                                 @foreach($product->prices as $price)
-                                    <span class="narx @if($loop->first) active @endif">{{ $price->price }}</span>
+                                    <span class="narx echo_price  @if($i == 0)active @endif">{{ $price->price }}</span>
+                                @php $i++ @endphp
                                 @endforeach
-                                    грн/шт.
                             </h5>
                         </div>
                     </div>
@@ -239,8 +245,8 @@
                             <img src="{{ asset('artColor/images/cost-result-1.png')}}" alt="">
                         </div>
                         <div>
-                            <h6><b>Применение:</b></h6>
-                            <p>интерьеры</p>
+                            <h6><b>@lang('front.text.Application'):</b></h6>
+                            <p>{{ $product->application }}</p>
                         </div>
                     </div>
 
@@ -250,9 +256,8 @@
                             <img src="{{ asset('artColor/images/cost-result-2.png')}}" alt="">
                         </div>
                         <div>
-                            <h6><b>Состав:</b></h6>
-                            <p>известь, минеральные
-                                наполнители</p>
+                            <h6><b>@lang('front.text.COMPOUND'):</b></h6>
+                            <p>{{ $product->compound }}</p>
                         </div>
                     </div>
 
@@ -261,27 +266,25 @@
                             <img src="{{ asset('artColor/images/cost-result-3.png')}}" alt="">
                         </div>
                         <div>
-                            <h6><b>Расход:</b></h6>
-                            <p>1-1,5 кг/м² </p>
+                            <h6><b>@lang('front.text.Consumption'):</b></h6>
+                            <p>{{ $product->consumption }}</p>
                         </div>
                     </div>
 
 
                 </div>
-
                 <div class="cost-btn">
-
-                    <a href="about.html">
+                    <a href="{{ route("about") }}">
                         <button class="buyBtn">
-                            НУЖНА КОНСУЛЬТАЦИЯ?
+                            @lang('front.text.need_consultation')
                             <span>&#10230;</span>
                         </button>
                     </a>
 
                     <div class="about-us-btn">
-                        <a href="buyPage.html">
+                        <a href="{{ route("buypage") }}">
                             <button>
-                                ГДЕ КУПИТЬ?
+                                @lang('front.text.could_buy')
                                 <span>&#10230;</span>
                             </button>
                         </a>
@@ -289,66 +292,28 @@
 
                     <a href="#contact">
                         <button class="buyBtn-outline">
-                            КУПИТЬ ONLINE
+                            @lang('front.text.buy_online')
                             <span>&#10230;</span>
                         </button>
                     </a>
 
                 </div>
-
                 <p class="cost-about-p" data-aos="fade-up" data-aos-duration="1500">
-                    Дополнительные характеристики:
+                    @lang('front.text.additional_characteristics'):
                 </p>
-
                 <div class="cost-about">
-                    <div class="cost-about-item">
-                        <p>ИЗВЕСТЬ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>МИНЕРАЛЬНЫЕ НАПОЛНИТЕЛИ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>ИНТЕРЬЕРНЫЕ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>МАТОВЫЙ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>МОЮЩИЕСЯ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>ВЫСОКАЯ ПРОЧНОСТЬ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>ПРОТИВОГРИБКОВЫЕ СВОЙСТВА</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>ФАКТУРНЫЙ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>СТАРЫЕ СТЕНЫ</p>
-                    </div>
-                    <div class="cost-about-item">
-                        <p>КАМЕНЬ</p>
-                    </div>
+                    @foreach($product->characters as $character)
+                        <div class="cost-about-item">
+                            <p>{{ $character->title }}</p>
+                        </div>
+                    @endforeach
                 </div>
-
                 <div class="cost-list">
 
-                    <h4>Особенности</h4>
-
-                    <ul>
-                        <li>Высокая прочность</li>
-                        <li>Высокая прочность</li>
-                        <li>Обладает противогрибковыми свойствами</li>
-                    </ul>
-
+                    <h4>@lang('front.text.Peculiarities')</h4>
+                    {{ $product->peculiarit }}
                 </div>
-
-
-
             </div>
-
         </div>
     </div>
 </div>
@@ -358,18 +323,15 @@
 <!-- acc -->
 <div class="container py-5">
     <div class="accordion" id="accordionExample">
-
         <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Технологии нанесения
+                    {{ $product->accordion_title }}
                 </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <p>
-                        Декоративная штукатурка (декоративка) – это специальный материал для отделки стен. В отличие от других видов покрытия. На сайте Elf-decor.com можно найти дилера и недорого купить декоративную штукатурку от производителя с доставкой по Украине.
-                    </p>
+                    {{ $product->accordion_info }}
                 </div>
             </div>
         </div>
@@ -377,58 +339,22 @@
         <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Видео-уроки <span id="videoItem">(4)</span>
+                    @lang('front.text.video_lessons')<span id="videoItem">({{ count($product->videos) }})</span>
                 </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-
                     <div class="acc-content">
-
-                        <div class="acc-item" >
-                            <div class="acc-img">
-                                <img src="../images/main.png" alt="">
-
-                                <div class="acc-linear"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fas fa-solid fa-play" ></i>
+                        @foreach($product->videos as $video)
+                            <div class="acc-item">
+                                <div class="acc-img">
+                                    <img src="{{ asset("uploads/".$video->image) }}" alt="">
+                                    <div class="acc-linear">
+                                        <i class="fas fa-solid fa-play" ></i>
+                                    </div>
                                 </div>
-
                             </div>
-                        </div>
-
-                        <div class="acc-item">
-                            <div class="acc-img">
-                                <img src="../images/forProduct.png" alt="">
-
-                                <div class="acc-linear">
-                                    <i class="fas fa-solid fa-play" ></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="acc-item">
-                            <div class="acc-img">
-                                <img src="../images/about-right.png" alt="">
-
-                                <div class="acc-linear">
-                                    <i class="fas fa-solid fa-play" ></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="acc-item">
-                            <div class="acc-img">
-                                <img src="../images/our-item.png" alt="">
-
-                                <div class="acc-linear">
-                                    <i class="fas fa-solid fa-play" ></i>
-                                </div>
-
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
 
                 </div>
@@ -438,205 +364,26 @@
         <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Галерея фактур <span id="galleryItem">(24)</span>
+                    @lang('front.text.textures_gallery') <span id="galleryItem"> @if(count($product->gallery))({{ count($product->gallery) }}) @else (0) @endif</span>
                 </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="acc-gallery"  id="gallery--getting-started">
-
-                        <div class="acc-gallery-item">
-
-                            <a href="../images/main.png" data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/main.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
+                        @foreach($product->gallery as $gallery)
+                            <div class="acc-gallery-item">
+                                <a href="{{ asset("uploads/".$gallery->image) }}" data-pswp-width="1500"
+                                   data-pswp-height="1000"
+                                   target="_blank">
+                                    <div class="acc-gallery-img">
+                                        <img src="{{ asset("uploads/".$gallery->image) }}" alt="">
+                                        <div class="acc-linear">
+                                            <img src="{{ asset("artColor/images/x-vector-yellow.png") }}" alt="">
+                                        </div>
                                     </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-                            <a href="../images/about-right.png" data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/about-right.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/our-item.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/our-item.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/productPage-1.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/productPage-1.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/forProduct.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/forProduct.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-                            <a href="../images/main.png" data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/main.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-                            <a href="../images/about-right.png" data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/about-right.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/our-item.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/our-item.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/productPage-1.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/productPage-1.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
-                        <div class="acc-gallery-item">
-
-
-                            <a href="../images/forProduct.png"  data-pswp-width="1500"
-                               data-pswp-height="1000"
-                               target="_blank">
-                                <div class="acc-gallery-img">
-                                    <img src="../images/forProduct.png" alt="">
-
-                                    <div class="acc-linear">
-                                        <img src="../images/x-vector-yellow.png" alt="">
-                                    </div>
-
-                                </div>
-                            </a>
-
-
-
-                        </div>
-
+                                </a>
+                            </div>
+                        @endforeach
 
                     </div>
                 </div>
@@ -646,34 +393,30 @@
         <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="accordion-header" id="headingFour">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Материалы для скачивания (1)
+                    @lang('front.text.Downloads') ({{ count($product->downloads) }})
                 </button>
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-
-                    <div class="acc-content acc-border">
-
-                        <div class="acc-left">
-                            <h2>Каталог продукции Elf Decor™</h2>
-                            <p>
-                                Каталоги – pdf (57.73 МB)
-                            </p>
-                        </div>
-
-                        <div class="acc-left">
-                            <div class="about-us-btn">
-                                <a href="../html.html" download>
-                                    <button>
-                                        Скачать
-                                    </button>
-                                </a>
+                    @foreach($product->downloads as $download)
+                        <div class="acc-content acc-border">
+                            <div class="acc-left">
+                                <h2>{{ $download->title }}</h2>
+                                <p>
+                                    @lang('front.text.Catalogs') – {{ $download->origin }} ({{ number_format($download->mb/1024,2,'.','') }} МB)
+                                </p>
+                            </div>
+                            <div class="acc-left">
+                                <div class="about-us-btn">
+                                        <a href="{{ route("productdownload",$download->id) }}" download>
+                                        <button>
+                                            @lang('front.text.Download')
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-
-
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -682,8 +425,6 @@
     </div>
 </div>
 <!-- acc -->
-
-
 
 <!-- input form -->
 <div class="form-input" id="contact">
@@ -739,9 +480,6 @@
     </div>
 </div>
 <!-- input form -->
-
-
-
 
 <!-- footer -->
 <div class="footer" id="footer">
@@ -867,7 +605,6 @@
 </div>
 <!-- footer -->
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -918,9 +655,6 @@
     AOS.init();
 </script>
 <!-- aos animation -->
-
-
-
 
 <!-- font awesome -->
 <script src="https://kit.fontawesome.com/02b94d3768.js" crossorigin="anonymous"></script>
@@ -987,8 +721,6 @@
 </script>
 <script src="{{ asset('artColor/js/map.js')}}"></script>
 <!-- map -->
-
-
 <!-- my js code -->
 <script>
     // scrool
@@ -1115,7 +847,6 @@
 
 </script>
 
-
 <script type="module">
     // Include Lightbox
     import PhotoSwipeLightbox from '{{ asset('artColor/js/photoswipe-lightbox.esm.min.js')}};
@@ -1134,6 +865,12 @@
 
 </script>
 <!-- my js code -->
-
+<script src="{{ asset('artColor/js/jquery.min.js')}}"></script>
+<script>
+    $(document).on("click",".change_price",function (){
+        var price = $(this).attr("price");
+        $(".echo_price").text(price);
+    })
+</script>
 </body>
 </html>

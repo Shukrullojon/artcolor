@@ -60,6 +60,7 @@ return [
         "gallery_about" => "Галерея о",
     ],
     'crud' => [
+        "download" => "Скачать",
         "filter" => "Фильтр",
         "parent" => "Главный",
         "add" => "Добавлять",

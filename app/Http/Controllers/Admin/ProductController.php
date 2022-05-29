@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCharacter;
+use App\Models\ProductDownload;
 use App\Models\ProductFilter;
 use App\Models\ProductImage;
 use App\Models\ProductPrice;
@@ -132,6 +133,34 @@ class ProductController extends Controller
                 'price_uz' => $price_uz[$key] ?? "",
                 'price_ru' => $price_ru[$key] ?? "",
                 'price_en' => $price_en[$key] ?? "",
+            ]);
+        }
+
+        $download_uz = $inputs['download_uz'];
+        $download_ru = $inputs['download_ru'];
+        $download_en = $inputs['download_en'];
+
+        $arr = [];
+        foreach($request->download as $down){
+            $origin = $down->getClientOriginalExtension();
+            $size = $down->getSize();
+            $name=rand(1000,9999).time().".".$down->getClientOriginalExtension();
+            $down->move(public_path().'/uploads/', $name);
+            $dow = ProductDownload::create([
+                'product_id' => $product->id,
+                'file' => $name,
+                'origin'=>$down->getClientOriginalExtension(),
+                'mb' => $size/1024
+            ]);
+            $arr[]=$dow->id;
+        }
+
+        foreach($arr as $key => $item){
+            $download = ProductDownload::where('id',$item)->first();
+            $download->update([
+                'title_uz' => $download_uz[$key],
+                'title_ru' => $download_ru[$key],
+                'title_en' => $download_en[$key],
             ]);
         }
 

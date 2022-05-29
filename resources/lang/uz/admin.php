@@ -60,6 +60,7 @@ return [
         "gallery_about" => "Galereya haqida",
     ],
     'crud' => [
+        "download" => "Yuklash",
         "filter" => "Filtr",
         "parent" => "Asosiy",
         "add" => "Qo'shish",

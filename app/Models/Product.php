@@ -47,4 +47,21 @@ class Product extends Model
     public function prices(){
         return $this->hasMany(ProductPrice::class)->select("id","litr_$this->lang as litr","price_$this->lang as price");
     }
+
+    public function characters(){
+        return $this->hasMany(ProductCharacter::class)->select("id","title_$this->lang as title");
+    }
+
+    public function videos(){
+        return $this->hasMany(ProductVideo::class);
+    }
+
+    public function gallery(){
+        return $this->hasMany(ProductImage::class)->where('type',2);
+    }
+
+    public function downloads(){
+        return $this->hasMany(ProductDownload::class)->select("id","title_$this->lang as title","file","origin","mb");
+    }
+
 }

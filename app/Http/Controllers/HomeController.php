@@ -23,6 +23,7 @@ use App\Models\Item;
 use App\Models\NewHeader;
 use App\Models\News;
 use App\Models\Product;
+use App\Models\ProductDownload;
 use App\Models\ProductFilter;
 use App\Models\ProductType;
 use App\Models\Service;
@@ -184,10 +185,27 @@ class HomeController extends Controller
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
         }
-        $product = Product::select("id","sub_category_id","title_$lang as title","info_$lang as info")->where('id',$id)->first();
+        $product = Product::select(
+            "id",
+            "sub_category_id",
+            "title_$lang as title",
+            "info_$lang as info",
+            "application_$lang as application",
+            "compound_$lang as compound",
+            "consumption_$lang as consumption",
+            "peculiarit_$lang as peculiarit",
+            "accordion_title_$lang as accordion_title",
+            "accordion_info_$lang as accordion_info")
+            ->where('id',$id)->first();
         return view('product-item',[
             'product' => $product,
         ]);
+    }
+
+    public function productdownload($id){
+        $download = ProductDownload::where('id',$id)->first();
+        $filepath = public_path('uploads/'.$download->file);
+        return Response()->download($filepath);
     }
 
     public function service(){

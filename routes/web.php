@@ -15,11 +15,12 @@ Route::get('/product',[\App\Http\Controllers\HomeController::class,'product'])->
 Route::get('/subcategory/{id?}',[\App\Http\Controllers\HomeController::class,'subcategory'])->name('subcategory');
 Route::get('/carditem/{id}',[\App\Http\Controllers\HomeController::class,'carditem'])->name('carditem');
 Route::get('/productitem/{id}',[\App\Http\Controllers\HomeController::class,'productitem'])->name('productitem');
+Route::get('/productdownload/{id}',[\App\Http\Controllers\HomeController::class,'productdownload'])->name('productdownload');
 Route::get('/service',[\App\Http\Controllers\HomeController::class,'service'])->name("service");
 Route::get('/serviceitem/{id}',[\App\Http\Controllers\HomeController::class,'serviceitem'])->name("serviceitem");
 Route::get('/gallery',[\App\Http\Controllers\HomeController::class,'gallery'])->name("gallery");
 Route::get('/galleryitem',[\App\Http\Controllers\HomeController::class,'galleryitem'])->name("galleryitem");
-
+Route::get("/buypage",[\App\Http\Controllers\HomeController::class,'buypage'])->name("buypage");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {

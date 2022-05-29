@@ -460,7 +460,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div id="addPrice"></div>
                             <div class="row">
                                 <div class="col-lg-12 col-sm-12">
@@ -471,6 +470,59 @@
                             </div>
                             {{--price end--}}
 
+                            {{--download start--}}
+                            <div id="download">
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.title')(uz)</label>
+                                            <input type="text" name="download_uz[]" class="form-control {{ $errors->has('download_uz') ? "is-invalid":"" }}" value="{{ old('download_uz') }}">
+                                            @if($errors->has('download_uz'))
+                                                <span class="error invalid-feedback">{{ $errors->first('download_uz') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.title')(ru)</label>
+                                            <input type="text" name="download_ru[]" class="form-control {{ $errors->has('download_ru') ? "is-invalid":"" }}" value="{{ old('download_ru') }}">
+                                            @if($errors->has('download_ru'))
+                                                <span class="error invalid-feedback">{{ $errors->first('download_ru') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.title')(en)</label>
+                                            <input type="text" name="download_en[]" class="form-control {{ $errors->has('download_en') ? "is-invalid":"" }}" value="{{ old('download_en') }}">
+                                            @if($errors->has('download_en'))
+                                                <span class="error invalid-feedback">{{ $errors->first('download_en') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                            <label>@lang('admin.crud.download')</label>
+                                            <input type="file" name="download[]" class="form-control {{ $errors->has('download') ? "is-invalid":"" }}" value="{{ old('download') }}">
+                                            @if($errors->has('download'))
+                                                <span class="error invalid-feedback">{{ $errors->first('download') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="addDownload"></div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="form-group">
+                                        <a class="btn btn-primary form-control" id="add_download">@lang('admin.crud.download') @lang('admin.crud.add')</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--download end--}}
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.save')</button>
@@ -495,6 +547,11 @@
         $(document).on("click","#add_price",function() {
             var inputs = $("#price").html();
             $("#addPrice").append(inputs);
+        });
+
+        $(document).on("click","#add_download",function() {
+            var inputs = $("#download").html();
+            $("#addDownload").append(inputs);
         });
     </script>
 @endsection

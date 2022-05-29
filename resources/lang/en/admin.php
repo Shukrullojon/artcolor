@@ -59,6 +59,7 @@ return [
         "gallery_about" => "Gallery about",
     ],
     'crud' => [
+        "download" => "Download",
         "filter" => "Filter",
         "parent" => "Main",
         "add" => "Add",

@@ -9,7 +9,7 @@ class ProductVideo extends Model
 {
     use HasFactory;
 
-    protected $table = 'product_price';
+    protected $table = 'product_video';
 
     protected $guarded = [];
 
