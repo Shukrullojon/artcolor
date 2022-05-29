@@ -51,11 +51,11 @@ class NewsController extends Controller
                 'text_uz' => $request->text_uz ,
                 'text_ru' => $request->text_ru ,
                 'text_en' => $request->text_en ,
-                'slug' => Str::slug($request->title_en) ,
+                'slug' => Str::slug($request->title_en),
                 'status' => $request->status ,
                 'image' => $image ,
                 'category_new_id' => $request->category ,
-
+                'type' => $request->type,
             ]
         );
         return redirect()->route('news.index');
@@ -118,11 +118,11 @@ class NewsController extends Controller
                 'text_uz' => $request->text_uz ,
                 'text_ru' => $request->text_ru ,
                 'text_en' => $request->text_en ,
-                'slug' => Str::slug($request->title_en) ,
+                'slug' => Str::slug($request->title_en),
                 'status' => $request->status ,
                 'image' => $image ,
                 'category_new_id' => $request->category ,
-
+                'type' => $request->type,
             ]
         );
         return redirect()->route('news.index');

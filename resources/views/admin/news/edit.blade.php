@@ -118,6 +118,20 @@
                                         @endif
                                     </div>
                                 </div>
+
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label>@lang('admin.crud.type')</label><label style="color: red">*</label>
+                                        <select class="form-control" name="type">
+                                            <option @if($news->type == 1) selected @endif value="1">News</option>
+                                            <option @if($news->type == 2) selected @endif value="2">Blog</option>
+                                        </select>
+                                        @if($errors->has('type'))
+                                            <span class="error invalid-feedback">{{ $errors->first('type') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-6 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.status')</label><label style="color: red">*</label>

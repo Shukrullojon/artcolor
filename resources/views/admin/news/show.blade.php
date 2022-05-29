@@ -85,6 +85,13 @@
                                     <img src="{{ asset("uploads/".$news->image) }}" class="img_admin">
                                 </td>
                             </tr>
+
+                            <tr>
+                                <th>@lang('admin.crud.type')</th>
+                                <td>
+                                    @if($news->type == 1) News @else Blog @endif
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>

@@ -62,8 +62,10 @@ return [
         "portfolio_image" => "Portfolio image",
         "portfolio_character" => "Portfolio character",
         "portfolio_product" => "Portfolio product",
+        "new_header" => "News title",
     ],
     'crud' => [
+        "type" => "Type",
         "file" => "File",
         "social" => "Social",
         "link" =>"Url",

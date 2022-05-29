@@ -15,6 +15,7 @@ return [
         "portfolio" => "Portfolio",
     ],
     "text" => [
+        "share" => "Share",
         "management" => "Management",
         "News_events" => "News & Events",
         "subscribe_to_news" => "Subscribe to news",
@@ -26,6 +27,8 @@ return [
         "our_work" => "Our work",
         "blog" => "blog",
         "new" => "news",
+        "news_and_blog" => "News and blog",
+        "print" => "Print",
         "discuss_your_project" => "Let's discuss your project",
         "Name" => "Name",
         "Phone" => "Phone",

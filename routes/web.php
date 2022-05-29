@@ -10,6 +10,7 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name("ind
 Route::get('/about',[\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/blog',[\App\Http\Controllers\HomeController::class,'blog'])->name('blog');
 Route::get('/blogitem/{id}',[\App\Http\Controllers\HomeController::class,'blogitem'])->name('blogitem');
+Route::get('/randblog',[\App\Http\Controllers\HomeController::class,'randblog'])->name('randblog');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/product',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
 Route::get('/subcategory/{id?}',[\App\Http\Controllers\HomeController::class,'subcategory'])->name('subcategory');
@@ -36,6 +37,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('activity' , \App\Http\Controllers\Admin\ActivityController::class);
     Route::resource('videos' , \App\Http\Controllers\Admin\VideoController::class);
     Route::resource('news' , \App\Http\Controllers\Admin\NewsController::class);
+    Route::resource('newheader' , \App\Http\Controllers\Admin\NewHeaderController::class);
     Route::resource('contacts' , \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('contact_headers' , \App\Http\Controllers\Admin\ContactHeaderController::class);
     Route::resource('contact_footers' , \App\Http\Controllers\Admin\ContactFooterController::class);

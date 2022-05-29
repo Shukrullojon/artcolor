@@ -22,7 +22,8 @@ return new class extends Migration
             $table->text('text_uz');
             $table->text('text_ru');
             $table->text('text_en');
-            $table->string('slug');
+            $table->string('slug')->nullable();
+            $table->integer('type')->nullable();
             $table->string('image');
             $table->tinyInteger('status');
             $table->timestamps();

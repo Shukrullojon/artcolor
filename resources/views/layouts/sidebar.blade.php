@@ -197,14 +197,21 @@
                     <li class="nav-item">
                         <a href="{{route('categorynew.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category new </p>
+                            <p>@lang('admin.sidebar.category')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('news.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>News </p>
+                            <p>@lang('admin.sidebar.news')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('newheader.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.new_header')</p>
                         </a>
                     </li>
 

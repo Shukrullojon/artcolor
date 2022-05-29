@@ -107,16 +107,33 @@ class HomeController extends Controller
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
         }
-        $newHeader = NewHeader::select("title_$lang as title","info_$lang as info","button_url")->first();
-        $categoryNew =CategoryNew::select("name_$lang as name")->latest()->get();
+        $header = NewHeader::select("title_$lang as title","info_$lang as info","button_url")->first();
+        $categories = CategoryNew::select("id","name_$lang as name")->latest()->get();
+        $news = News::select("id","category_new_id","title_$lang as title","text_$lang as text","image")->where('status',1)->latest()->get();
         return view('blog',[
-            'newHeader' => $newHeader,
-            'categoryNew' => $categoryNew,
+            'header' => $header,
+            'categories' => $categories,
+            'news' => $news,
         ]);
     }
 
     public function blogItem($id){
-        return view('blog-item');
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $new = News::select("id","title_$lang as title","text_$lang as text","image","type","created_at")->where('id',$id)->first();
+        $rand = News::select("id","title_$lang as title","text_$lang as text","image","type","created_at")->orderByRaw("RAND()")->get();
+
+        return view('blog-item',[
+            'new' => $new,
+            'rand' => $rand,
+        ]);
+    }
+
+    public function randblog(){
+        $rand = News::select("id")->orderByRaw("RAND()")->first();
+        return redirect()->route('blogitem',$rand->id);
     }
 
     public function contact(){

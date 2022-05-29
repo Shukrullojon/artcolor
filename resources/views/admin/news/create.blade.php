@@ -113,17 +113,19 @@
                                         @endif
                                     </div>
                                 </div>
+
                                 <div class="col-lg-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>@lang('admin.crud.slug')(ru)</label><label style="color: red">*</label>
-                                        <input type="text" name="slug" class="form-control {{ $errors->has('slug') ? "is-invalid":"" }}" value="{{ old('slug') }}" required>
-                                        @if($errors->has('slug'))
-                                            <span class="error invalid-feedback">{{ $errors->first('slug') }}</span>
+                                        <label>@lang('admin.crud.type')</label><label style="color: red">*</label>
+                                        <select class="form-control" name="type">
+                                            <option value="1">News</option>
+                                            <option value="2">Blog</option>
+                                        </select>
+                                        @if($errors->has('type'))
+                                            <span class="error invalid-feedback">{{ $errors->first('type') }}</span>
                                         @endif
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <div class="row">

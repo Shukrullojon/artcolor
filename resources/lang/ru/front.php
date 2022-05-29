@@ -15,6 +15,7 @@ return [
         "portfolio" => "Портфолио",
     ],
     "text" => [
+        "share" => "Поделиться",
         "management" => "Руководство",
         "News_events" => "Новости и События",
         "subscribe_to_news" => "Подписоция на новостей",
@@ -26,6 +27,8 @@ return [
         "our_work" => "Наши работы",
         "blog" => "блог",
         "new" => "новости",
+        "news_and_blog" => "Новости и блог",
+        "print" => "Распечатать",
         "discuss_your_project" => "Обсудим ваш проект",
         "Name" => "Имя",
         "Phone" => "Телефон",

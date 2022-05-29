@@ -63,8 +63,10 @@ return [
         "portfolio_image" => "Изображение портфолио",
         "portfolio_character" => "Персонаж портфолио",
         "portfolio_product" => "Продукт портфеля",
+        "new_header" => "Название новости",
     ],
     'crud' => [
+        "type" => "Тип",
         "file" => "Файл",
         "social" => "Социальное",
         "link" =>"Url",

@@ -63,8 +63,10 @@ return [
         "portfolio_image" => "Portfolio rasmlar",
         "portfolio_character" => "Portfolio xarakteristika",
         "portfolio_product" => "Portfolio mahsulotlar",
+        "new_header" => "Yangilik sarlavhasi",
     ],
     'crud' => [
+        "type" => "Turi",
         "file" => "Fayl",
         "social" => "Ijtimoiy",
         "link" =>"Url",

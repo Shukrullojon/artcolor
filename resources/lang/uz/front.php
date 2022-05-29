@@ -15,6 +15,7 @@ return [
         "portfolio" => "Portfel",
     ],
     "text" => [
+        "share" => "Ulashish",
         "management" => "Boshqaruv",
         "News_events" => "Yangiliklar va Voqealar",
         "subscribe_to_news" => "Yangiliklarga obuna bo'ling",
@@ -25,7 +26,9 @@ return [
         "view_all" => "Hammasini ko'rish",
         "our_work" => "Bizning ishlar",
         "blog" => "blog",
+        "news_and_blog" => "Yangiliklar va blog",
         "new" => "yangilik",
+        "print" => "Chop etish",
         "discuss_your_project" => "Keling, loyihangizni muhokama qilaylik",
         "Name" => "Ism",
         "Phone" => "Telefon",
