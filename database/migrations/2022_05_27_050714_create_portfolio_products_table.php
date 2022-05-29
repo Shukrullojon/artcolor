@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('title_ru');
             $table->string('title_en');
             $table->string('file');
-            $table->string('file_info')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('mb')->nullable();
             $table->string('image');
             $table->timestamps();
         });

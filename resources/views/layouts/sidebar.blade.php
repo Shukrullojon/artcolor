@@ -436,37 +436,37 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("portfolioheader.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Portfolio header table</p>
+                            <p>@lang('admin.sidebar.portfolio_header')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("portfolioabout.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Portfolio about table</p>
+                            <p>@lang('admin.sidebar.portfolio_about')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("portfolioimage.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Portfolio images table</p>
+                            <p>@lang('admin.sidebar.portfolio_image')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("portfoliocharacter.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Portfolio character table</p>
+                            <p>@lang('admin.sidebar.portfolio_character')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("portfolioproduct.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Portfolio products table</p>
+                            <p>@lang('admin.sidebar.portfolio_product')</p>
                         </a>
                     </li>
 

@@ -66,8 +66,12 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('galleryfilter', \App\Http\Controllers\Admin\GalleryFilterController::class);
     Route::resource('galleryitem', \App\Http\Controllers\Admin\GalleryItemController::class);
     Route::resource('galleryitemfooter', \App\Http\Controllers\Admin\GalleryItemFooterController::class);
-
-
+    Route::resource('portfolioabout', \App\Http\Controllers\Admin\PortfolioAboutController::class);
+    Route::resource('portfoliocharacter', \App\Http\Controllers\Admin\PortfolioCharacterController::class);
+    Route::resource('portfolioheader', \App\Http\Controllers\Admin\PortfolioHeaderController::class);
+    Route::resource('portfolioimage', \App\Http\Controllers\Admin\PortfolioImageController::class);
+    Route::resource('portfolioproduct', \App\Http\Controllers\Admin\PortfolioProductController::class);
+    
 });
 
 // Change language session condition
