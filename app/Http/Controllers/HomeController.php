@@ -467,4 +467,13 @@ class HomeController extends Controller
         $filepath = public_path('uploads/'.$download->file);
         return Response()->download($filepath);
     }
+
+    public function system(){
+
+        return view('system');
+    }
+
+    public function systemitem($id){
+        return view('systemitem');
+    }
 }
