@@ -22,6 +22,10 @@ use App\Models\GalleryHeader;
 use App\Models\GalleryItem;
 use App\Models\GalleryItemFooter;
 use App\Models\GalleryItemHeader;
+use App\Models\GalleryVideo;
+use App\Models\GalleryVideoFilter;
+use App\Models\GalleryVideoFooter;
+use App\Models\GalleryVideoHeader;
 use App\Models\Item;
 use App\Models\NewHeader;
 use App\Models\News;
@@ -395,5 +399,22 @@ class HomeController extends Controller
         $download = PortfolioProduct::where('id',$id)->first();
         $filepath = public_path('uploads/'.$download->file);
         return Response()->download($filepath);
+    }
+
+    public function video(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = GalleryVideoHeader::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $footer = GalleryVideoFooter::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $filters = GalleryVideoFilter::select("id","title_$lang as title")->latest()->get();
+        $videos = GalleryVideo::select("id","title_$lang as title","image","link","filter_id")->latest()->get();
+        return view('video',[
+            'header' => $header,
+            'footer' => $footer,
+            'filters' => $filters,
+            'videos' => $videos,
+        ]);
     }
 }

@@ -16,6 +16,7 @@ return [
         "Downloads" => "Downloads",
     ],
     "text" => [
+        "Gallery_invoice" => "Gallery invoice",
         "share" => "Share",
         "management" => "Management",
         "News_events" => "News & Events",

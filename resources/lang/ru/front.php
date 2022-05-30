@@ -16,6 +16,7 @@ return [
         "Downloads" => "Материалы для скачивания",
     ],
     "text" => [
+        "Gallery_invoice" => "Галерея фактур",
         "share" => "Поделиться",
         "management" => "Руководство",
         "News_events" => "Новости и События",

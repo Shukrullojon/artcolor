@@ -16,6 +16,7 @@ return [
         "Downloads" => "Yuklashlar",
     ],
     "text" => [
+        "Gallery_invoice" => "Galereya hisob-fakturasi",
         "share" => "Ulashish",
         "management" => "Boshqaruv",
         "News_events" => "Yangiliklar va Voqealar",
