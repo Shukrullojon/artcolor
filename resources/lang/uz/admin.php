@@ -68,6 +68,9 @@ return [
         "gallery_video_filter" => "Filtr",
         "gallery_video" => "Video",
         "gallery_video_footer" => "Pastki sarlavha",
+        "download_about" => "Haqida",
+        "download_info" => "Ma'lumot",
+        "download_category" => "Katalog",
     ],
     'crud' => [
         "type" => "Turi",

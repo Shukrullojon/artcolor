@@ -68,6 +68,9 @@ return [
         "gallery_video_filter" => "Фильтр",
         "gallery_video" => "Видео",
         "gallery_video_footer" => "Нижний заголовок",
+        "download_about" => "Скачать о",
+        "download_info" => "Информация",
+        "download_category" => "Категория",
     ],
     'crud' => [
         "type" => "Тип",

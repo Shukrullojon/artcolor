@@ -15,6 +15,10 @@ use App\Models\ContactFooter;
 use App\Models\ContactHeader;
 use App\Models\ContactType;
 use App\Models\Country;
+use App\Models\DownloadAbout;
+use App\Models\DownloadCategory;
+use App\Models\DownloadHeader;
+use App\Models\DownloadInfo;
 use App\Models\GalleryAbout;
 use App\Models\GalleryCategory;
 use App\Models\GalleryFilter;
@@ -416,5 +420,26 @@ class HomeController extends Controller
             'filters' => $filters,
             'videos' => $videos,
         ]);
+    }
+
+    public function download(){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = DownloadHeader::select("image","title_$lang as title","info_$lang as info")->latest()->first();
+        $about = DownloadAbout::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $info = DownloadInfo::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $categories = DownloadCategory::select("id","image","title_$lang as title","info_$lang as info")->latest()->get();
+        return view('download',[
+            'header' => $header,
+            'about' => $about,
+            'info' => $info,
+            'categories' => $categories,
+        ]);
+    }
+
+    public function downloaditem($id){
+        return view('downloaditem');
     }
 }

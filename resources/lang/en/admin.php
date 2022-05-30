@@ -67,6 +67,9 @@ return [
         "gallery_video_filter" => "Filter",
         "gallery_video" => "Video",
         "gallery_video_footer" => "Bottom title",
+        "download_about" => "About",
+        "download_info" => "Info",
+        "download_category" => "Category",
     ],
     'crud' => [
         "type" => "Type",

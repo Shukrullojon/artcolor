@@ -234,6 +234,27 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route("downloadabout.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_about')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("downloadinfo.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_info')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("downloadcategory.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_category')</p>
+                        </a>
+                    </li>
+
 
                 </ul>
             </li>

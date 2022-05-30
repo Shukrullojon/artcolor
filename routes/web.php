@@ -25,6 +25,7 @@ Route::get("/buypage",[\App\Http\Controllers\HomeController::class,'buypage'])->
 Route::get("/portfolio",[\App\Http\Controllers\HomeController::class,'portfolio'])->name("portfolio");
 Route::get("/portfoliodownload/{id}",[\App\Http\Controllers\HomeController::class,'portfoliodownload'])->name("portfoliodownload");
 Route::get("/download",[\App\Http\Controllers\HomeController::class,'download'])->name("download");
+Route::get("/downloaditem/{id}",[\App\Http\Controllers\HomeController::class,'downloaditem'])->name("downloaditem");
 Route::get("/video",[\App\Http\Controllers\HomeController::class,'video'])->name("video");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
@@ -81,6 +82,9 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('galleryvideofilter', \App\Http\Controllers\Admin\GalleryVideoFilterController::class);
     Route::resource('galleryvideofooter', \App\Http\Controllers\Admin\GalleryVideoFooterController::class);
     Route::resource('galleryvideoheader', \App\Http\Controllers\Admin\GalleryVideoHeaderController::class);
+    Route::resource('downloadabout', \App\Http\Controllers\Admin\DownloadAboutController::class);
+    Route::resource('downloadcategory', \App\Http\Controllers\Admin\DownloadCategoryController::class);
+    Route::resource('downloadinfo', \App\Http\Controllers\Admin\DownloadInfoController::class);
 });
 
 // Change language session condition
