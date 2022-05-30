@@ -14,8 +14,11 @@ return [
         "gallery" => "Gallery",
         "portfolio" => "Portfolio",
         "Downloads" => "Downloads",
+        "System" => "System",
     ],
     "text" => [
+        "System_products" => "System products Quartz floor ELFLOOR",
+        "Gallery_materials" => "Gallery of materials and works",
         "Gallery_invoice" => "Gallery invoice",
         "share" => "Share",
         "management" => "Management",

@@ -181,40 +181,38 @@
     <div class="form-input">
         <div class="container">
 
-            <form action="">
-
+            <form action="" method="GET">
                 <div class="form-content d-flex justify-content-between">
                     <div class="form-left">
-                        <h4 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500" >Обсудим ваш проект?</h4>
+                        <h4 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">@lang('front.text.discuss_your_project')?</h4>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="2000" >
-                            <input type="text" id="Имя" autocomplete="off" required>
-                            <label for="username" >Имя</label>
+                            <input type="text" name="fio" id="Имя" autocomplete="off" required>
+                            <label for="username">@lang('front.text.Name')</label>
                         </div>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="2500" >
-                            <input type="number" id="tel" autocomplete="off"  required>
-                            <label for="tel">Телефон</label>
+                            <input type="number" name="number" id="tel" autocomplete="off" required >
+                            <label for="tel">@lang('front.text.Phone')</label>
                         </div>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="3000" >
-                            <input type="email" id="mail" autocomplete="off"  required>
-                            <label for="mail">Эл. адрес</label>
+                            <input type="email" name="email" id="mail" autocomplete="off" required >
+                            <label for="mail">@lang('front.text.email')</label>
                         </div>
                         <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="3000" >
-                            <input type="checkbox" id="ok">
-                            <label for="ok" class="ok-text">Я согласен с <a href="#">условиями обработки персональных данных</a></label>
+                            <input type="checkbox" id="ok" required>
+                            <label for="ok" class="ok-text">@lang('front.text.i_agre') <a href="#">@lang('front.text.terms_of_personal_data_processing')</a></label>
                         </div>
                     </div>
                     <div class="form-right">
                         <button class="circleBtn" style="z-index: 100;">
-                            Отправить заявку
+                            @lang('front.text.submit_an_application')
                         </button>
                         <div id="map-content">
                             <div id="map" style="width: 100%; height: 100%; z-index: -1; ">
-
                                 <div class="map-content-bg-display " id="btn-cl">
                                     <div class="map-content-bg">
                                         <div>
-                                            <img src="../images/map-icon.png" alt="">
-                                            <p><b>Нажмите для отображения карты</b></p>
+                                            <img src="{{ asset("artColor/images/map-icon.png") }}" alt="">
+                                            <p><b>@lang('front.text.click_display_map')</b></p>
                                         </div>
                                     </div>
                                 </div>
