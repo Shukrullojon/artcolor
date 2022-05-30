@@ -72,13 +72,13 @@
             $contact = \App\Models\Contact::latest()->first();
         @endphp
         <div class="navbar-phone">
-            <a href="tel:{{ $contact->phone_1 }}">
+            <a href="tel:{{ $contact->phone_1 ?? "" }}">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_1 }}</span>
+                <span>{{ $contact->phone_1 ?? '' }}</span>
             </a>
-            <a href="tel:{{ $contact->phone_2 }}">
+            <a href="tel:{{ $contact->phone_2 ?? "" }}">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_2 }}</span>
+                <span>{{ $contact->phone_2 ?? "" }}</span>
             </a>
         </div>
         <div class="search">
@@ -111,7 +111,9 @@
         <div class="content">
             <div class="navbar-left">
                 <a href="{{ route("index") }}">
-                    <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @if(!empty($contact->logo))
+                        <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @endif
                 </a>
                 <ul>
                     <li>
@@ -130,13 +132,13 @@
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:{{ $contact->phone_1 }}">
+                    <a href="tel:{{ $contact->phone_1 ?? ""}}">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_1 }}</span>
+                        <span>{{ $contact->phone_1 ?? ""}}</span>
                     </a>
-                    <a href="tel:{{ $contact->phone_2 }}">
+                    <a href="tel:{{ $contact->phone_2 ?? ""}}">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_2 }}</span>
+                        <span>{{ $contact->phone_2 ?? "" }}</span>
                     </a>
                 </div>
                 <div class="search">

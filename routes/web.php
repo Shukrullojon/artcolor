@@ -35,7 +35,6 @@ Route::get("/downloadsystem/{id}",[\App\Http\Controllers\HomeController::class,'
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::get('/',[\App\Http\Controllers\Admin\MainController::class,'index'])->name('adminIndex');
-
     Route::resource("team",\App\Http\Controllers\Admin\TeamController::class);
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
     Route::resource('about' , \App\Http\Controllers\Admin\AboutController::class);

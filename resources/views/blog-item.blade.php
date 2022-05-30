@@ -10,11 +10,11 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route("index") }}">@lang('front.sidebar.home')</a></li>
                         <li class="breadcrumb-item"><a href="{{ route("blog") }}">@lang('front.sidebar.news')</a></li>
-                        <li class="breadcrumb-item active" ><a href="blog-item.html">{{ $new->title }}</a></li>
+                        <li class="breadcrumb-item active" ><a href="">{{ $new->title ?? "" }}</a></li>
                     </ol>
                 </nav>
                 <h2 data-aos="fade-up" data-aos-duration="1500">
-                    {{ $new->title }}
+                    {{ $new->title ?? "" }}
                 </h2>
 
             </div>
@@ -23,63 +23,64 @@
     <!-- main -->
 
     <!-- blog item - content -->
-    <div class="blog-item-cursor">
-        <div class="container">
-            <div class="row  text-center align-items-center">
-                <div class="col-md-5 py-2">
-                    <p>
-                        {{ date("Y-m-d",strtotime($new->created_at)) }} | <span>@if($new->type == 1) @lang('front.text.new') @else @lang('front.text.blog') @endif</span>
-                    </p>
-                </div>
-                <div class="col-md-2 blog-icons">
-                    <a href="{{ route("randblog") }}">
-                        <span>&#10229;</span>
-                    </a>
-                    <a href="#">
-                        <img src="{{ asset("artColor/images/grid.png") }}" alt="">
-                    </a>
-                    <a href="{{ route("randblog") }}">
-                        <span> &#10230;</span>
-                    </a>
-                </div>
-                <div class="col-md-5 py-2 blog-header-img">
-                    <p>
-                        @lang('front.text.share'):
-                        <a href="https://telegram.me/share/url?url={{ url()->current() }}">
-                            <img src="{{ asset("artColor/images/telegram.png") }}" alt="">
+    @if(!empty($new))
+        <div class="blog-item-cursor">
+            <div class="container">
+                <div class="row  text-center align-items-center">
+                    <div class="col-md-5 py-2">
+                        <p>
+                            {{ date("Y-m-d",strtotime($new->created_at)) }} | <span>@if($new->type == 1) @lang('front.text.new') @else @lang('front.text.blog') @endif</span>
+                        </p>
+                    </div>
+                    <div class="col-md-2 blog-icons">
+                        <a href="{{ route("randblog") }}">
+                            <span>&#10229;</span>
                         </a>
-                        <a href="https://www.instagram.com/sharer.php?u={{url()->current()}}">
-                            <img src="{{ asset("artColor/images/instagram.png") }}" alt="">
+                        <a href="#">
+                            <img src="{{ asset("artColor/images/grid.png") }}" alt="">
                         </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}">
-                            <img src="{{ asset("artColor/images/facebook.png") }}" alt="">
+                        <a href="{{ route("randblog") }}">
+                            <span> &#10230;</span>
                         </a>
-                        <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}">
-                            <img src="{{ asset("artColor/images/twitter.png") }}" alt="">
-                        </a>
-                    </p>
+                    </div>
+                    <div class="col-md-5 py-2 blog-header-img">
+                        <p>
+                            @lang('front.text.share'):
+                            <a href="https://telegram.me/share/url?url={{ url()->current() }}">
+                                <img src="{{ asset("artColor/images/telegram.png") }}" alt="">
+                            </a>
+                            <a href="https://www.instagram.com/sharer.php?u={{url()->current()}}">
+                                <img src="{{ asset("artColor/images/instagram.png") }}" alt="">
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}">
+                                <img src="{{ asset("artColor/images/facebook.png") }}" alt="">
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}">
+                                <img src="{{ asset("artColor/images/twitter.png") }}" alt="">
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- blog item - content-->
+    @endif
 
     <!-- blog item about -->
     <div class="blog-item-about">
         <div class="container-fluid">
-
-            <h2 data-aos="fade-up" data-aos-duration="1500">{{ $new->title }}</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1500">{{ $new->title ?? "" }}</h2>
             <div class="row py-4">
                 <div class="col-6" >
-                    <p data-aos="fade-up" data-aos-duration="1500">@if($new->type == 1) @lang('front.text.new') @else @lang('front.text.blog') @endif</p>
+                    @if(!empty($new))<p data-aos="fade-up" data-aos-duration="1500">@if($new->type == 1) @lang('front.text.new') @else @lang('front.text.blog') @endif</p>@endif
                 </div>
                 <div class="col-6 text-end">
-                    <p data-aos="fade-up" data-aos-duration="2000">{{ date("Y-m-d", strtotime($new->created_at)) }}</p>
+                    @if(!empty($new))<p data-aos="fade-up" data-aos-duration="2000">{{ date("Y-m-d", strtotime($new->created_at)) }}</p>@endif
                 </div>
             </div>
 
             <div class="blog-item-about-img">
-                <img src="{{ asset("uploads/".$new->image) }}" alt="">
+                @if(!empty($new))<img src="{{ asset("uploads/".$new->image) }}" alt="">@endif
             </div>
 
             <div class="about-item-social row">
@@ -113,7 +114,7 @@
             </div>
 
             <div class="blog-item-text">
-                {{ $new->text }}
+                {{ $new->text ?? "" }}
             </div>
 
         </div>

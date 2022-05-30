@@ -74,13 +74,13 @@
             $contact = \App\Models\Contact::latest()->first();
         @endphp
         <div class="navbar-phone">
-            <a href="tel:{{ $contact->phone_1 }}">
+            <a href="tel:@if(!empty($contact->phone_1)){{ $contact->phone_1 }}@endif">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_1 }}</span>
+                <span>@if(!empty($contact->phone_1)){{ $contact->phone_1 }}@endif</span>
             </a>
-            <a href="tel:{{ $contact->phone_2 }}">
+            <a href="tel:@if(!empty($contact->phone_2)){{ $contact->phone_2 }}@endif">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_2 }}</span>
+                <span>@if(!empty($contact->phone_2)){{ $contact->phone_2 }}@endif</span>
             </a>
         </div>
         <div class="search">
@@ -111,7 +111,9 @@
         <div class="content">
             <div class="navbar-left">
                 <a href="{{ url("/") }}">
-                    <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @if(!empty($contact->logo))
+                        <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @endif
                 </a>
                 <ul>
                     <li>
@@ -130,13 +132,13 @@
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:{{ $contact->phone_1 }}">
+                    <a href="tel:@if(!empty($contact->phone_1)){{ $contact->phone_1 }}@endif">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_1 }}</span>
+                        <span>@if(!empty($contact->phone_1)){{ $contact->phone_1 }}@endif</span>
                     </a>
-                    <a href="tel:{{ $contact->phone_2 }}">
+                    <a href="tel:@if(!empty($contact->phone_2)){{ $contact->phone_2 }}@endif">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_2 }}</span>
+                        <span>@if(!empty($contact->phone_2)){{ $contact->phone_2 }}@endif</span>
                     </a>
                 </div>
                 <div class="search">
@@ -188,7 +190,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="{{ url("/") }}"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
+                <a href="{{ url("/") }}">
+                    @if(!empty($contact->logo))
+                        <img src="{{ asset('artColor/images/logo.png')}}" alt="">
+                    @endif
+                </a>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

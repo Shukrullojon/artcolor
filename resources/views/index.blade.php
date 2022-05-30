@@ -492,7 +492,7 @@
                     </div>
                     <div class="form-right">
                         <button class="circleBtn" style="z-index: 100;">
-                            Отправить заявку
+                            @lang('front.text.submit_an_application')
                         </button>
 
                         <div id="map-content">
@@ -501,7 +501,7 @@
                                     <div class="map-content-bg">
                                         <div>
                                             <img src="{{ asset('artColor/images/map-icon.png')}}" alt="">
-                                            <p><b>Нажмите для отображения карты</b></p>
+                                            <p><b>@lang('front.text.click_display_map')</b></p>
                                         </div>
                                     </div>
                                 </div>

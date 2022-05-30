@@ -66,13 +66,13 @@
             $contact = \App\Models\Contact::latest()->first();
         @endphp
         <div class="navbar-phone">
-            <a href="tel:{{ $contact->phone_1 }}">
+            <a href="tel:{{ $contact->phone_1 ?? "" }}">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_1 }}</span>
+                <span>{{ $contact->phone_1 ?? ""}}</span>
             </a>
-            <a href="tel:{{ $contact->phone_2 }}">
+            <a href="tel:{{ $contact->phone_2 ?? "" }}">
                 <i class="fas fa-phone"></i>
-                <span>{{ $contact->phone_2 }}</span>
+                <span>{{ $contact->phone_2 ?? "" }}</span>
             </a>
         </div>
         <div class="search">
@@ -103,7 +103,7 @@
         <div class="content">
             <div class="navbar-left">
                 <a href="{{ route("index") }}">
-                    <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @if(!empty($contact->logo))<img src="{{ asset('uploads/'.$contact->logo)}}" alt="">@endif
                 </a>
                 <ul>
                     <li>
@@ -122,13 +122,13 @@
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:{{ $contact->phone_1 }}">
+                    <a href="tel:{{ $contact->phone_1 ?? "" }}">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_1 }}</span>
+                        <span>{{ $contact->phone_1 ?? "" }}</span>
                     </a>
-                    <a href="tel:{{ $contact->phone_2 }}">
+                    <a href="tel:{{ $contact->phone_2 ?? "" }}">
                         <i class="fas fa-phone"></i>
-                        <span>{{ $contact->phone_2 }}</span>
+                        <span>{{ $contact->phone_2 ?? ""}}</span>
                     </a>
                 </div>
                 <div class="search">
@@ -174,18 +174,18 @@
                 </ol>
             </nav>
             <h4 data-aos="fade-up" data-aos-duration="1500">
-                {{ $header->title }}
+                {{ $header->title ?? "" }}
             </h4>
 
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    {{ $header->info }}
+                    {{ $header->info ?? "" }}
                 </div>
                 <div class="col-md-4">
                     <div class="about-us-btn">
-                        <a href="{{ $header->button_link }}">
+                        <a href="{{ $header->button_link ?? ""}}">
                             <button>
-                                {{ $header->button }}
+                                {{ $header->button ?? ""}}
                             </button>
                         </a>
                     </div>
@@ -211,24 +211,26 @@
                     <div class="map-text">
                         <p class="pb-3">Магазин «Маляр»</p>
 
-                        <div>
-                            <span>@lang('front.text.Address')</span>
-                            @foreach($contact->addresses as $add)
-                                <p>
-                                    @if($lang == "uz") {{ $add->address_uz }} @elseif($lang == "ru") {{ $add->address_ru }} @else {{ $add->address_en }} @endif
-                                </p>
-                            @endforeach
-                        </div>
+                        @if(!empty($contact->addresses))
+                            <div>
+                                <span>@lang('front.text.Address')</span>
+                                @foreach($contact->addresses as $add)
+                                    <p>
+                                        @if($lang == "uz") {{ $add->address_uz }} @elseif($lang == "ru") {{ $add->address_ru }} @else {{ $add->address_en }} @endif
+                                    </p>
+                                @endforeach
+                            </div>
+                        @endif
                         <div>
                             <span>@lang('front.text.Schedule')</span>
                             <p>
-                                {{ $contact->timetable }}
+                                {{ $contact->timetable ?? ""}}
                             </p>
                         </div>
                         <div>
                             <span>@lang('front.text.Phone')</span>
                             <p>
-                                <a href="tel:{{ $contact->phone_1 }}" class="text-dark">{{ $contact->phone_1 }}</a>
+                                <a href="tel:{{ $contact->phone_1 ?? "" }}" class="text-dark">{{ $contact->phone_1 ?? "" }}</a>
                             </p>
                         </div>
                     </div>
@@ -257,20 +259,22 @@
                     <div class="map-form-item-text">
                         <div>
                             <span>@lang('front.text.Address'):</span>
-                            @foreach($contact->addresses as $add)
-                                <p>
-                                    <b>@if($lang == "uz") {{ $add->address_uz }} @elseif($lang == "ru") {{ $add->address_ru }} @else {{ $add->address_en }} @endif</b>
-                                </p>
-                                @php break; @endphp
-                            @endforeach
+                            @if(!empty($contact->addresses))
+                                @foreach($contact->addresses as $add)
+                                    <p>
+                                        <b>@if($lang == "uz") {{ $add->address_uz }} @elseif($lang == "ru") {{ $add->address_ru }} @else {{ $add->address_en }} @endif</b>
+                                    </p>
+                                    @php break; @endphp
+                                @endforeach
+                            @endif
                         </div>
                         <div>
                             <span>@lang('front.text.email'):</span>
-                            <p><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></p>
+                            <p><a href="mailto:{{ $contact->email ?? ""}}">{{ $contact->email ?? "" }}</a></p>
                         </div>
                         <div>
                             <span>@lang('front.text.Phone'):</span>
-                            <p><a href="tel:{{ $contact->phone_1 }}">{{ $contact->phone_1 }}</a></p>
+                            <p><a href="tel:{{ $contact->phone_1 ?? "" }}">{{ $contact->phone_1 ?? ""}}</a></p>
                         </div>
                     </div>
 

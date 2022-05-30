@@ -57,39 +57,47 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="../index.html"  class="active">Главная</a>
+                <a href="{{ url("/") }}"  @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
             </li>
             <li>
-                <a href="product.html">Продукция</a>
+                <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
             </li>
             <li>
-                <a href="about.html">О компании</a>
+                <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
             </li>
             <li>
-                <a href="contact.html">Контакты</a>
+                <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
             </li>
+            @php
+                $contact = \App\Models\Contact::latest()->first();
+            @endphp
         </ul>
         <div class="navbar-phone">
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_1 ?? ""}}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>@if(!empty($contact->phone_1)){{ $contact->phone_1 }}@endif</span>
             </a>
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_2 ?? ""}}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>{{ $contact->phone_2 ?? ""}}</span>
             </a>
         </div>
         <div class="search">
             <i class="fas fa-search"></i>
 
             <div class="dropdown">
+                @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ru
+                    @if(strlen($lang)>2) Ru @endif
+                    @if($lang == "uz") Uz @endif
+                    @if($lang == "ru") Ru @endif
+                    @if($lang == "en") En @endif
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Eng</a></li>
-                    <li><a class="dropdown-item" href="#">Uz</a></li>
+                    @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                    @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                    @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                 </ul>
             </div>
 
@@ -103,46 +111,53 @@
     <div class="container">
         <div class="content">
             <div class="navbar-left">
-                <a href="../index.html">
-                    <img src="../images/logo-Black.png" alt="">
+                <a href="{{ url("/") }}">
+                    @if(!empty($contact->logo))
+                        <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
+                    @endif
                 </a>
                 <ul>
                     <li>
-                        <a href="../index.html" >Главная</a>
+                        <a href="{{ url("/") }}" @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
                     </li>
                     <li>
-                        <a href="product.html">Продукция</a>
+                        <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
                     </li>
                     <li>
-                        <a href="about.html">О компании</a>
+                        <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
                     </li>
                     <li>
-                        <a href="contact.html">Контакты</a>
+                        <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_1 ?? "" }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_1 ?? "" }}</span>
                     </a>
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_2 ?? "" }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_2 ?? "" }}</span>
                     </a>
                 </div>
                 <div class="search">
                     <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
 
                     <div class="dropdown">
+                        @php $lang = session('locale') @endphp
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ru
+                            @if(strlen($lang)>2) Ru @endif
+                            @if($lang == "uz") Uz @endif
+                            @if($lang == "ru") Ru @endif
+                            @if($lang == "en") En @endif
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Eng</a></li>
-                            <li><a class="dropdown-item" href="#">Uz</a></li>
+                            @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                            @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                            @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                         </ul>
                     </div>
 
@@ -180,7 +195,7 @@
     <!-- main -->
 @endif
 
-
+@if(!empty($product))
 <!-- section -->
 <div class="section-product-item">
     <div class="container">
@@ -318,142 +333,143 @@
     </div>
 </div>
 <!-- section -->
+@endif
 
-
-<!-- acc -->
-<div class="container py-5">
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    {{ $product->accordion_title }}
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    {{ $product->accordion_info }}
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    @lang('front.text.video_lessons')<span id="videoItem">({{ count($product->videos) }})</span>
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <div class="acc-content">
-                        @foreach($product->videos as $video)
-                            <div class="acc-item">
-                                <div class="acc-img">
-                                    <img src="{{ asset("uploads/".$video->image) }}" alt="">
-                                    <div class="acc-linear">
-                                        <i class="fas fa-solid fa-play" ></i>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+@if(!empty($product))
+    <!-- acc -->
+    <div class="container py-5">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{ $product->accordion_title }}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {{ $product->accordion_info }}
                     </div>
-
                 </div>
             </div>
-        </div>
 
-        <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
-            <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    @lang('front.text.textures_gallery') <span id="galleryItem"> @if(count($product->gallery))({{ count($product->gallery) }}) @else (0) @endif</span>
-                </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <div class="acc-gallery"  id="gallery--getting-started">
-                        @foreach($product->gallery as $gallery)
-                            <div class="acc-gallery-item">
-                                <a href="{{ asset("uploads/".$gallery->image) }}" data-pswp-width="1500"
-                                   data-pswp-height="1000"
-                                   target="_blank">
-                                    <div class="acc-gallery-img">
-                                        <img src="{{ asset("uploads/".$gallery->image) }}" alt="">
+            <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        @lang('front.text.video_lessons')<span id="videoItem">({{ count($product->videos) }})</span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="acc-content">
+                            @foreach($product->videos as $video)
+                                <div class="acc-item">
+                                    <div class="acc-img">
+                                        <img src="{{ asset("uploads/".$video->image) }}" alt="">
                                         <div class="acc-linear">
-                                            <img src="{{ asset("artColor/images/x-vector-yellow.png") }}" alt="">
+                                            <i class="fas fa-solid fa-play" ></i>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                        @endforeach
+                                </div>
+                            @endforeach
+                        </div>
 
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
-            <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    @lang('front.text.Downloads') ({{ count($product->downloads) }})
-                </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    @foreach($product->downloads as $download)
-                        <div class="acc-content acc-border">
-                            <div class="acc-left">
-                                <h2>{{ $download->title }}</h2>
-                                <p>
-                                    @lang('front.text.Catalogs') – {{ $download->origin }} ({{ number_format($download->mb/1024,2,'.','') }} МB)
-                                </p>
-                            </div>
-                            <div class="acc-left">
-                                <div class="about-us-btn">
-                                        <a href="{{ route("productdownload",$download->id) }}" download>
-                                        <button>
-                                            @lang('front.text.Download')
-                                        </button>
+            <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        @lang('front.text.textures_gallery') <span id="galleryItem"> @if(count($product->gallery))({{ count($product->gallery) }}) @else (0) @endif</span>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="acc-gallery"  id="gallery--getting-started">
+                            @foreach($product->gallery as $gallery)
+                                <div class="acc-gallery-item">
+                                    <a href="{{ asset("uploads/".$gallery->image) }}" data-pswp-width="1500"
+                                       data-pswp-height="1000"
+                                       target="_blank">
+                                        <div class="acc-gallery-img">
+                                            <img src="{{ asset("uploads/".$gallery->image) }}" alt="">
+                                            <div class="acc-linear">
+                                                <img src="{{ asset("artColor/images/x-vector-yellow.png") }}" alt="">
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
-                            </div>
+                            @endforeach
+
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
+
+            <div class="accordion-item" data-aos="fade-up" data-aos-duration="1500">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        @lang('front.text.Downloads') ({{ count($product->downloads) }})
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        @foreach($product->downloads as $download)
+                            <div class="acc-content acc-border">
+                                <div class="acc-left">
+                                    <h2>{{ $download->title }}</h2>
+                                    <p>
+                                        @lang('front.text.Catalogs') – {{ $download->origin }} ({{ number_format($download->mb/1024,2,'.','') }} МB)
+                                    </p>
+                                </div>
+                                <div class="acc-left">
+                                    <div class="about-us-btn">
+                                            <a href="{{ route("productdownload",$download->id) }}" download>
+                                            <button>
+                                                @lang('front.text.Download')
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-
-
     </div>
-</div>
+@endif
 <!-- acc -->
 
 <!-- input form -->
 <div class="form-input" id="contact">
     <div class="container">
-
-        <form action="">
+        <form action="" method="get">
             <div class="form-content d-flex justify-content-between">
                 <div class="form-left" data-aos="fade-up" data-aos-duration="1500">
-                    <h4 class="text-capitalize">Обсудим ваш проект?</h4>
+                    <h4 class="text-capitalize">@lang('front.text.discuss_your_project')</h4>
                     <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                        <input type="text" id="Имя" autocomplete="off" required >
-                        <label for="username">Имя</label>
+                        <input type="text" name="fio" id="Имя" autocomplete="off" required>
+                        <label for="username">@lang('front.text.Name')</label>
                     </div>
                     <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                        <input type="number" id="tel" autocomplete="off"  required>
-                        <label for="tel">Телефон</label>
+                        <input type="number" name="number" id="tel" autocomplete="off" required >
+                        <label for="tel">@lang('front.text.Phone')</label>
                     </div>
                     <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                        <input type="email" id="mail" autocomplete="off"  required>
-                        <label for="mail">Эл. адрес</label>
+                        <input type="email" name="email" id="mail" autocomplete="off" required >
+                        <label for="mail">@lang('front.text.email')</label>
                     </div>
                     <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="1500">
-                        <input type="checkbox" id="ok">
-                        <label for="ok" class="ok-text">Я согласен с <a href="#">условиями обработки персональных данных</a></label>
+                        <input type="checkbox" id="ok" required>
+                        <label for="ok" class="ok-text">@lang('front.text.i_agre') <a href="#">@lang('front.text.terms_of_personal_data_processing')</a></label>
                     </div>
                 </div>
                 <div class="form-right">
                     <button class="circleBtn" style="z-index: 100;">
-                        Отправить заявку
+                        @lang('front.text.submit_an_application')
                     </button>
 
                     <div id="map-content">
@@ -462,15 +478,14 @@
                             <div class="map-content-bg-display " id="btn-cl">
                                 <div class="map-content-bg">
                                     <div>
-                                        <img src="../images/map-icon.png" alt="">
-                                        <p><b>Нажмите для отображения карты</b></p>
+                                        <img src="{{ asset('artColor/images/map-icon.png')}}" alt="">
+                                        <p><b>@lang('front.text.click_display_map')</b></p>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-
 
                 </div>
             </div>
@@ -482,127 +497,7 @@
 <!-- input form -->
 
 <!-- footer -->
-<div class="footer" id="footer">
-    <div class="container">
-
-        <div class="footer-content d-flex justify-content-center text-center text-sm-start   justify-content-sm-between">
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="../index.html"><img src="../images/logo.png" class="footer-logo" alt=""></a>
-                <p>Ведущий узбекский производитель декоративно-отделочных материалов</p>
-                <h6 class="mb-3">Подписывайтесь на нас</h6>
-                <div class="main-social-app">
-                    <a href="#">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="../index.html">Главная</a>
-                <a href="product.html">Продукция</a>
-                <a href="about.html">О компании</a>
-                <a href="blog.html">Новости</a>
-                <a href="servise.html">Сервисы</a>
-                <a href="downloadmaterial.html">Материалы для скачивания</a>
-                <a href="contact.html">Контакты</a>
-            </div>
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <h6>Адрес:</h6>
-
-                <div class="address">
-                    <div>
-                        <img src="../images/location.png" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Улица Бунёдкор 9, Чиланзарский район, Ташкент, Узбекистан
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="../images/location.png" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, улица Хадра
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="../images/location.png" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, просп. Амира Темура, 1
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <h6>Контакты:</h6>
-
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-phone"></i>
-                    </div>
-                    <div>
-                        <p>
-                            <a href="tel:+998 99 777 77 77">+998 99 777 77 77</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p>
-                            <a href="mailto:artcolor.com@info">artcolor.com@info</a>
-                        </p>
-                    </div>
-                </div>
-                <h6 class="my-3">Расписание:</h6>
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-clock"></i>
-                    </div>
-                    <div>
-                        <p>
-                            ПН-СБ с 10:00 до 19:00
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="footer-ads">
-        <div class="container">
-            <div class="footer-ads-content d-flex justify-content-between align-items-center">
-                <div class="footer-left">
-                    <p>При перепечатке любых материалов ссылка на веб-сайт обязательна</p>
-                </div>
-                <div class="footer-right">
-                    <p>2022. Все права защищены. </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include("layouts.front.footer")
 <!-- footer -->
 
 <!-- Modal -->

@@ -255,12 +255,18 @@ class HomeController extends Controller
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
         }
+
         $categories = Category::select('id',"title_$lang as title","info_$lang as info","image","slug","colls")->latest()->get();
+
         $cattext = CategoryText::select("id","title_$lang as title","info_$lang as info")->latest()->first();
         return view('product',[
             'categories' => $categories,
             'cattext' => $cattext,
         ]);
+    }
+
+    public function buypage(){
+        return view('buypage');
     }
 
     public function subcategory($id = null){
@@ -303,7 +309,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function productitem($id){
+    public function productitem($id, Request $request){
+
         $lang = strtolower(App::getLocale('locale'));
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
@@ -320,6 +327,33 @@ class HomeController extends Controller
             "accordion_title_$lang as accordion_title",
             "accordion_info_$lang as accordion_info")
             ->where('id',$id)->first();
+
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+            if(!empty($product->title))
+                $message .= "Product: ".$product->title."\n";
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
+
         return view('product-item',[
             'product' => $product,
         ]);
