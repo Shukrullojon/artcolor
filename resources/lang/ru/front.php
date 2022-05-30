@@ -60,5 +60,6 @@ return [
         "contact_type" => "Тип контакта",
         "Message"=> "Сообщение",
         "Country" => "Страна",
+        "Categories_of_systems"=>"Категории систем",
     ],
 ];

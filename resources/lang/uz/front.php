@@ -60,5 +60,6 @@ return [
         "contact_type" => "Kontakt turi",
         "Message"=> "Xabar",
         "Country" => "Mamlakat",
+        "Categories_of_systems"=>"Tizimlarning toifalari",
     ],
 ];
