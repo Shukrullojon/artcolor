@@ -10,8 +10,11 @@ use App\Models\Category;
 use App\Models\CategoryNew;
 use App\Models\CategoryText;
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\ContactFooter;
 use App\Models\ContactHeader;
+use App\Models\ContactType;
+use App\Models\Country;
 use App\Models\GalleryAbout;
 use App\Models\GalleryCategory;
 use App\Models\GalleryFilter;
@@ -161,16 +164,46 @@ class HomeController extends Controller
         return redirect()->route('blogitem',$rand->id);
     }
 
-    public function contact(){
+    public function contact(Request $request){
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+            $message .= "Contact type: ".$request->contact."\n";
+            $message .= "Country: ".$request->country."\n";
+            $message .= "Message: ".$request->message."\n";
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
         $lang = strtolower(App::getLocale('locale'));
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
         }
         $header = ContactHeader::select("id","title_$lang as title","info_$lang as info","button_$lang as button","button_link")->first();
         $footer = ContactFooter::select("title_$lang as title","info_$lang as info")->first();
+        $country = Country::select("title_$lang as title")->latest()->get();
+        $type = ContactType::select("title_$lang as title")->latest()->get();
         return view('contact',[
             'header' => $header,
             'footer' => $footer,
+            'country' => $country,
+            'type' => $type,
         ]);
     }
 

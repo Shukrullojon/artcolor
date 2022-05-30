@@ -55,5 +55,9 @@ return [
         "follow_us" => "Follow us",
         "Address" => "Address",
         "Schedule" => "Schedule",
+        "click_display_map" => "Click to display the map",
+        "contact_type" => "Contact type",
+        "Message"=> "Message",
+        "Country" => "Country",
     ],
 ];

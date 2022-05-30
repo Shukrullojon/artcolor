@@ -55,5 +55,9 @@ return [
         "follow_us" => "Bizni kuzatib boring",
         "Address" => "Manzil",
         "Schedule" => "Jadval",
+        "click_display_map" => "Xaritani ko'rsatish uchun bosing",
+        "contact_type" => "Kontakt turi",
+        "Message"=> "Xabar",
+        "Country" => "Mamlakat",
     ],
 ];
