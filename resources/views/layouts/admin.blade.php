@@ -141,6 +141,15 @@
         $('#summernote9').summernote()
         $('#summernote10').summernote()
         $('#summernote11').summernote()
+        $('#summernote12').summernote()
+        $('#summernote13').summernote()
+        $('#summernote14').summernote()
+        $('#summernote15').summernote()
+        $('#summernote16').summernote()
+        $('#summernote17').summernote()
+        $('#summernote18').summernote()
+        $('#summernote19').summernote()
+        $('#summernote20').summernote()
 
         // CodeMirror
         CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {

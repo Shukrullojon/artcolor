@@ -88,6 +88,7 @@ return [
         "download_item_footer" => "Нижний заголовок",
         "download_item_header" => "Название заголовка",
         "download_item_product" => "Товар",
+        'about_about' => "О нас" ,
     ],
     'crud' => [
         "effect" => "Эффект",
@@ -181,6 +182,7 @@ return [
         'system_product' => "Системный продукт" ,
         'system_slider' => "Ползунок системы" ,
         'system_about' => "Система о" ,
-        'system' => "Система"
+        'system' => "Система" ,
+        'about_about' => "О нас" ,
     ],
 ];

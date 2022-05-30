@@ -87,6 +87,7 @@ return [
         "download_item_footer" => "Bottom title",
         "download_item_header" => "Header title",
         "download_item_product" => "Product",
+        'about_about' => "About About" ,
     ],
     'crud' => [
         "effect" => "Effect",
@@ -182,6 +183,6 @@ return [
         'system_product' => "System product" ,
         'system_slider' => "System slider" ,
         'system_about' => "System about" ,
-
+        'about_about' => "About About" ,
     ],
 ];

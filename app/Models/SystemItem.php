@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\System;
 
 class SystemItem extends Model
 {
@@ -12,5 +13,9 @@ class SystemItem extends Model
     protected $table = 'system_items';
 
     protected $guarded = [];
+
+    public function system(){
+        return $this->belongsTo(System::class);
+    }
 
 }

@@ -88,6 +88,7 @@ return [
         "download_item_footer" => "Pastki sarlavha",
         "download_item_header" => "Yuqori sarlavha",
         "download_item_product" => "Mahsulot",
+        'about_about' => "Haqida"
     ],
     'crud' => [
         "effect" => "Effekt",
@@ -175,7 +176,7 @@ return [
         "litr" => "Litr",
         "gallery" => "Galereya",
         'system_header' => "Tizim sarlavhasi" ,
-        'system_text' => "System Text" ,
+        'system_text' => "Tizim matni" ,
         'system_item_header' => "Tizim elementi sarlavhasi" ,
         'system_item' => "Tizim elementlari" ,
         'system_filter' => "Tizim filtri" ,
@@ -183,5 +184,6 @@ return [
         'system_slider' => "Tizim slayderi" ,
         'system_about' => "Tizim haqida" ,
         'system' => "Sistema" ,
+        'about_about' => "Haqida"
     ],
 ];

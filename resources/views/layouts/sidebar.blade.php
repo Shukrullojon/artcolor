@@ -123,14 +123,14 @@
                     <li class="nav-item">
                         <a href="{{route('card_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Card header</p>
+                            <p>@lang('admin.sidebar.card_header')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('card_abouts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Card about</p>
+                            <p>@lang('admin.sidebar.card_about')</p>
                         </a>
                     </li>
 
@@ -146,6 +146,12 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('about_abouts.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.about_about')
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{route('about.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>

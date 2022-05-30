@@ -14,5 +14,9 @@ class System extends Model
 
     protected $guarded = [];
 
+    public function items(){
+        return $this->hasMany(SystemItem::class);
+    }
+
 
 }

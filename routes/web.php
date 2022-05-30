@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource("team",\App\Http\Controllers\Admin\TeamController::class);
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
     Route::resource('about' , \App\Http\Controllers\Admin\AboutController::class);
+    Route::resource('about_abouts' , \App\Http\Controllers\Admin\AboutAboutController::class);
     Route::resource('item' , \App\Http\Controllers\Admin\ItemController::class);
     Route::resource('text' , \App\Http\Controllers\Admin\TextController::class);
     Route::resource('activity' , \App\Http\Controllers\Admin\ActivityController::class);
@@ -55,8 +56,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('system_filters' , \App\Http\Controllers\Admin\SystemFilterController::class);
     Route::resource('system_abouts' , \App\Http\Controllers\Admin\SystemAboutController::class);
     Route::resource('system_items' , \App\Http\Controllers\Admin\SystemItemController::class);
-    Route::resource('system_sliders' , \App\Http\Controllers\Admin\SystemTextController::class);
-    Route::resource('system_texts' , \App\Http\Controllers\Admin\ServiceItemController::class);
+    Route::resource('system_sliders' , \App\Http\Controllers\Admin\SystemSliderController::class);
+    Route::resource('system_texts' , \App\Http\Controllers\Admin\SystemTextController::class);
     Route::resource('system_item_headers' , \App\Http\Controllers\Admin\SystemItemHeaderController::class);
     Route::resource('card_abouts' , \App\Http\Controllers\Admin\CardAboutController::class);
     Route::resource('works' , \App\Http\Controllers\Admin\WorkController::class);

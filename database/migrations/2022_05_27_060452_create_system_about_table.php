@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('system_about', function (Blueprint $table) {
             $table->id();
-            $table->integer('system_id');
             $table->string('title_uz');
             $table->string('title_ru');
             $table->string('title_en');

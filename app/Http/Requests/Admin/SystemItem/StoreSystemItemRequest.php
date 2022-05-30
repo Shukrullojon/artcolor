@@ -13,7 +13,7 @@ class StoreSystemItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreSystemItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'system_id' => "required" ,
+            'title_uz' => "required" ,
+            'title_ru' => "required" ,
+            'title_en' => "required" ,
+            'info_uz' => "required" ,
+            'info_ru' => "required" ,
+            'info_en' => "required" ,
+            'image' => "required" ,
         ];
     }
 }
