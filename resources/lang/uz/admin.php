@@ -64,6 +64,10 @@ return [
         "portfolio_character" => "Portfolio xarakteristika",
         "portfolio_product" => "Portfolio mahsulotlar",
         "new_header" => "Yangilik sarlavhasi",
+        "gallery_video_header" => "Sarlavha",
+        "gallery_video_filter" => "Filtr",
+        "gallery_video" => "Video",
+        "gallery_video_footer" => "Pastki sarlavha",
     ],
     'crud' => [
         "type" => "Turi",

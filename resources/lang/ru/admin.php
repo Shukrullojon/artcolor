@@ -64,6 +64,10 @@ return [
         "portfolio_character" => "Персонаж портфолио",
         "portfolio_product" => "Продукт портфеля",
         "new_header" => "Название новости",
+        "gallery_video_header" => "Заголовок",
+        "gallery_video_filter" => "Фильтр",
+        "gallery_video" => "Видео",
+        "gallery_video_footer" => "Нижний заголовок",
     ],
     'crud' => [
         "type" => "Тип",

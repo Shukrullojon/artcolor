@@ -403,33 +403,32 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryvideoheader.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Gallery video header</p>
+                            <p>@lang('admin.sidebar.gallery_video_header')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryvideofilter.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>GAllery video filter</p>
+                            <p>@lang('admin.sidebar.gallery_video_filter')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryvideo.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Gallery videoes</p>
+                            <p>@lang('admin.sidebar.gallery_video')</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route("galleryvideofooter.index") }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Gallery video footer</p>
+                            <p>@lang('admin.sidebar.gallery_video_footer')</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 

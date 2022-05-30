@@ -63,6 +63,10 @@ return [
         "portfolio_character" => "Portfolio character",
         "portfolio_product" => "Portfolio product",
         "new_header" => "News title",
+        "gallery_video_header" => "Title",
+        "gallery_video_filter" => "Filter",
+        "gallery_video" => "Video",
+        "gallery_video_footer" => "Bottom title",
     ],
     'crud' => [
         "type" => "Type",
