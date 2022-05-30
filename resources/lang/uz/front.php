@@ -14,8 +14,11 @@ return [
         "gallery" => "Galereya",
         "portfolio" => "Portfel",
         "Downloads" => "Yuklashlar",
+        "System" => "Tizim",
     ],
     "text" => [
+        "System_products" => "Tizim mahsulotlari Kvars pol ELFLOOR",
+        "Gallery_materials" => "Materiallar va asarlar galereyasi",
         "Gallery_invoice" => "Galereya hisob-fakturasi",
         "share" => "Ulashish",
         "management" => "Boshqaruv",

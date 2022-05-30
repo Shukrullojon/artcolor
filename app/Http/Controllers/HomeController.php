@@ -55,7 +55,12 @@ use App\Models\Slider;
 use App\Models\SubCategory;
 use App\Models\SubCategoryHeader;
 use App\Models\System;
+use App\Models\SystemAbout;
 use App\Models\SystemHeader;
+use App\Models\SystemItem;
+use App\Models\SystemItemHeader;
+use App\Models\SystemProduct;
+use App\Models\SystemSlider;
 use App\Models\Team;
 use App\Models\Text;
 use App\Models\Video;
@@ -125,7 +130,31 @@ class HomeController extends Controller
         ]);
     }
 
-    public function about(){
+    public function about(Request $request){
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
         $lang = strtolower(App::getLocale('locale'));
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);
@@ -484,6 +513,27 @@ class HomeController extends Controller
     }
 
     public function systemitem($id){
-        return view('systemitem');
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = SystemItemHeader::select("id","image","title_$lang as title","info_$lang as info")->latest()->first();
+        $items = SystemItem::select("id","title_$lang as title","info_$lang as info","image")->where('system_id',$id)->latest()->get();
+        $products = SystemProduct::select("id","title_$lang as title","file","image","origin","mb")->where('system_id',$id)->get();
+        $silders= SystemSlider::select("id","title_$lang as title","image")->get();
+        $about = SystemAbout::select("id","title_$lang as title","info_$lang as info")->latest()->first();
+        return view('systemitem',[
+            'header' => $header,
+            'items' => $items,
+            'products' => $products,
+            'silders' => $silders,
+            'about' => $about,
+        ]);
+    }
+
+    public function downloadsystem($id){
+        $download = SystemProduct::where('id',$id)->first();
+        $filepath = public_path('uploads/'.$download->file);
+        return Response()->download($filepath);
     }
 }

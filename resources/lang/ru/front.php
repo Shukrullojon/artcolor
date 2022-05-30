@@ -14,8 +14,11 @@ return [
         "gallery" => "Галерея",
         "portfolio" => "Портфолио",
         "Downloads" => "Материалы для скачивания",
+        "System" => "Система",
     ],
     "text" => [
+        "System_products" => "Товары системы Кварцевый пол ELFLOOR",
+        "Gallery_materials" => "Галерея материалов и работ",
         "Gallery_invoice" => "Галерея фактур",
         "share" => "Поделиться",
         "management" => "Руководство",

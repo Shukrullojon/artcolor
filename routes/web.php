@@ -30,6 +30,7 @@ Route::get('/downloaditemdownload/{id}',[\App\Http\Controllers\HomeController::c
 Route::get("/video",[\App\Http\Controllers\HomeController::class,'video'])->name("video");
 Route::get("/system",[\App\Http\Controllers\HomeController::class,'system'])->name("system");
 Route::get("/systemitem/{id}",[\App\Http\Controllers\HomeController::class,'systemitem'])->name("systemitem");
+Route::get("/downloadsystem/{id}",[\App\Http\Controllers\HomeController::class,'downloadsystem'])->name("downloadsystem");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {

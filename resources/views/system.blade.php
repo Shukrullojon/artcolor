@@ -40,7 +40,7 @@
                 <div class="section-1-content">
                     @foreach($systems as $system)
                         <div class="section-item">
-                            <a href="system-item.html">
+                            <a href="{{ route("systemitem",$system->id) }}">
                                 <div class="section-1-item">
                                     <div class="section-1-img">
                                         <img src="{{ asset("uploads/".$system->image) }}" class="section-1-item-img" alt="">
