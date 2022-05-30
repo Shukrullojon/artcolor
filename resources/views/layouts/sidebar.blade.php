@@ -260,6 +260,45 @@
             </li>
 
             <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-download"></i>
+                    <p>
+                        @lang('admin.sidebar.download_item')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route("downloaditemfilter.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_item_filter')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("downloaditemfooter.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_item_footer')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("downloaditemheader.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_item_header')</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route("downloaditemproduct.index") }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('admin.sidebar.download_item_product')</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
                 <a href="{{route('contacts.index')}}" class="nav-link">
                     <i class="nav-icon fa fa-address-book"></i>
                     <p>

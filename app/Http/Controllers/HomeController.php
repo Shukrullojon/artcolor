@@ -19,6 +19,10 @@ use App\Models\DownloadAbout;
 use App\Models\DownloadCategory;
 use App\Models\DownloadHeader;
 use App\Models\DownloadInfo;
+use App\Models\DownloadItemFilter;
+use App\Models\DownloadItemFooter;
+use App\Models\DownloadItemHeader;
+use App\Models\DownloadItemProduct;
 use App\Models\GalleryAbout;
 use App\Models\GalleryCategory;
 use App\Models\GalleryFilter;
@@ -440,6 +444,27 @@ class HomeController extends Controller
     }
 
     public function downloaditem($id){
-        return view('downloaditem');
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = DownloadItemHeader::select("title_$lang as title")->latest()->first();
+        $filter_1 = DownloadItemFilter::select("id","title_$lang as title")->where('type',1)->latest()->get();
+        $filter_2 = DownloadItemFilter::select("id","title_$lang as title")->where('type',2)->latest()->get();
+        $footer = DownloadItemFooter::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $products = DownloadItemProduct::select("id","filter_id","image","file","origin","mb","title_$lang as title")->latest()->paginate(20);
+        return view('downloaditem',[
+            'header' => $header,
+            'filter_1' => $filter_1,
+            'filter_2' => $filter_2,
+            'footer' => $footer,
+            'products' => $products,
+        ]);
+    }
+
+    public function downloaditemdownload($id){
+        $download = DownloadItemProduct::where('id',$id)->first();
+        $filepath = public_path('uploads/'.$download->file);
+        return Response()->download($filepath);
     }
 }
