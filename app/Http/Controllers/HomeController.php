@@ -54,6 +54,8 @@ use App\Models\ServiceText;
 use App\Models\Slider;
 use App\Models\SubCategory;
 use App\Models\SubCategoryHeader;
+use App\Models\System;
+use App\Models\SystemHeader;
 use App\Models\Team;
 use App\Models\Text;
 use App\Models\Video;
@@ -469,8 +471,16 @@ class HomeController extends Controller
     }
 
     public function system(){
-
-        return view('system');
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = SystemHeader::select("title_$lang as title","image")->latest()->first();
+        $systems = System::select("id","title_$lang as title","info_$lang as info","image")->latest()->get();
+        return view('system',[
+            'header' => $header,
+            'systems' => $systems,
+        ]);
     }
 
     public function systemitem($id){

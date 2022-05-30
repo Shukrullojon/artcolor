@@ -29,7 +29,7 @@ Route::get("/downloaditem/{id}",[\App\Http\Controllers\HomeController::class,'do
 Route::get('/downloaditemdownload/{id}',[\App\Http\Controllers\HomeController::class,'downloaditemdownload'])->name('downloaditemdownload');
 Route::get("/video",[\App\Http\Controllers\HomeController::class,'video'])->name("video");
 Route::get("/system",[\App\Http\Controllers\HomeController::class,'system'])->name("system");
-Route::get("/systemitem",[\App\Http\Controllers\HomeController::class,'systemitem'])->name("systemitem");
+Route::get("/systemitem/{id}",[\App\Http\Controllers\HomeController::class,'systemitem'])->name("systemitem");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {

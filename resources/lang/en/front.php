@@ -60,5 +60,6 @@ return [
         "contact_type" => "Contact type",
         "Message"=> "Message",
         "Country" => "Country",
+        "Categories_of_systems"=>"Categories of systems",
     ],
 ];
