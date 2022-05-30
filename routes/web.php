@@ -47,6 +47,14 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('contact_types' , \App\Http\Controllers\Admin\ContactTypeController::class);
     Route::resource('countries' , \App\Http\Controllers\Admin\CountryController::class);
     Route::resource('card_headers' , \App\Http\Controllers\Admin\CardHeaderController::class);
+    Route::resource('system_headers' , \App\Http\Controllers\Admin\SystemHeaderController::class);
+    Route::resource('systems' , \App\Http\Controllers\Admin\SystemController::class);
+    Route::resource('system_filters' , \App\Http\Controllers\Admin\SystemFilterController::class);
+    Route::resource('system_abouts' , \App\Http\Controllers\Admin\SystemAboutController::class);
+    Route::resource('system_items' , \App\Http\Controllers\Admin\SystemItemController::class);
+    Route::resource('system_sliders' , \App\Http\Controllers\Admin\SystemTextController::class);
+    Route::resource('system_texts' , \App\Http\Controllers\Admin\ServiceItemController::class);
+    Route::resource('system_item_headers' , \App\Http\Controllers\Admin\SystemItemHeaderController::class);
     Route::resource('card_abouts' , \App\Http\Controllers\Admin\CardAboutController::class);
     Route::resource('works' , \App\Http\Controllers\Admin\WorkController::class);
     Route::resource('work_items' , \App\Http\Controllers\Admin\WorkItemController::class);

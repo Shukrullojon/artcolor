@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('galery_items', function (Blueprint $table) {
             $table->id();
             $table->integer('filter_id');
-            $table->integer('filter_id');
             $table->string('image');
             $table->string('title_uz');
             $table->string('title_ru');

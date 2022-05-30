@@ -149,14 +149,14 @@
                     <li class="nav-item">
                         <a href="{{route('about.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Abouts </p>
+                            @lang('admin.sidebar.about')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('item.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>About Item</p>
+                            @lang('admin.sidebar.about_item')
                         </a>
                     </li>
 
@@ -170,14 +170,14 @@
                     <li class="nav-item">
                         <a href="{{route('activity.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Activity </p>
+                            @lang('admin.sidebar.activity')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('videos.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Videos </p>
+                            @lang('admin.sidebar.video')
                         </a>
                     </li>
 
@@ -318,35 +318,35 @@
                     <li class="nav-item">
                         <a href="{{route('service_texts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service text</p>
+                            @lang('admin.sidebar.service_text')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('services.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Services</p>
+                            @lang('admin.sidebar.service')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('service_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service item header</p>
+                            @lang('admin.sidebar.service_header')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('service_items.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Service items </p>
+                            @lang('admin.sidebar.service_item')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{route('service_images.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Services image</p>
+                            @lang('admin.sidebar.service_image')
                         </a>
                     </li>
 
@@ -510,65 +510,66 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('system_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>System header table</p>
+
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('system_texts.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.system_text')
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('systems.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.system')
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('system_item_headers.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.system_item_header')
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('system_items.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.system_item')
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('system_filters.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.system_filter')
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>System text table</p>
+                            @lang('admin.sidebar.system_product')
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('system_sliders.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Systems table</p>
+                            @lang('admin.sidebar.system_slider')
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('system_abouts.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>System item header table</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>System items table</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>System filter table</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>System product table</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>System slider table</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>System about table</p>
+                            @lang('admin.sidebar.system_about')
                         </a>
                     </li>
                 </ul>

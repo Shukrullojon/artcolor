@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('admin.sidebar.card_header') @lang('admin.sidebar.edit')</h1>
+                    <h1>@lang('admin.sidebar.system_header') @lang('admin.sidebar.edit')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('adminIndex') }}">@lang('admin.sidebar.home')</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('card_headers.index') }}">@lang('admin.sidebar.card_header')</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('system_headers.index') }}">@lang('admin.sidebar.system_header')</a></li>
                         <li class="breadcrumb-item active">@lang('admin.crud.update')</li>
                     </ol>
                 </div>
@@ -31,14 +31,14 @@
                     <!-- /.card-header -->
                     <div class="card-body">
 
-                        <form action="{{ route('card_headers.update' , $cardHeader->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('system_headers.update' , $systemHeader->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
                             <div class="row">
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.title')(uz)</label><label style="color: red">*</label>
-                                        <input type="text" name="title_uz" class="form-control {{ $errors->has('title_uz') ? "is-invalid":"" }}" value="{{ $cardHeader->title_uz }}" required>
+                                        <input type="text" name="title_uz" class="form-control {{ $errors->has('title_uz') ? "is-invalid":"" }}" value="{{ $systemHeader->title_uz }}" required>
                                         @if($errors->has('title_uz'))
                                             <span class="error invalid-feedback">{{ $errors->first('title_uz') }}</span>
                                         @endif
@@ -48,7 +48,7 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.title')(ru)</label><label style="color: red">*</label>
-                                        <input type="text" name="title_ru" class="form-control {{ $errors->has('title_ru') ? "is-invalid":"" }}" value="{{ $cardHeader->title_ru }}" required>
+                                        <input type="text" name="title_ru" class="form-control {{ $errors->has('title_ru') ? "is-invalid":"" }}" value="{{ $systemHeader->title_ru }}" required>
                                         @if($errors->has('title_ru'))
                                             <span class="error invalid-feedback">{{ $errors->first('title_ru') }}</span>
                                         @endif
@@ -58,7 +58,7 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="form-group">
                                         <label>@lang('admin.crud.title')(en)</label><label style="color: red">*</label>
-                                        <input type="text" name="title_en" class="form-control {{ $errors->has('title_en') ? "is-invalid":"" }}" value="{{ $cardHeader->title_en }}" required>
+                                        <input type="text" name="title_en" class="form-control {{ $errors->has('title_en') ? "is-invalid":"" }}" value="{{ $systemHeader->title_en }}" required>
                                         @if($errors->has('title_en'))
                                             <span class="error invalid-feedback">{{ $errors->first('title_en') }}</span>
                                         @endif
@@ -66,37 +66,6 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.info')(uz)</label><label style="color: red">*</label>
-                                        <input type="text" name="info_uz" class="form-control {{ $errors->has('info_uz') ? "is-invalid":"" }}" value="{{ $cardHeader->info_uz }}" required>
-                                        @if($errors->has('info_uz'))
-                                            <span class="error invalid-feedback">{{ $errors->first('info_uz') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.info')(ru)</label><label style="color: red">*</label>
-                                        <input type="text" name="info_ru" class="form-control {{ $errors->has('info_ru') ? "is-invalid":"" }}" value="{{ $cardHeader->info_ru }}" required>
-                                        @if($errors->has('info_ru'))
-                                            <span class="error invalid-feedback">{{ $errors->first('info_ru') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="form-group">
-                                        <label>@lang('admin.crud.info')(en)</label><label style="color: red">*</label>
-                                        <input type="text" name="info_en" class="form-control {{ $errors->has('info_en') ? "is-invalid":"" }}" value="{{ $cardHeader->info_en }}" required>
-                                        @if($errors->has('info_en'))
-                                            <span class="error invalid-feedback">{{ $errors->first('info_en') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
 
                                 <div class="col-lg-4 col-sm-12">
@@ -113,7 +82,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success float-right">@lang('admin.crud.update')</button>
-                                <a href="{{ route('card_headers.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
+                                <a href="{{ route('system_headers.index') }}" class="btn btn-default float-left">@lang('admin.crud.cancel')</a>
                             </div>
                         </form>
 
