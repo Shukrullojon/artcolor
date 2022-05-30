@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('system_sliders' , \App\Http\Controllers\Admin\SystemSliderController::class);
     Route::resource('system_texts' , \App\Http\Controllers\Admin\SystemTextController::class);
     Route::resource('system_item_headers' , \App\Http\Controllers\Admin\SystemItemHeaderController::class);
+    Route::resource('systemproduct' , \App\Http\Controllers\Admin\SystemProductController::class);
     Route::resource('card_abouts' , \App\Http\Controllers\Admin\CardAboutController::class);
     Route::resource('works' , \App\Http\Controllers\Admin\WorkController::class);
     Route::resource('work_items' , \App\Http\Controllers\Admin\WorkItemController::class);
