@@ -551,7 +551,7 @@
                     <li class="nav-item">
                         <a href="{{route('system_headers.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-
+                            @lang('admin.sidebar.system_header')
 
                         </a>
                     </li>
