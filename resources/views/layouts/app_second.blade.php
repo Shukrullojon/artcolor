@@ -56,39 +56,47 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="../index.html"  class="active">Главная</a>
+                <a href="{{ url("/") }}"  @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
             </li>
             <li>
-                <a href="product.html">Продукция</a>
+                <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
             </li>
             <li>
-                <a href="about.html">О компании</a>
+                <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
             </li>
             <li>
-                <a href="contact.html">Контакты</a>
+                <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
             </li>
         </ul>
+        @php
+            $contact = \App\Models\Contact::latest()->first();
+        @endphp
         <div class="navbar-phone">
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_1 }}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>{{ $contact->phone_1 }}</span>
             </a>
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_2 }}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>{{ $contact->phone_2 }}</span>
             </a>
         </div>
         <div class="search">
             <i class="fas fa-search"></i>
 
             <div class="dropdown">
+                @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ru
+                    @if(strlen($lang)>2) Ru @endif
+                    @if($lang == "uz") Uz @endif
+                    @if($lang == "ru") Ru @endif
+                    @if($lang == "en") En @endif
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Eng</a></li>
-                    <li><a class="dropdown-item" href="#">Uz</a></li>
+                    @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                    @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                    @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                 </ul>
             </div>
 
@@ -102,46 +110,49 @@
     <div class="container">
         <div class="content">
             <div class="navbar-left">
-                <a href="../index.html">
-                    <img src="{{ asset('artColor/images/logo-Black.png')}}" alt="">
+                <a href="{{ route("index") }}">
+                    <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
                 </a>
                 <ul>
                     <li>
-                        <a href="../index.html" >Главная</a>
+                        <a href="{{ url("/") }}" @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
                     </li>
                     <li>
-                        <a href="product.html">Продукция</a>
+                        <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
                     </li>
                     <li>
-                        <a href="about.html">О компании</a>
+                        <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
                     </li>
                     <li>
-                        <a href="contact.html">Контакты</a>
+                        <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_1 }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_1 }}</span>
                     </a>
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_2 }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_2 }}</span>
                     </a>
                 </div>
                 <div class="search">
-                    <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
-
                     <div class="dropdown">
+                        @php $lang = session('locale') @endphp
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ru
+                            @if(strlen($lang)>2) Ru @endif
+                            @if($lang == "uz") Uz @endif
+                            @if($lang == "ru") Ru @endif
+                            @if($lang == "en") En @endif
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Eng</a></li>
-                            <li><a class="dropdown-item" href="#">Uz</a></li>
+                            @if($lang != "uz") <li><a class="dropdown-item" href="/language/uz">Uz</a></li> @endif
+                            @if($lang != "ru" and strlen($lang) == 2) <li><a class="dropdown-item" href="/language/ru">Ru</a></li> @endif
+                            @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                         </ul>
                     </div>
 
@@ -168,129 +179,7 @@
 
 
 <!-- footer -->
-<div class="footer">
-    <div class="container">
-
-        <div class="footer-content d-flex justify-content-center text-center text-sm-start   justify-content-sm-between">
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500" >
-                <a href="../index.html">
-                    <img src="{{ asset('artColor/images/logo.png')}}" class="footer-logo" alt="">
-                </a>
-                <p>Ведущий узбекский производитель декоративно-отделочных материалов</p>
-                <h6 class="mb-3">Подписывайтесь на нас</h6>
-                <div class="main-social-app">
-                    <a href="#">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500" >
-                <a href="../index.html">Главная</a>
-                <a href="product.html">Продукция</a>
-                <a href="about.html">О компании</a>
-                <a href="blog.html">Новости</a>
-                <a href="servise.html">Сервисы</a>
-                <a href="downloadmaterial.html">Материалы для скачивания</a>
-                <a href="contact.html">Контакты</a>
-            </div>
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500" >
-                <h6>Адрес:</h6>
-
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png')}}" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Улица Бунёдкор 9, Чиланзарский район, Ташкент, Узбекистан
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png')}}" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, улица Хадра
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png')}}" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, просп. Амира Темура, 1
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1500" >
-                <h6>Контакты:</h6>
-
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-phone"></i>
-                    </div>
-                    <div>
-                        <p>
-                            <a href="tel:+998 99 777 77 77">+998 99 777 77 77</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p>
-                            <a href="mailto:artcolor.com@info">artcolor.com@info</a>
-                        </p>
-                    </div>
-                </div>
-                <h6 class="my-3">Расписание:</h6>
-                <div class="address">
-                    <div>
-                        <i class="fas fa-solid fa-clock"></i>
-                    </div>
-                    <div>
-                        <p>
-                            ПН-СБ с 10:00 до 19:00
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="footer-ads">
-        <div class="container">
-            <div class="footer-ads-content d-flex justify-content-between align-items-center">
-                <div class="footer-left">
-                    <p>При перепечатке любых материалов ссылка на веб-сайт обязательна</p>
-                </div>
-                <div class="footer-right">
-                    <p>2022. Все права защищены. </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('layouts.front.footer')
 <!-- footer -->
 
 <!-- Modal -->

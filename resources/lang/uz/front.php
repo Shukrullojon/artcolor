@@ -13,6 +13,7 @@ return [
         "service" => "Xizmatlar",
         "gallery" => "Galereya",
         "portfolio" => "Portfel",
+        "Downloads" => "Yuklashlar",
     ],
     "text" => [
         "share" => "Ulashish",
@@ -51,5 +52,8 @@ return [
         "Catalogs" => "Kataloglar",
         "Download" => "Yuklab olish",
         "see_also" => "Shuningdek qarang",
+        "follow_us" => "Bizni kuzatib boring",
+        "Address" => "Manzil",
+        "Schedule" => "Jadval",
     ],
 ];

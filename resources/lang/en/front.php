@@ -13,6 +13,7 @@ return [
         "service" => "Service",
         "gallery" => "Gallery",
         "portfolio" => "Portfolio",
+        "Downloads" => "Downloads",
     ],
     "text" => [
         "share" => "Share",
@@ -51,5 +52,8 @@ return [
         "Catalogs" => "Catalogs",
         "Download" => "Download",
         "see_also" => "See also",
+        "follow_us" => "Follow us",
+        "Address" => "Address",
+        "Schedule" => "Schedule",
     ],
 ];

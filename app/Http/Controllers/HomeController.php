@@ -52,8 +52,33 @@ class HomeController extends Controller
 {
 
 
-    public function index()
+    public function index(Request $request)
     {
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
+
         $lang = strtolower(App::getLocale('locale'));
         if(strlen($lang)>2){
             $lang=substr($lang,0,2);

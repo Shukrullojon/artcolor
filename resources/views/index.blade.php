@@ -469,25 +469,25 @@
     <!-- input form -->
     <div class="form-input">
         <div class="container">
-            <form action="">
+            <form action="" method="get">
                 <div class="form-content d-flex justify-content-between">
-                    <div class="form-left">
-                        <h4 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">Обсудим ваш проект?</h4>
+                    <div class="form-left" >
+                        <h4 class="text-capitalize" data-aos="fade-up" data-aos-duration="1500">@lang('front.text.discuss_your_project')?</h4>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="text" id="Имя" autocomplete="off" required>
-                            <label for="username">Имя</label>
+                            <input type="text" name="fio" id="Имя" autocomplete="off" required>
+                            <label for="username">@lang('front.text.Name')</label>
                         </div>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="number" id="tel"  autocomplete="off"  required>
-                            <label for="tel">Телефон</label>
+                            <input type="number" name="number" id="tel" autocomplete="off" required >
+                            <label for="tel">@lang('front.text.Phone')</label>
                         </div>
                         <div class="form-item" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="email" id="mail" autocomplete="off"  required>
-                            <label for="mail">Эл. адрес</label>
+                            <input type="email" name="email" id="mail" autocomplete="off" required >
+                            <label for="mail">@lang('front.text.email')</label>
                         </div>
-                        <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center align-items-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="1500">
-                            <input type="checkbox" id="ok"  style="color: #fff;">
-                            <label for="ok" class="ok-text" >Я согласен с <a href="#">условиями обработки персональных данных</a></label>
+                        <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="1500">
+                            <input type="checkbox" id="ok" required>
+                            <label for="ok" class="ok-text">@lang('front.text.i_agre') <a href="#">@lang('front.text.terms_of_personal_data_processing')</a></label>
                         </div>
                     </div>
                     <div class="form-right">

@@ -58,31 +58,33 @@
     <div class="offcanvas-body">
         <ul>
             <li>
-                <a href="{{ url("/") }}"  class="active">@lang('front.sidebar.home')</a>
+                <a href="{{ url("/") }}"  @if(Route::currentRouteName() == "index") class="active" @endif>@lang('front.sidebar.home')</a>
             </li>
             <li>
-                <a href="{{ route("product") }}">@lang('front.sidebar.product')</a>
+                <a href="{{ route("product") }}" @if(Route::currentRouteName() == "product") class="active" @endif>@lang('front.sidebar.product')</a>
             </li>
             <li>
-                <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
+                <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
             </li>
             <li>
-                <a href="pages/contact.html">@lang('front.sidebar.contact')</a>
+                <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
             </li>
         </ul>
+        @php
+            $contact = \App\Models\Contact::latest()->first();
+        @endphp
         <div class="navbar-phone">
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_1 }}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>{{ $contact->phone_1 }}</span>
             </a>
-            <a href="tel:+998 90 780 06 60">
+            <a href="tel:{{ $contact->phone_2 }}">
                 <i class="fas fa-phone"></i>
-                <span>+998 90 780 06 60</span>
+                <span>{{ $contact->phone_2 }}</span>
             </a>
         </div>
         <div class="search">
-            <i class="fas fa-search"></i>
-
+            {{--<i class="fas fa-search"></i>--}}
             <div class="dropdown">
                 @php $lang = session('locale') @endphp
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,7 +100,6 @@
                     @if($lang != "en") <li><a class="dropdown-item" href="/language/en">En</a></li> @endif
                 </ul>
             </div>
-
         </div>
     </div>
 </div>
@@ -110,7 +111,7 @@
         <div class="content">
             <div class="navbar-left">
                 <a href="{{ url("/") }}">
-                    <img src="{{ asset('artColor/images/logo.png')}}" alt="">
+                    <img src="{{ asset('uploads/'.$contact->logo)}}" alt="">
                 </a>
                 <ul>
                     <li>
@@ -123,23 +124,23 @@
                         <a href="{{ route("about") }}" @if(Route::currentRouteName() == "about") class="active" @endif>@lang('front.sidebar.about_company')</a>
                     </li>
                     <li>
-                        <a href="pages/contact.html" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
+                        <a href="{{ route("contact") }}" @if(Route::currentRouteName() == "contact") class="active" @endif>@lang('front.sidebar.contact')</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar-right">
                 <div class="navbar-phone">
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_1 }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_1 }}</span>
                     </a>
-                    <a href="tel:+998 90 780 06 60">
+                    <a href="tel:{{ $contact->phone_2 }}">
                         <i class="fas fa-phone"></i>
-                        <span>+998 90 780 06 60</span>
+                        <span>{{ $contact->phone_2 }}</span>
                     </a>
                 </div>
                 <div class="search">
-                    <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>
+                    {{--<i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#exampleModal-search"></i>--}}
 
                     <div class="dropdown">
                         @php $lang = session('locale') @endphp

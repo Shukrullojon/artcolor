@@ -116,7 +116,7 @@ class ContactController extends Controller
         $image = '';
         if(isset($request->image)){
             $image = $this->uploadImage($request);
-            $this->deleteImage($contact->image);
+            //$this->deleteImage($contact->image);
         }else{
             $image = $contact->logo;
         }
@@ -145,17 +145,19 @@ class ContactController extends Controller
         $inputs = $request->all();
 
 
-        $address_uz = $inputs['address_uz'];
-        $address_ru = $inputs['address_ru'];
-        $address_en = $inputs['address_en'];
+        $address_uz = $inputs['address_uz'] ?? "";
+        $address_ru = $inputs['address_ru'] ?? "";
+        $address_en = $inputs['address_en'] ?? "";
 
-        foreach($address_uz as $key => $item){
-            Address::create([
-                'address_uz' => $item,
-                'address_ru' => $address_ru[$key],
-                'address_en' => $address_en[$key],
-                'contact_id' => $contact->id,
-            ]);
+        if(!empty($address_uz)){
+            foreach($address_uz as $key => $item){
+                Address::create([
+                    'address_uz' => $item,
+                    'address_ru' => $address_ru[$key],
+                    'address_en' => $address_en[$key],
+                    'contact_id' => $contact->id,
+                ]);
+            }
         }
         return  redirect()->route('contacts.index');
     }
@@ -172,7 +174,7 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        $this->deleteImage($contact->image);
+        //$this->deleteImage($contact->image);
         $contact->delete();
         return  redirect()->route('contacts.index');
     }

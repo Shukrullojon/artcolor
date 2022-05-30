@@ -24,6 +24,7 @@ Route::get('/galleryitem',[\App\Http\Controllers\HomeController::class,'galleryi
 Route::get("/buypage",[\App\Http\Controllers\HomeController::class,'buypage'])->name("buypage");
 Route::get("/portfolio",[\App\Http\Controllers\HomeController::class,'portfolio'])->name("portfolio");
 Route::get("/portfoliodownload/{id}",[\App\Http\Controllers\HomeController::class,'portfoliodownload'])->name("portfoliodownload");
+Route::get("/download",[\App\Http\Controllers\HomeController::class,'download'])->name("download");
 
 Route::get('/home',[\App\Http\Controllers\Admin\MainController::class,'index'])->middleware('auth')->name("home");
 Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {

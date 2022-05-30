@@ -1,82 +1,74 @@
 <!-- footer -->
 <div class="footer">
     <div class="container">
-
+        @php
+            $contact = \App\Models\Contact::latest()->first();
+            $lang = strtolower(App::getLocale('locale'));
+            if(strlen($lang)>2){
+                $lang=substr($lang,0,2);
+            }
+        @endphp
         <div class="footer-content d-flex justify-content-center text-center text-sm-start   justify-content-sm-between">
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="{{ url("/") }}"><img src="{{ asset('artColor/images/logo.png')}}" alt=""></a>
-                <p>Ведущий узбекский производитель декоративно-отделочных материалов</p>
-                <h6 class="mb-3">Подписывайтесь на нас</h6>
+                <a href="{{ url("/") }}"><img src="{{ asset('uploads/'.$contact->logo)}}" alt=""></a>
+                <p>@if($lang == "uz") {{ $contact->title_uz }} @elseif($lang == "ru") {{ $contact->title_ru }} @else {{ $contact->title_en }} @endif</p>
+                <h6 class="mb-3">@lang('front.text.follow_us')</h6>
                 <div class="main-social-app">
-                    <a href="#">
+                    <a href="{{ $contact->telegram }}">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <a href="#">
+                    <a href="{{ $contact->youtube }}">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="#">
+                    <a href="{{ $contact->facebook }}">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a href="{{ $contact->instagram }}">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <a href="{{ url("/") }}">Главная</a>
-                <a href="pages/product.html">Продукция</a>
-                <a href="{{ route("about") }}">О компании</a>
-                <a href="pages/blog.html">Новости</a>
-                <a href="{{ route("service") }}">Сервисы</a>
-                <a href="pages/downloadmaterial.html">Материалы для скачивания</a>
-                <a href="pages/contact.html">Контакты</a>
+                <a href="{{ url("/") }}">@lang('front.sidebar.home')</a>
+                <a href="{{ route("product") }}">@lang('front.sidebar.product')</a>
+                <a href="{{ route("about") }}">@lang('front.sidebar.about_company')</a>
+                <a href="{{ route("blog") }}">@lang('front.sidebar.news')</a>
+                <a href="{{ route("service") }}">@lang('front.sidebar.service')</a>
+                <a href="{{ route("download") }}">@lang('front.sidebar.Downloads')</a>
+                <a href="{{ route("contact") }}">@lang('front.sidebar.contact')</a>
             </div>
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <h6>Адрес:</h6>
-
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png') }}" alt="">
+                <h6>@lang('front.text.Address'):</h6>
+                @php
+                    $lang = strtolower(App::getLocale('locale'));
+                    if(strlen($lang)>2){
+                        $lang=substr($lang,0,2);
+                    }
+                @endphp
+                @foreach($contact->addresses as $add)
+                    <div class="address">
+                        <div>
+                            <img src="{{ asset('artColor/images/location.png') }}" alt="">
+                        </div>
+                        <div>
+                            <p>
+                                @if($lang == "uz") {{ $add->address_uz }} @elseif($lang == "ru") {{ $add->address_ru }} @else {{ $add->address_en }} @endif
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p>
-                            Улица Бунёдкор 9, Чиланзарский район, Ташкент, Узбекистан
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png')}}" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, улица Хадра
-                        </p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div>
-                        <img src="{{ asset('artColor/images/location.png')}}" alt="">
-                    </div>
-                    <div>
-                        <p>
-                            Узбекистан, Ташкент, просп. Амира Темура, 1
-                        </p>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
 
             <div class="footer-item" data-aos="fade-up" data-aos-duration="1500">
-                <h6>Контакты:</h6>
-
+                <h6>@lang('front.sidebar.contact'):</h6>
                 <div class="address">
                     <div>
                         <i class="fas fa-solid fa-phone"></i>
                     </div>
                     <div>
                         <p>
-                            <a href="tel:+998 99 777 77 77">+998 99 777 77 77</a>
+                            <a href="tel:{{ $contact->phone_1 }}">{{ $contact->phone_1 }}</a>
                         </p>
                     </div>
                 </div>
@@ -86,18 +78,18 @@
                     </div>
                     <div>
                         <p>
-                            <a href="mailto:artcolor.com@info">artcolor.com@info</a>
+                            <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
                         </p>
                     </div>
                 </div>
-                <h6 class="my-3">Расписание:</h6>
+                <h6 class="my-3">@lang('front.text.Schedule'):</h6>
                 <div class="address">
                     <div>
                         <i class="fas fa-solid fa-clock"></i>
                     </div>
                     <div>
                         <p>
-                            ПН-СБ с 10:00 до 19:00
+                            {{ $contact->timetable }}
                         </p>
                     </div>
                 </div>
@@ -119,5 +111,6 @@
             </div>
         </div>
     </div>
+
 </div>
 <!-- footer -->
