@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\AboutAbout;
+use App\Models\BranchAbout;
+use App\Models\BranchHeader;
+use App\Models\BuypageHeader;
 use App\Models\CardAbout;
 use App\Models\CardHeader;
 use App\Models\Category;
@@ -265,8 +268,80 @@ class HomeController extends Controller
         ]);
     }
 
-    public function buypage(){
-        return view('buypage');
+    public function buypage(Request $request){
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+            if(!empty($product->title))
+                $message .= "Product: ".$product->title."\n";
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $header = BuypageHeader::select("title_$lang as title","info_$lang as info")->latest()->first();
+        $contact = Contact::select("id","email","phone_1")->latest()->first();
+        return view('buypage',[
+            'header' => $header,
+            'contact' => $contact,
+        ]);
+    }
+
+    public function branch(Request $request){
+        $lang = strtolower(App::getLocale('locale'));
+        if(strlen($lang)>2){
+            $lang=substr($lang,0,2);
+        }
+        $sms = '';
+        if(isset($request->fio)){
+            Comment::create([
+                "fio" => $request->fio,
+                "phone" => $request->number,
+                "email" => $request->email,
+            ]);
+            $sms = "Arizangiz qabul qilindi!";
+            $message = '';
+            $message .= "Ism: ".$request->fio."\n";
+            $message .= "Telefon: ".$request->number."\n";
+            $message .= "Email: ".$request->email."\n";
+            if(!empty($product->title))
+                $message .= "Product: ".$product->title."\n";
+            $method = "sendMessage";
+            $data = [];
+            $data['chat_id'] = "-1001442690995";
+            $data['text'] = $message;
+            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            $res = curl_exec($ch);
+        }
+        $header = BranchHeader::select("title_$lang as title","info_$lang as info","button_$lang as button","button_url")->latest()->first();
+        $about = BranchAbout::select("title_$lang as title","info_$lang as info")->latest()->first();
+        return view('branch',[
+            'header' => $header,
+            'about' => $about,
+        ]);
     }
 
     public function subcategory($id = null){
@@ -328,31 +403,7 @@ class HomeController extends Controller
             "accordion_info_$lang as accordion_info")
             ->where('id',$id)->first();
 
-        $sms = '';
-        if(isset($request->fio)){
-            Comment::create([
-                "fio" => $request->fio,
-                "phone" => $request->number,
-                "email" => $request->email,
-            ]);
-            $sms = "Arizangiz qabul qilindi!";
-            $message = '';
-            $message .= "Ism: ".$request->fio."\n";
-            $message .= "Telefon: ".$request->number."\n";
-            $message .= "Email: ".$request->email."\n";
-            if(!empty($product->title))
-                $message .= "Product: ".$product->title."\n";
-            $method = "sendMessage";
-            $data = [];
-            $data['chat_id'] = "-1001442690995";
-            $data['text'] = $message;
-            $url = "https://api.telegram.org/bot5380923873:AAHxbU-4rmbstFn0Rw_Tj_QXU2q4QAi_yIU/" . $method;
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            $res = curl_exec($ch);
-        }
+
 
         return view('product-item',[
             'product' => $product,

@@ -17,6 +17,7 @@ return [
         "System" => "Система",
     ],
     "text" => [
+        "Where_could_I_buy" => "Где купить",
         "System_products" => "Товары системы Кварцевый пол ELFLOOR",
         "Gallery_materials" => "Галерея материалов и работ",
         "Gallery_invoice" => "Галерея фактур",

@@ -88,7 +88,12 @@ return [
         "download_item_footer" => "Нижний заголовок",
         "download_item_header" => "Название заголовка",
         "download_item_product" => "Товар",
-        'about_about' => "О нас" ,
+        'about_about' => "О нас",
+        "branch" => "Ответвляться",
+        "branch_header" => "Заголовок",
+        "branch_about" => "Филиал о",
+        "buypage" => "Страница покупки",
+        "buypage_header" => "Заголовок",
     ],
     'crud' => [
         "effect" => "Эффект",

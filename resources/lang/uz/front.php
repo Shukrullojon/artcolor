@@ -17,6 +17,7 @@ return [
         "System" => "Tizim",
     ],
     "text" => [
+        "Where_could_I_buy" => "Qayerdan sotib olsam bo'ladi",
         "System_products" => "Tizim mahsulotlari Kvars pol ELFLOOR",
         "Gallery_materials" => "Materiallar va asarlar galereyasi",
         "Gallery_invoice" => "Galereya hisob-fakturasi",

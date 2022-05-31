@@ -621,6 +621,51 @@
             </li>
 
             <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa fa-code-branch"></i>
+                    <p>
+                        @lang('admin.sidebar.branch')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('branchheader.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.branch_header')
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{route('branchabout.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.branch_about')
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa far fa-bookmark"></i>
+                    <p>
+                        @lang('admin.sidebar.buypage')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('buypageheader.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.buypage_header')
+
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
                 <a href="#" class="nav-link ">
                     <i class="fa fa-language"></i>
                     <p> @lang('admin.sidebar.language')</p>

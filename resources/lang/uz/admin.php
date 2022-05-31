@@ -88,7 +88,12 @@ return [
         "download_item_footer" => "Pastki sarlavha",
         "download_item_header" => "Yuqori sarlavha",
         "download_item_product" => "Mahsulot",
-        'about_about' => "Haqida"
+        'about_about' => "Haqida",
+        "branch" => "Filial",
+        "branch_header" => "Sarlavha",
+        "branch_about" => "Filial haqida",
+        "buypage" => "Sotib olish bo'limi",
+        "buypage_header" => "Sarlavha",
     ],
     'crud' => [
         "effect" => "Effekt",

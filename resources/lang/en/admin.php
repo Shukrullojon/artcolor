@@ -88,6 +88,11 @@ return [
         "download_item_header" => "Header title",
         "download_item_product" => "Product",
         'about_about' => "About About" ,
+        "branch" => "Branch",
+        "branch_header" => "Title",
+        "branch_about" => "About",
+        "buypage" => "Buy page",
+        "buypage_header" => "Title",
     ],
     'crud' => [
         "effect" => "Effect",

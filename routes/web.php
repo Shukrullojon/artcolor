@@ -22,6 +22,7 @@ Route::get('/serviceitem/{id}',[\App\Http\Controllers\HomeController::class,'ser
 Route::get('/gallery',[\App\Http\Controllers\HomeController::class,'gallery'])->name("gallery");
 Route::get('/galleryitem',[\App\Http\Controllers\HomeController::class,'galleryitem'])->name("galleryitem");
 Route::get("/buypage",[\App\Http\Controllers\HomeController::class,'buypage'])->name("buypage");
+Route::get("/branch",[\App\Http\Controllers\HomeController::class,'branch'])->name("branch");
 Route::get("/portfolio",[\App\Http\Controllers\HomeController::class,'portfolio'])->name("portfolio");
 Route::get("/portfoliodownload/{id}",[\App\Http\Controllers\HomeController::class,'portfoliodownload'])->name("portfoliodownload");
 Route::get("/download",[\App\Http\Controllers\HomeController::class,'download'])->name("download");
@@ -102,6 +103,9 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('downloaditemfooter', \App\Http\Controllers\Admin\DownloadItemFooterController::class);
     Route::resource('downloaditemheader', \App\Http\Controllers\Admin\DownloadItemHeaderController::class);
     Route::resource('downloaditemproduct', \App\Http\Controllers\Admin\DownloadItemProductController::class);
+    Route::resource('branchheader', \App\Http\Controllers\Admin\BranchHeaderController::class);
+    Route::resource('branchabout', \App\Http\Controllers\Admin\BranchAboutController::class);
+    Route::resource('buypageheader', \App\Http\Controllers\Admin\BuypageHeaderController::class);
 });
 
 // Change language session condition

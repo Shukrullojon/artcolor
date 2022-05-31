@@ -1,54 +1,49 @@
 @extends('layouts.app_second')
 
 @section('content')
-    <!-- main -->
-    <div class="main py-5">
-        <div class="container">
-            <div class="main-content">
 
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
-                        <li class="breadcrumb-item active" ><a href="buyPage.html">ГДЕ КУПИТЬ</a></li>
-                    </ol>
-                </nav>
-                <h4 data-aos="fade-up" data-aos-duration="1500">
-                    ГДЕ КУПИТЬ
-                </h4>
-
-                <div class="row align-items-center">
-                    <div class="col-md-8" data-aos="fade-up" data-aos-duration="1500">
-                        <p>
-                            Мы всегда рады помочь Вам и ответить на все вопросы, исходя из нашего опыта.
-                            Давайте вместе создавать красивые проекты.
-                        </p>
-                    </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="about-us-btn">
-                            <a href="blog.html">
-                                <button>
-                                    Подписоция на новостей
-                                </button>
-                            </a>
+    @if(!empty($header))
+        <!-- main -->
+        <div class="main py-5">
+            <div class="container">
+                <div class="main-content">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route("index") }}">@lang('front.sidebar.home')</a></li>
+                            <li class="breadcrumb-item active" ><a href="">@lang('front.text.Where_could_I_buy')</a></li>
+                        </ol>
+                    </nav>
+                    <h4 data-aos="fade-up" data-aos-duration="1500">
+                        {{ $header->title }}
+                    </h4>
+                    <div class="row align-items-center">
+                        <div class="col-md-8" data-aos="fade-up" data-aos-duration="1500">
+                            <p>
+                                {!! $header->info !!}
+                            </p>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="about-us-btn">
+                                <a href="{{ route("blog") }}">
+                                    <button>
+                                        @lang('front.text.subscribe_to_news')
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- main -->
+        <!-- main -->
+    @endif
 
 
     <!-- buypages content -->
     <div class="buypages">
         <div class="container">
-
-
-
             <div class="buypages-content">
-
                 <div class="buypages-map">
-
                     <div class="iframe-relative">
                         <div id="map" style="width: 100%;"></div>
                         <!-- <div class="map-content-bg-display">
@@ -60,92 +55,77 @@
                             </div>
                         </div> -->
                     </div>
-
-
-                    <div class="map-content-display"  >
-                        <div class="map-content-item" style="z-index: 10000;">
-                            <div class="map-content-about">
-                                <div class="map-text">
-
-                                    <div>
-                                        <span>Адрес </span>
-                                        <p>
-                                            ул.Бунёдкор 9, Чиланзарский район, Ташкент, Узбекистан
-                                        </p>
+                    @if(!empty($contact))
+                        <div class="map-content-display">
+                            <div class="map-content-item" style="z-index: 10000;">
+                                <div class="map-content-about">
+                                    <div class="map-text">
+                                        <div>
+                                            <span>Адрес </span>
+                                            @if(!empty($contact->addresses))
+                                                @foreach($contact->addresses as $add)
+                                                    <p>
+                                                        {{ $add->address_uz }}
+                                                    </p>
+                                                    @php break; @endphp
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <div>
+                                            <span>@lang('front.text.email'):</span>
+                                            <p>
+                                                <a href="mailto:{{ $contact->email }}" class="text-dark">{{ $contact->email }}</a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span>@lang('front.text.Phone')</span>
+                                            <p>
+                                                <a href="tel:{{ $contact->phone_1 }}" class="text-dark">{{ $contact->phone_1 }}</a>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <span>Эл. адрес:</span>
-                                        <p>
-                                            <a href="mailto:artcolor.com@info" class="text-dark">artcolor.com@info</a>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <span>телефон</span>
-                                        <p>
-                                            <a href="tel:+998 99 777 77 77" class="text-dark">+998 99 777 77 77</a>
-                                        </p>
-                                    </div>
-
-
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-
-
+                    @endif
                 </div>
-
-
-
             </div>
 
             <!-- input form -->
             <div class="form-input">
                 <div class="container">
-
-                    <form action="">
-
+                    <form action="" method="get">
                         <div class="form-content d-flex justify-content-between">
                             <div class="form-left">
-                                <h4 class="text-capitalize">Обсудим ваш проект?</h4>
+                                <h4 class="text-capitalize">@lang('front.text.discuss_your_project')?</h4>
                                 <div class="form-item">
-                                    <input type="text" id="Имя" autocomplete="off" required>
-                                    <label for="username">Имя</label>
+                                    <input type="text" name="fio" id="Имя" autocomplete="off" required>
+                                    <label for="username">@lang('front.text.Name')</label>
                                 </div>
                                 <div class="form-item">
-                                    <input type="number" id="tel" autocomplete="off" required >
-                                    <label for="tel">Телефон</label>
+                                    <input type="number" name="number" id="tel" autocomplete="off" required >
+                                    <label for="tel">@lang('front.text.Phone')</label>
                                 </div>
                                 <div class="form-item">
-                                    <input type="email" id="mail" autocomplete="off" required >
-                                    <label for="mail">Эл. адрес</label>
+                                    <input type="email" name="email" id="mail" autocomplete="off" required >
+                                    <label for="mail">@lang('front.text.email')</label>
                                 </div>
                                 <div class="d-flex gap-2  justify-content-md-center justify-content-sm-center justify-content-lg-start">
-                                    <input type="checkbox" id="ok">
-                                    <label for="ok" class="ok-text">Я согласен с <a href="#">условиями обработки персональных данных</a></label>
+                                    <input type="checkbox" id="ok" required>
+                                    <label for="ok" class="ok-text">@lang('front.text.i_agre') <a href="#">@lang('front.text.terms_of_personal_data_processing')</a></label>
                                 </div>
                             </div>
                             <div class="form-right">
                                 <button class="circleBtn" >
-                                    Отправить заявку
+                                    @lang('front.text.submit_an_application')
                                 </button>
-                                <img src="../images/main-video-bg.png" class="img-form" alt="form-img">
-
-
-
+                                <img src="{{ asset("artColor/images/main-video-bg.png") }}" class="img-form" alt="form-img">
                             </div>
                         </div>
-
                     </form>
-
-
-
                 </div>
             </div>
             <!-- input form -->
-
-
         </div>
     </div>
     <!-- buypages content -->

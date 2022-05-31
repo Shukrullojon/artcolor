@@ -17,6 +17,7 @@ return [
         "System" => "System",
     ],
     "text" => [
+        "Where_could_I_buy" => "Where could I buy",
         "System_products" => "System products Quartz floor ELFLOOR",
         "Gallery_materials" => "Gallery of materials and works",
         "Gallery_invoice" => "Gallery invoice",
