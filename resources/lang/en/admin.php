@@ -2,6 +2,7 @@
 
 return [
     'sidebar' => [
+        "admin" => "Admin",
         "our_team" => "Our team",
         "home" => "Home",
         "slider" => "Slider",
@@ -166,7 +167,8 @@ return [
         "character" => "Character",
         'work' => "Our Works" ,
         'work_item' => "Work Item" ,
-        'name' => "Name" ,
+        'name' => "Name",
+        "password"=>"Password",
         'region' => "Region" ,
         'product_image' => 'Product Image' ,
         'image_small' => "Small Image" ,

@@ -3,66 +3,109 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
 use App\Models\User;
-use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function index(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         $users = User::latest()->paginate(20);
         return view('admin.user.index',[
             'users' => $users,
         ]);
     }
 
-    public function update($id){
-        $user = User::where('id',$id)->first();
-        $roles = Role::get();
-        return view('admin.user.update',[
-            'user' => $user,
-            'roles' => $roles,
-        ]);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.user.create');
     }
 
-    public function edit(Request $request){
-        $user_id = $request->user_id;
-        if(!empty($request->role)){
-            UserRole::create([
-                'role_id'=>$request->role,
-                'user_id'=>$request->user_id,
-            ]);
-        }
-        User::where('id',$user_id)->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
-        return redirect()->route('userIndex')->with("success","Saved!");
+        return redirect()->route('user.index')->with("success","Saved successful!");
     }
 
-    public function show($id){
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
         $user = User::where('id',$id)->first();
         return view('admin.user.show',[
             'user' => $user,
         ]);
     }
 
-    public function admin(){
-        $userrole = UserRole::get();
-        return view('admin.user.admin',[
-            'userrole' => $userrole,
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user = User::where('id',$id)->first();
+        return view('admin.user.edit',[
+            'user' => $user,
         ]);
     }
 
-    public function adminstore(Request $request){
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user = User::where('id',$id)->first();
+        $password = $user->password;
+        if(!empty($request->password))
+            $password = $request->password;
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($password),
+        ]);
+        return redirect()->route('user.index')->with("success","Update successful!");
     }
 
-    public function userroledelete($id){
-        UserRole::destroy($id);
-        return redirect()->route('adminsIndex')->with("success","Destroy successful!");
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::where('id',$id)->delete();
+        return redirect()->route('user.index')->with('success',"Delete successful!");
     }
 }

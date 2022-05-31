@@ -2,6 +2,7 @@
 
 return [
     'sidebar' => [
+        "admin" => "Администратор",
         "our_team" => "Наша команда",
         "home" => "Главная",
         "slider" => "Слайдер",
@@ -189,5 +190,6 @@ return [
         'system_about' => "Система о" ,
         'system' => "Система" ,
         'about_about' => "О нас" ,
+        "password"=>"Пароль",
     ],
 ];

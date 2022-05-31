@@ -666,6 +666,25 @@
             </li>
 
             <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fa fa-user"></i>
+                    <p>
+                        @lang('admin.sidebar.admin')
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('user.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            @lang('admin.sidebar.admin')
+
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
                 <a href="#" class="nav-link ">
                     <i class="fa fa-language"></i>
                     <p> @lang('admin.sidebar.language')</p>

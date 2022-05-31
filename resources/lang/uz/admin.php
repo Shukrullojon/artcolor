@@ -2,6 +2,7 @@
 
 return [
     'sidebar' => [
+        "admin" => "Admin",
         "our_team" => "Bizning jamoa",
         "home" => "Bosh sahifa",
         "slider" => "Slayder",
@@ -189,6 +190,7 @@ return [
         'system_slider' => "Tizim slayderi" ,
         'system_about' => "Tizim haqida" ,
         'system' => "Sistema" ,
-        'about_about' => "Haqida"
+        'about_about' => "Haqida",
+        "password"=>"Parol",
     ],
 ];

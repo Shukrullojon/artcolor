@@ -106,6 +106,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin'], function() {
     Route::resource('branchheader', \App\Http\Controllers\Admin\BranchHeaderController::class);
     Route::resource('branchabout', \App\Http\Controllers\Admin\BranchAboutController::class);
     Route::resource('buypageheader', \App\Http\Controllers\Admin\BuypageHeaderController::class);
+    Route::resource('user', \App\Http\Controllers\Admin\UserController::class);
 });
 
 // Change language session condition
